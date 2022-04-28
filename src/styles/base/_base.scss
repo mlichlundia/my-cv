@@ -1,0 +1,8 @@
+@use "../utilities/_mixins.scss" as *;
+
+html {
+  @include generate-fonts;
+  @include generate-colors;
+  @include screen-width;
+  @include generate-breakpoints;
+}

@@ -1,0 +1,16 @@
+$font-base: 16;
+$fonts: (24, 20, 16, 14);
+
+$colors: (
+  light: #fff,
+  dark: #000,
+  dark-sec: rgba(0, 0, 0, 0.65),
+);
+
+$breakpoints: (
+  s: 482px,
+  m: 640px,
+  l: 992px,
+  xl: 1440px,
+  xxl: 1920px,
+);

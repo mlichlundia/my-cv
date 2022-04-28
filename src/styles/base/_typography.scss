@@ -1,0 +1,45 @@
+@use "../utilities/functions" as *; //
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+
+h1,
+h2,
+h3,
+p {
+  font-family: "Inter", Arial, sans-serif;
+}
+
+h1 {
+  font-size: font(24);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: font(20);
+  font-weight: 800;
+  text-transform: lowercase;
+}
+
+h3 {
+  font-size: font(20);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: font(16);
+  text-transform: lowercase;
+}
+
+.p-1 {
+  font-weight: 700;
+}
+
+.p-2 {
+  text-transform: uppercase;
+}
+
+.p-3 {
+  text-transform: lowercase;
+}
