@@ -1,3 +1,8 @@
+@forward "./base";
+@forward "./components";
+@forward "./layout";
+@forward "./utilities";
+
 @use "./base" as *;
 @use "./components" as *;
 @use "./layout" as *;
