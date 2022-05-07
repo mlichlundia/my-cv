@@ -6,3 +6,7 @@ html {
   @include screen-width;
   @include generate-breakpoints;
 }
+
+body {
+  overflow: hidden;
+}

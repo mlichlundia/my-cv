@@ -1,0 +1,49 @@
+@use "../../styles/main.scss" as *;
+
+:host {
+  transition: 0.5s;
+  width: 100%;
+  opacity: 1;
+}
+
+:host-context(.unvisible) {
+  opacity: 0;
+  visibility: hidden;
+
+  @media screen and (min-width: get-breakpoint(l)) {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.menu {
+  position: absolute;
+  width: 100%;
+  margin: rem(6) 0;
+  padding: rem(22) 0;
+  display: flex;
+  flex-direction: column;
+  background: color(dark-sec);
+  color: color(light);
+  border-bottom-left-radius: rem(2);
+  border-bottom-right-radius: rem(2);
+  transition: 0.4s;
+
+  @media screen and (min-width: get-breakpoint(l)) {
+    flex-direction: row;
+    justify-content: center;
+    background: none;
+    color: color(dark);
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.menu__point {
+  text-align: center;
+  padding: rem(3) 0;
+
+  @media screen and (min-width: get-breakpoint(l)) {
+    padding: rem(16);
+  }
+}
