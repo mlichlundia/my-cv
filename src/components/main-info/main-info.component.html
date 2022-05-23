@@ -1,0 +1,5 @@
+<h1>{{profileInfo.name | uppercase}}</h1>
+<h3>{{profileInfo.profession | uppercase}}</h3>
+<div ngClass="profile__summary">
+    <p *ngFor="let paragraph of profileInfo.summary">{{paragraph}}</p>
+</div>
