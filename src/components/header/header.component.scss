@@ -1,5 +1,11 @@
 @use "../../styles/main.scss" as *;
 
+:host {
+  position: absolute;
+  width: calc(100% - rem(16) * 2);
+  z-index: 10;
+}
+
 .menu__wrapper {
   position: relative;
   display: flex;
