@@ -1,0 +1,49 @@
+<h1>{{template.name | uppercase}}</h1>
+<form #login='ngForm' (ngSubmit)="onSubmit(login)">
+    <div ngClass="form__form-group">
+        <div ngClass="form__form-control">
+            <div>
+                <label
+                    for='{{template.usernameInput.label}}'>{{template.usernameInput.label}}:
+                </label>
+                <input ngModel [name]='template.usernameInput.label'
+                    #username='ngModel' (change)='onChange(username)'
+                    [minlength]="template.usernameInput.min"
+                    [type]='template.usernameInput.type' required>
+            </div>
+            <div *ngIf="username.touched && !username.valid"
+                class="form__error">
+                <p *ngIf="username.errors?.['required']">
+                    The field username is required
+                </p>
+                <p *ngIf="username.errors?.['minlength']">
+                    The field username length should be more than
+                    {{username.errors?.['minlength']?.requiredLength}}
+                </p>
+            </div>
+        </div>
+        <div ngClass="form__form-control">
+            <div>
+                <label
+                    for='{{template.passwordInput.label}}'>{{template.passwordInput.label}}:
+                </label>
+                <input ngModel [name]='template.passwordInput.label'
+                    #password='ngModel' (change)='onChange(password)'
+                    [minlength]="template.passwordInput.min"
+                    [type]="template.passwordInput.type" required>
+            </div>
+            <div *ngIf="password.touched && !password.valid"
+                class="form__error">
+                <p *ngIf="password.errors?.['required']">The field password is
+                    required.
+                </p>
+                <p *ngIf="password.errors?.['minlength']">The field password
+                    length should
+                    be not less than
+                    {{password.errors?.['minlength']?.requiredLength}}
+                    symbols.</p>
+            </div>
+        </div>
+    </div>
+    <button type="submit">{{template.button | uppercase}}</button>
+</form>

@@ -1,0 +1,28 @@
+form {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+input {
+  display: inline-block;
+  width: 100%;
+  background: none;
+  outline: none;
+}
+
+.form__form-control {
+  position: relative;
+}
+
+.form__error {
+  position: absolute;
+}
