@@ -9,7 +9,48 @@
 }
 
 h3 {
-  padding: rem(4) 0 rem(16);
+  padding: 0 0 rem(16);
+}
+
+.profile__input {
+  position: relative;
+  width: rem(368);
+  margin: 0 0 rem(4);
+  border-bottom: rem(1) solid rgba(255, 255, 255, 0);
+  transition: 0.25s;
+
+  label {
+    left: 50%;
+    transform: translate(-50%);
+    white-space: nowrap;
+    font-size: font(24);
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: 0.25s;
+  }
+
+  input {
+    padding: rem(4) rem(8);
+    opacity: 0;
+  }
+}
+
+.profile__input_visible {
+  margin: rem(32);
+  border-bottom: rem(1) solid color(dark);
+
+  label {
+    top: rem(-16);
+    font-size: font(14);
+  }
+
+  input {
+    opacity: 1;
+  }
+}
+
+.profile__input_error {
+  margin: rem(32);
 }
 
 .profile__summary {
@@ -37,5 +78,17 @@ h3 {
 
   > :first-child {
     margin: 0;
+  }
+}
+
+.form__error {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  white-space: nowrap;
+
+  p {
+    font-size: font(14);
+    color: color(error);
   }
 }

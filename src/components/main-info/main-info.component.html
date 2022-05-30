@@ -1,5 +1,15 @@
-<h1>{{profileInfo.name | uppercase}}</h1>
+<div class="profile__input" [ngClass]="currentClasses">
+    <label for="name">{{profileInfo.name | uppercase}}</label>
+    <input [(ngModel)]="profileInfo.name" #name='ngModel' type="text"
+        name="name" minlength="3" maxlength="27" (focus)="onEdit()"
+        (blur)="onSave(name.valid)">
+
+    <div *ngIf="name.touched && !name.valid" class="form__error">
+        <p *ngIf="name.errors?.['minlength']">Your name should be not less than
+            3 symbols</p>
+    </div>
+</div>
 <h3>{{profileInfo.profession | uppercase}}</h3>
-<div ngClass="profile__summary">
+<div ngClass=" profile__summary">
     <p *ngFor="let paragraph of profileInfo.summary">{{paragraph}}</p>
 </div>
