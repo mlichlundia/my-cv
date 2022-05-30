@@ -1,6 +1,6 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from 'src/services/profile.service';
+import { ProfileService } from 'src/services/profile/profile.service';
 
 @Component({
   selector: 'app-main-info',
