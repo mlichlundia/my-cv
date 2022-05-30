@@ -9,14 +9,22 @@ import { Profile } from 'src/interfaces/profile';
   providedIn: 'root',
 })
 export class ProfileService {
-  folder: string = 'profile';
+  profileApi: string = GlobalVariables.apiURL + 'profile';
 
   constructor(private http: HttpClient) {}
 
   getProfile() {
     return this.http
-      .get<Profile>(GlobalVariables.apiURL + this.folder)
+      .get<Profile>(this.profileApi)
       .pipe(retry(3), catchError(this.errorHandler));
+  }
+
+  setName(name: string) {
+    //to fix: change req object
+    const body = { name, location: 'qwer', contacts: [] };
+    return this.http
+      .post<Profile>(this.profileApi, body)
+      .pipe(catchError(this.errorHandler));
   }
 
   private errorHandler(error: HttpErrorResponse) {
