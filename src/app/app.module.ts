@@ -10,6 +10,7 @@ import { AppWrapperComponent } from '../components/app-wrapper/app-wrapper.compo
 import { HeaderComponent } from '../components/header/header.component';
 import { MainInfoComponent } from '../components/main-info/main-info.component';
 import { LoginPageComponent } from '../pages/login-page/login-page.component';
+import { httpIntrseptorProvider } from 'src/services/interseptors';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { LoginPageComponent } from '../pages/login-page/login-page.component';
     LoginPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
-  providers: [],
+  providers: [httpIntrseptorProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
