@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { AuthService } from 'src/services/auth/auth.service';
+import { User } from '../../interfaces/user';
 
 @Component({
   selector: 'app-login-page',
@@ -18,7 +20,7 @@ export class LoginPageComponent implements OnInit {
     button: 'submit',
   };
 
-  constructor() {}
+  constructor(private auth: AuthService) {}
 
   ngOnInit(): void {}
 
@@ -26,7 +28,12 @@ export class LoginPageComponent implements OnInit {
     console.log(value);
   }
 
-  onSubmit(data: NgForm) {
-    console.log(data);
+  onSubmit(data: NgForm): void {
+    const user: User = {
+      name: data.value.username,
+      password: data.value.password,
+    };
+
+    this.auth.login(user);
   }
 }
