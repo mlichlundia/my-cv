@@ -1,6 +1,6 @@
 export interface Profile {
   name: string;
   location: string;
-  contacts?: [];
+  contacts?: string[];
   profileImg: string;
 }
