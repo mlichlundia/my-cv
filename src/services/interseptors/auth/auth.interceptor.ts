@@ -12,9 +12,9 @@ export class AuthInterseptor implements HttpInterceptor {
   constructor() {}
 
   intercept(
-    request: HttpRequest<any>,
+    request: HttpRequest<unknown>,
     next: HttpHandler
-  ): Observable<HttpEvent<any>> {
+  ): Observable<HttpEvent<unknown>> {
     const key = localStorage.getItem('token');
     if (key) {
       const newRequest = request.clone({
