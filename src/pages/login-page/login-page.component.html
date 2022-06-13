@@ -1,15 +1,12 @@
-<h1>{{template.name | uppercase}}</h1>
+<h1>login</h1>
 <form #login='ngForm' (ngSubmit)="onSubmit(login)">
-    <div ngClass="form__form-group">
-        <div ngClass="form__form-control">
+    <div class="form__form-group">
+        <div class="form__form-control">
             <div>
-                <label
-                    for='{{template.usernameInput.label}}'>{{template.usernameInput.label}}:
+                <label for='username'>username:
                 </label>
-                <input ngModel [name]='template.usernameInput.label'
-                    #username='ngModel' (change)='onChange(username)'
-                    [minlength]="template.usernameInput.min"
-                    [type]='template.usernameInput.type' required>
+                <input ngModel name="username" #username="ngModel" minlength="3"
+                    type='text' required>
             </div>
             <div *ngIf="username.touched && !username.valid"
                 class="form__error">
@@ -22,15 +19,12 @@
                 </p>
             </div>
         </div>
-        <div ngClass="form__form-control">
+        <div class="form__form-control">
             <div>
-                <label
-                    for='{{template.passwordInput.label}}'>{{template.passwordInput.label}}:
+                <label for='password'>password:
                 </label>
-                <input ngModel [name]='template.passwordInput.label'
-                    #password='ngModel' (change)='onChange(password)'
-                    [minlength]="template.passwordInput.min"
-                    [type]="template.passwordInput.type" required>
+                <input ngModel name="password" #password="ngModel" minlength="3"
+                    type="password" required>
             </div>
             <div *ngIf="password.touched && !password.valid"
                 class="form__error">
@@ -45,5 +39,5 @@
             </div>
         </div>
     </div>
-    <button type="submit">{{template.button | uppercase}}</button>
+    <button type="submit">submit</button>
 </form>
