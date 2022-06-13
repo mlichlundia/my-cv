@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { User } from 'src/interfaces/user';
 
 @Injectable({
   providedIn: 'root',
@@ -7,8 +6,8 @@ import { User } from 'src/interfaces/user';
 export class AuthService {
   constructor() {}
 
-  login(user: User): void {
-    const key = 'Basic ' + btoa(user.name + ':' + user.password);
+  login(username: string, password: string): void {
+    const key = 'Basic ' + btoa(username + ':' + password);
     localStorage.setItem('token', key);
   }
 
