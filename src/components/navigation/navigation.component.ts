@@ -14,9 +14,12 @@ export class NavigationComponent implements OnInit {
     { title: 'other', link: '#other' },
   ];
 
+  /**
+    if you open menu, assign skipClick to true,
+    it prevents hide method from being called
+   **/
   private skipClick = false;
   menuPointClick = false;
-
   @HostBinding('class')
   hostClass = 'unvisible';
 
@@ -29,6 +32,7 @@ export class NavigationComponent implements OnInit {
   show(): void {
     this.hostClass = '';
     this.skipClick = true;
+    console.log(this.skipClick);
   }
 
   @HostListener('click', ['$event'])
