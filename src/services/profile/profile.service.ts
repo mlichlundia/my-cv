@@ -16,9 +16,7 @@ export class ProfileService {
     return this.http.get<Profile>(this.profileApi).pipe(retry(3));
   }
 
-  setName(name: string) {
-    //to fix: change req object
-    const body = { name, location: 'qwer', contacts: [] };
-    return this.http.post<Profile>(this.profileApi, body);
+  setData(data: Profile) {
+    return this.http.post<Profile>(this.profileApi, data);
   }
 }
