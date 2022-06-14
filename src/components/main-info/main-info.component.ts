@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Profile } from 'src/interfaces/profile';
 import { ProfileService } from 'src/services/profile/profile.service';
 
 @Component({
@@ -7,12 +8,17 @@ import { ProfileService } from 'src/services/profile/profile.service';
   styleUrls: ['./main-info.component.scss'],
 })
 export class MainInfoComponent implements OnInit {
-  username: string = '';
+  profileData: Profile = {
+    name: '',
+    location: '',
+    contacts: [{ type: '', value: '' }],
+    profileImg: '',
+  };
 
   isEditable: boolean = false;
   hasError: boolean = false;
 
-  currentNameame: string = '';
+  currentName: string = '';
 
   constructor(private profileService: ProfileService) {}
 
@@ -22,13 +28,13 @@ export class MainInfoComponent implements OnInit {
 
   showProfile() {
     this.profileService.getProfile().subscribe((data) => {
-      this.username = data.name;
+      this.profileData = data;
     });
   }
 
   onEdit(): void {
     this.isEditable = true;
-    this.currentNameame = this.username;
+    this.currentName = this.profileData.name;
   }
 
   onSave(valid: boolean | null): void {
@@ -36,13 +42,13 @@ export class MainInfoComponent implements OnInit {
     this.isValid(valid);
 
     //check if username was changed
-    if (this.currentNameame === this.username) {
+    if (this.currentName === this.profileData.name) {
       return;
     }
 
     //make request
     this.profileService
-      .setName(this.username)
+      .setData(this.profileData)
       .subscribe((message) => console.log(message));
   }
 
