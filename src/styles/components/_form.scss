@@ -19,6 +19,30 @@ input {
   outline: none;
 }
 
+.profile__input {
+  position: relative;
+  border-bottom: rem(1) solid rgba(255, 255, 255, 0);
+  transition: 0.25s;
+
+  label {
+    left: 50%;
+    transform: translate(-50%);
+    white-space: nowrap;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: 0.25s;
+  }
+
+  input {
+    opacity: 0;
+    transition: 0.25s;
+  }
+
+  div {
+    transition: 0.25s;
+  }
+}
+
 .form__form-control {
   position: relative;
 }
