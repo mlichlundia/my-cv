@@ -14,26 +14,15 @@ h3 {
 }
 
 .profile__input {
-  position: relative;
   width: rem(368);
   margin: 0 0 rem(4);
-  border-bottom: rem(1) solid rgba(255, 255, 255, 0);
-  transition: 0.25s;
 
   label {
-    left: 50%;
-    transform: translate(-50%);
-    white-space: nowrap;
     font-size: font(24);
-    font-weight: 800;
-    text-transform: uppercase;
-    transition: 0.25s;
   }
 
   input {
     padding: rem(4) rem(8);
-    opacity: 0;
-    transition: 0.25s;
   }
 
   div {
