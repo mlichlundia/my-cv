@@ -1,0 +1,80 @@
+@use "../../styles/main.scss" as *;
+
+:host {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form button {
+  margin: rem(24) 0 0;
+}
+
+.form__form-control {
+  position: relative;
+  margin: rem(28) 0 0;
+  width: rem(368);
+
+  label {
+    padding: rem(8) 0;
+  }
+
+  input {
+    padding: rem(8) rem(8) rem(8) rem(56);
+  }
+
+  > :first-child {
+    border-bottom: rem(1) solid color(dark);
+
+    > :last-child {
+      margin: 0;
+    }
+  }
+}
+
+.form__form-group > :last-child {
+  input {
+    padding: rem(8) rem(8) rem(8) rem(40);
+  }
+}
+
+.social-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.25s;
+  margin: rem(20) 0 0;
+
+  button {
+    padding: 0 rem(8);
+    font-size: font(20);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: 0.25s;
+  }
+
+  button:hover {
+    color: color(error);
+  }
+
+  > :first-child {
+    margin: 0 0 rem(4);
+    font-weight: 700;
+  }
+}
+
+.social-container:hover {
+  > button {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+}
+
+.form__error p {
+  font-size: font(14);
+  color: color(error);
+}

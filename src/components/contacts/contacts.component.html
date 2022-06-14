@@ -1,0 +1,38 @@
+<div class="social-container" *ngFor="let contact of profileData.contacts">
+    <p class="social__title">{{contact.type | lowercase}}</p>
+    <p>{{contact.value |lowercase}}</p>
+    <button (click)="onDelete(contact)">🞬</button>
+</div>
+
+<form #contactForm='ngForm' (ngSubmit)="onPush(contactForm, $event)">
+    <div class="form__form-group">
+        <div class="form__form-control">
+            <div>
+                <label for="type">social:</label>
+                <input ngModel name="type" #social="ngModel" type='text'
+                    required>
+            </div>
+            <div *ngIf="social.touched && !social.valid" class="form__error">
+                <p *ngIf="social.errors?.['required']">
+                    The field social is required
+                </p>
+            </div>
+        </div>
+
+        <div class="form__form-control">
+            <div>
+                <label for="value">link:</label>
+                <input ngModel name="value" #socialLink="ngModel" type='text'
+                    required>
+            </div>
+            <div *ngIf="socialLink.touched && !socialLink.valid"
+                class="form__error">
+                <p *ngIf="socialLink.errors?.['required']">
+                    The field link is required
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <button type="submit">add</button>
+</form>
