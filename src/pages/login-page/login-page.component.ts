@@ -12,7 +12,14 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSubmit(data: NgForm): void {
-    this.auth.login(data.value.username, data.value.password);
+  onSubmit(form: NgForm): void {
+    for (let val of Object.values(form.value)) {
+      if (val === '') {
+        return;
+      }
+    }
+
+    this.auth.login(form.value.username, form.value.password);
+    form.reset();
   }
 }
