@@ -1,7 +1,7 @@
 <div class="social-container" *ngFor="let contact of profileData.contacts">
     <p class="social__title">{{contact.type | lowercase}}</p>
     <p>{{contact.value |lowercase}}</p>
-    <button (click)="onDelete(contact)">🞬</button>
+    <button (click)="onDelete(contact)">🞪</button>
 </div>
 
 <form #contactForm='ngForm' (ngSubmit)="onPush(contactForm, $event)">
