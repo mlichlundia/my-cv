@@ -1,0 +1,78 @@
+@use "../../styles/main.scss" as *;
+
+:host {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  position: relative;
+}
+
+form > button {
+  position: absolute;
+  top: rem(16);
+  right: 0;
+}
+
+.form__form-control {
+  position: relative;
+  margin: rem(28) 0 0;
+  width: rem(368);
+  border-bottom: rem(1) solid color(dark);
+}
+
+.skills__container {
+  width: rem(372);
+  margin: rem(48) 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media screen and (min-width: get-breakpoint(m)) {
+    width: rem(480);
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 rem(12);
+  }
+
+  p {
+    margin: 0;
+    transition: 0.25s;
+  }
+
+  button {
+    visibility: hidden;
+    opacity: 0;
+    font-size: font(20);
+    padding: 0 rem(6);
+    transition: 0.25s;
+  }
+
+  button:hover {
+    color: color(error);
+  }
+}
+
+.skills__container div:hover {
+  p {
+    margin: rem(-6) 0 0;
+  }
+
+  button {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.form__error p {
+  font-size: font(14);
+  color: color(error);
+}

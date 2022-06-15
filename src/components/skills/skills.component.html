@@ -1,0 +1,21 @@
+<form #skillForm='ngForm' (ngSubmit)="onPush(skillForm, $event)">
+  <div class="form__form-control">
+    <div>
+      <label for="skill"></label>
+      <input ngModel name="skill" #skill="ngModel" type='text' required>
+    </div>
+    <div *ngIf="skill.touched && !skill.valid" class="form__error">
+      <p *ngIf="skill.errors?.['required']">
+        The field skill is required
+      </p>
+    </div>
+  </div>
+  <button>add</button>
+</form>
+
+<div class="skills__container">
+  <div *ngFor="let skill of skills"><button
+      (click)="onDelete(skill)">🞪</button>
+    <p>{{skill.title | uppercase}} </p>
+  </div>
+</div>
