@@ -12,6 +12,7 @@ import { LoginPageComponent } from '../pages/login-page/login-page.component';
 import { httpIntrseptorProvider } from 'src/services/interseptors/InterseptorExport';
 import { ContactsComponent } from '../components/contacts/contacts.component';
 import { SkillsComponent } from '../components/skills/skills.component';
+import { OtherComponent } from '../components/other/other.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SkillsComponent } from '../components/skills/skills.component';
     LoginPageComponent,
     ContactsComponent,
     SkillsComponent,
+    OtherComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [httpIntrseptorProvider],

@@ -1,0 +1,136 @@
+@use "../../styles/main.scss" as *;
+
+:host {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.other-container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.other-container > :last-child {
+  margin: rem(64) 0 0;
+}
+
+.other__title {
+  font-weight: 700;
+}
+
+.form__form-control {
+  position: relative;
+  margin: rem(12) 0 0;
+  width: rem(368);
+  text-align: center;
+
+  label {
+    position: static;
+    display: block;
+    padding: 0 rem(52);
+    transform: translate(0);
+    transition: 0.25s;
+  }
+
+  input {
+    padding: rem(8) rem(72) rem(8) rem(8);
+    border-bottom: rem(1) solid color(dark);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.25s;
+  }
+
+  button {
+    position: absolute;
+    right: 50%;
+    transform: translate(50%);
+    transition: 0.25s;
+  }
+
+  [type="submit"] {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  input[name="lang"] {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  input[name="lang"] + button {
+    right: 0;
+    transform: translate(0);
+  }
+}
+
+form {
+  .form__input_edit {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .form__button_edit {
+    opacity: 0;
+    visibility: hidden;
+    right: 0;
+    transform: translate(0);
+  }
+
+  .form__button_edit[type="submit"] {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .form__label_edit {
+    transform: translate(0, calc(50% + rem(8)));
+  }
+}
+
+.langs__container {
+  display: flex;
+
+  div {
+    margin: 0 rem(12);
+    text-align: center;
+
+    p {
+      transition: 0.25s;
+    }
+
+    button {
+      font-size: font(20);
+      visibility: hidden;
+      opacity: 0;
+      padding: 0 rem(6);
+      transition: 0.25s;
+    }
+
+    button:hover {
+      color: color(error);
+    }
+  }
+
+  div:hover {
+    p {
+      margin: rem(-6) 0 0;
+    }
+
+    button {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.form__error {
+  top: rem(42);
+
+  p {
+    font-size: font(14);
+    color: color(error);
+  }
+}
