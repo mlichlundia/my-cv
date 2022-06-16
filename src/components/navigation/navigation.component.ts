@@ -6,13 +6,7 @@ import { Component, HostBinding, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.scss'],
 })
 export class NavigationComponent implements OnInit {
-  menuPoints = [
-    { title: 'main', link: '#main' },
-    { title: 'contacts', link: '#contacts' },
-    { title: 'skills', link: '#skills' },
-    { title: 'projects', link: '#projects' },
-    { title: 'other', link: '#other' },
-  ];
+  menuPoints = ['main', 'contacts', 'skills', 'projects', 'other'];
 
   /**
     if you open menu, assign skipClick to true,

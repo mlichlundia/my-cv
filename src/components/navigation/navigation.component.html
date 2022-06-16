@@ -1,5 +1,7 @@
 <nav class="menu">
     <a class='menu__point' *ngFor="let point of menuPoints"
-        (click)="isActiveMenuPoint(true)"
-        href='{{point.link | lowercase}}'>{{point.title}}</a>
+        (click)="isActiveMenuPoint(true)" routerLink
+        [fragment]='point'>{{point}}
+    </a>
+    <a routerLink="login" class='menu__point'>login</a>
 </nav>
