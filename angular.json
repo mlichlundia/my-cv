@@ -97,5 +97,7 @@
       }
     }
   },
-  "defaultProject": "my-cv"
+  "cli": {
+    "analytics": "586eacc3-bd6d-4502-bfb6-f8d3b3aac890"
+  }
 }
