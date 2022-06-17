@@ -6,8 +6,6 @@ import { Component, HostBinding, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.scss'],
 })
 export class NavigationComponent implements OnInit {
-  menuPoints = ['main', 'contacts', 'skills', 'projects', 'other'];
-
   /**
     if you open menu, assign skipClick to true,
     it prevents hide method from being called
