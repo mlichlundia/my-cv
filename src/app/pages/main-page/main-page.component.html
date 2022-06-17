@@ -1,4 +1,15 @@
-<app-main-info id="main"></app-main-info>
-<app-contacts id="contacts"></app-contacts>
-<app-skills id="skills"></app-skills>
-<app-other id="other"></app-other>
+<swiper [direction]="'vertical'" [slidesPerView]="1" [spaceBetween]=""
+  [mousewheel]="true" class="swiper">
+  <ng-template swiperSlide>
+    <app-main-info></app-main-info>
+  </ng-template>
+  <ng-template swiperSlide>
+    <app-contacts></app-contacts>
+  </ng-template>
+  <ng-template swiperSlide>
+    <app-skills></app-skills>
+  </ng-template>
+  <ng-template swiperSlide>
+    <app-other></app-other>
+  </ng-template>
+</swiper>

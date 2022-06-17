@@ -15,6 +15,7 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { OtherComponent } from './components/other/other.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
+import { SwiperModule } from 'swiper/angular';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
@@ -38,6 +39,7 @@ const routes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    SwiperModule,
     RouterModule.forRoot(routes, {
       // scrollPositionRestoration: 'enabled',
       anchorScrolling: 'enabled',
