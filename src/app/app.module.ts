@@ -16,6 +16,8 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { OtherComponent } from './components/other/other.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { SwiperModule } from 'swiper/angular';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { ProjectSlideComponent } from './components/project-slide/project-slide.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
@@ -33,6 +35,8 @@ const routes: Routes = [
     SkillsComponent,
     OtherComponent,
     MainPageComponent,
+    ProjectsComponent,
+    ProjectSlideComponent,
   ],
   imports: [
     BrowserModule,

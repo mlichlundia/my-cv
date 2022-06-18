@@ -1,0 +1,55 @@
+@use "../../../styles/main.scss" as *;
+
+@import "~swiper/css";
+@import "~swiper/css/effect-fade";
+@import "~swiper/css/navigation";
+
+.projects {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  > :last-child {
+    position: absolute;
+    top: calc(50% + rem(312) / 2 + rem(64));
+    z-index: 1;
+
+    button {
+      margin: 0 rem(64);
+
+      @media screen and (min-width: get-breakpoint(l)) {
+        margin: 0 rem(93);
+      }
+    }
+  }
+}
+
+.projects__swiper {
+  height: fit-content;
+  text-align: center;
+}
+
+.projects__gallery {
+  margin: rem(64) 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: rem(312);
+    height: rem(312);
+    margin: 0 rem(5);
+  }
+}
+
+.projects__info {
+  p {
+    margin: rem(4) 0 0;
+  }
+}
+
+.projects .swiper-slide:not(.swiper-slide-active) {
+  opacity: 0 !important;
+}
