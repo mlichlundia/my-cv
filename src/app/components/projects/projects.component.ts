@@ -43,14 +43,6 @@ export class ProjectsComponent implements OnInit {
       .subscribe((message) => console.log(message));
   }
 
-  addProject() {
-    console.log('add');
-  }
-
-  removeProject() {
-    console.log('remove');
-  }
-
   next() {
     this.swiper?.swiperRef.slideNext();
   }

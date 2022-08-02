@@ -2,11 +2,6 @@
   <swiper #swiper [spaceBetween]="30" [effect]="'fade'" [navigation]="true"
     class="projects__swiper swiper">
     <ng-template swiperSlide *ngFor="let project of projects">
-      <div class="project__buttons">
-        <button>edit</button>
-        <button (click)="removeProject()">delete</button>
-        <button (click)="addProject()">add</button>
-      </div>
       <div class="projects__gallery">
         <img *ngFor="let image of project.images" [src]="image"
           [alt]="project.title">
