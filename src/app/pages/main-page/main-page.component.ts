@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import SwiperCore, { Mousewheel, Pagination } from 'swiper';
 
 SwiperCore.use([Mousewheel, Pagination]);
@@ -7,10 +7,6 @@ SwiperCore.use([Mousewheel, Pagination]);
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainPageComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class MainPageComponent {}
