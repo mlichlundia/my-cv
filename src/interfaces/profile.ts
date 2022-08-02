@@ -1,8 +1,6 @@
-import { Contact } from './contact';
-
 export interface Profile {
   name: string;
   location: string;
-  contacts?: Contact[];
+  contacts?: Record<string, string>[];
   profileImg: string;
 }

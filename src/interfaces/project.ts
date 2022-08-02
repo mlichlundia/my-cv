@@ -3,5 +3,5 @@ export interface Project {
   description: string;
   descriptionShort: string;
   images: string[];
-  links: { url: string; type: string }[];
+  links: Record<string, string>[];
 }
