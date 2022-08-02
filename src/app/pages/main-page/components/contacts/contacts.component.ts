@@ -4,8 +4,6 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Contact } from 'src/interfaces/contact';
 import { Profile } from 'src/interfaces/profile';
 import { ProfileService } from 'src/services/profile/profile.service';
 
