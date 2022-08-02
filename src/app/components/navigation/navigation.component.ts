@@ -1,11 +1,11 @@
-import { Component, HostBinding, HostListener, OnInit } from '@angular/core';
+import { Component, HostBinding, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent {
   /**
     if you open menu, assign skipClick to true,
     it prevents hide method from being called
@@ -15,8 +15,6 @@ export class NavigationComponent implements OnInit {
   @HostBinding('class')
   hostClass = 'unvisible';
 
-  constructor() {}
-
   isActiveMenuPoint(bool: boolean) {
     this.menuPointClick = bool;
   }
@@ -24,7 +22,6 @@ export class NavigationComponent implements OnInit {
   show(): void {
     this.hostClass = '';
     this.skipClick = true;
-    console.log(this.skipClick);
   }
 
   @HostListener('click', ['$event'])
@@ -33,6 +30,7 @@ export class NavigationComponent implements OnInit {
       this.hide();
       this.isActiveMenuPoint(false);
     }
+
     event.stopPropagation();
   }
 
@@ -42,8 +40,7 @@ export class NavigationComponent implements OnInit {
       this.skipClick = false;
       return;
     }
+
     this.hostClass = 'unvisible';
   }
-
-  ngOnInit(): void {}
 }
