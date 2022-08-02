@@ -1,55 +1,13 @@
-<div class="other-container">
-  <div>
-    <p class="other__title">education</p>
-    <form #educationForm='ngForm' (ngSubmit)="onSave(educationForm, $event)">
-      <div class="form__form-control">
-        <div>
-          <input ngModel [class.form__input_edit]="isEditable"
-            (blur)="education.valid && onSave(educationForm, $event)"
-            (keyup.enter)="education.valid && onSave(educationForm, $event)"
-            name="education" #education="ngModel" type='text' required>
-          <button (click)="onEdit($event)"
-            [class.form__button_edit]="isEditable">edit
-          </button>
-          <button type="submit" [class.form__button_edit]="isEditable">save
-          </button>
-          <label for="education"
-            [class.form__label_edit]="isEditable">{{educationData[0] }}
-          </label>
-        </div>
-        <div *ngIf="isEditable && education.touched && !education.valid"
-          class="form__error">
-          <p *ngIf="education.errors?.['required']">
-            The field social is required
-          </p>
-        </div>
-      </div>
-    </form>
+<div>
+  <p class="other__title">education</p>
+  <div class="other__container">
+    <p *ngFor="let education of educationData">{{education | lowercase}} </p>
   </div>
+</div>
 
-  <div>
-    <p class="other__title">languages</p>
-    <form #langForm='ngForm' (ngSubmit)="onPush(langForm, $event)">
-      <div class="form__form-control">
-        <div>
-          <label for="lang"></label>
-          <input ngModel name="lang" #lang="ngModel" type='text' required>
-          <button>add</button>
-        </div>
-        <div *ngIf="lang.touched && !lang.valid" class="form__error">
-          <p *ngIf="lang.errors?.['required']">
-            The field lang is required
-          </p>
-        </div>
-      </div>
-
-    </form>
-
-    <div class="langs__container">
-      <div *ngFor="let lang of langs"><button
-          (click)="onDelete(lang)">🞪</button>
-        <p>{{lang | lowercase}} </p>
-      </div>
-    </div>
+<div>
+  <p class="other__title">languages</p>
+  <div class="other__container other__container_langs">
+    <p *ngFor="let lang of langs">{{lang | lowercase}} </p>
   </div>
 </div>

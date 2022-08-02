@@ -13,10 +13,12 @@ export class SkillsService {
   constructor(private http: HttpClient) {}
 
   getSkills() {
-    return this.http.get<Skill[]>(this.skillsApi).pipe(retry(3));
+    return this.http
+      .get<Record<string, string>[]>(this.skillsApi)
+      .pipe(retry(3));
   }
 
   setData(data: Skill[]) {
-    return this.http.post<Skill[]>(this.skillsApi, data);
+    return this.http.post<Record<string, string>[]>(this.skillsApi, data);
   }
 }

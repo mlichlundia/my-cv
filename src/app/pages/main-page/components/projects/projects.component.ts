@@ -1,4 +1,11 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+  ViewChild,
+  ViewEncapsulation,
+} from '@angular/core';
 import { Project } from 'src/interfaces/project';
 import { ProjectsService } from 'src/services/projects/projects.service';
 import SwiperCore, { EffectFade, Navigation } from 'swiper';
@@ -11,36 +18,28 @@ SwiperCore.use([EffectFade, Navigation]);
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectsComponent implements OnInit {
   @ViewChild(SwiperComponent, { static: false })
   swiper?: SwiperComponent;
 
-  projects: Project[] = [
-    {
-      title: '',
-      description: '',
-      descriptionShort: '',
-      images: [''],
-      links: [{ url: '', type: '' }],
-    },
-  ];
+  projects!: Project[];
 
-  constructor(private projectService: ProjectsService) {}
+  constructor(
+    private projectService: ProjectsService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this.getProjects();
   }
 
   getProjects() {
-    this.projectService.getData().subscribe((data) => (this.projects = data));
-  }
-
-  setProjects(data: Project[]) {
-    console.log(this.projects);
-    this.projectService
-      .setData(data)
-      .subscribe((message) => console.log(message));
+    this.projectService.getData().subscribe((data) => {
+      this.projects = data;
+      this.cdr.markForCheck();
+    });
   }
 
   next() {
