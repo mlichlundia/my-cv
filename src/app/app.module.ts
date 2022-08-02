@@ -8,16 +8,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { HeaderComponent } from './components/header/header.component';
-import { MainInfoComponent } from './components/main-info/main-info.component';
+import { MainInfoComponent } from './pages/main-page/components/main-info/main-info.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { httpIntrseptorProvider } from 'src/services/interseptors/InterseptorExport';
-import { ContactsComponent } from './components/contacts/contacts.component';
-import { SkillsComponent } from './components/skills/skills.component';
-import { OtherComponent } from './components/other/other.component';
+import { ContactsComponent } from './pages/main-page/components/contacts/contacts.component';
+import { SkillsComponent } from './pages/main-page/components/skills/skills.component';
+import { OtherComponent } from './pages/main-page/components/other/other.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { SwiperModule } from 'swiper/angular';
-import { ProjectsComponent } from './components/projects/projects.component';
-import { ProjectSlideComponent } from './components/project-slide/project-slide.component';
+import { ProjectsComponent } from './pages/main-page/components/projects/projects.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
@@ -36,7 +35,6 @@ const routes: Routes = [
     OtherComponent,
     MainPageComponent,
     ProjectsComponent,
-    ProjectSlideComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +43,6 @@ const routes: Routes = [
     FormsModule,
     SwiperModule,
     RouterModule.forRoot(routes, {
-      // scrollPositionRestoration: 'enabled',
       anchorScrolling: 'enabled',
     }),
   ],

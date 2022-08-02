@@ -1,43 +1,41 @@
 <h1>login</h1>
 <form #login='ngForm' (ngSubmit)="onSubmit(login)">
-    <div class="form__form-group">
-        <div class="form__form-control">
-            <div>
-                <label for='username'>username:
-                </label>
-                <input ngModel name="username" #username="ngModel" minlength="3"
-                    type='text' required>
-            </div>
-            <div *ngIf="username.touched && !username.valid"
-                class="form__error">
-                <p *ngIf="username.errors?.['required']">
-                    The field username is required
-                </p>
-                <p *ngIf="username.errors?.['minlength']">
-                    The field username length should be more than
-                    {{username.errors?.['minlength']?.requiredLength}}
-                </p>
-            </div>
-        </div>
-        <div class="form__form-control">
-            <div>
-                <label for='password'>password:
-                </label>
-                <input ngModel name="password" #password="ngModel" minlength="3"
-                    type="password" required>
-            </div>
-            <div *ngIf="password.touched && !password.valid"
-                class="form__error">
-                <p *ngIf="password.errors?.['required']">The field password is
-                    required.
-                </p>
-                <p *ngIf="password.errors?.['minlength']">The field password
-                    length should
-                    be not less than
-                    {{password.errors?.['minlength']?.requiredLength}}
-                    symbols.</p>
-            </div>
-        </div>
+  <div class="form__form-group">
+    <div class="form__form-control">
+      <div>
+        <label for='username'>username:
+        </label>
+        <input ngModel name="username" #username="ngModel" minlength="3"
+          type='text' required>
+      </div>
+      <div *ngIf="username.touched && !username.valid" class="form__error">
+        <p *ngIf="username.errors?.['required']">
+          The field username is required
+        </p>
+        <p *ngIf="username.errors?.['minlength']">
+          The field username length should be more than
+          {{username.errors?.['minlength']?.requiredLength}}
+        </p>
+      </div>
     </div>
-    <button type="submit">submit</button>
+    <div class="form__form-control">
+      <div>
+        <label for='password'>password:
+        </label>
+        <input ngModel name="password" #password="ngModel" minlength="3"
+          type="password" required>
+      </div>
+      <div *ngIf="password.touched && !password.valid" class="form__error">
+        <p *ngIf="password.errors?.['required']">The field password is
+          required.
+        </p>
+        <p *ngIf="password.errors?.['minlength']">The field password
+          length should
+          be not less than
+          {{password.errors?.['minlength']?.requiredLength}}
+          symbols.</p>
+      </div>
+    </div>
+  </div>
+  <button type="submit">submit</button>
 </form>
