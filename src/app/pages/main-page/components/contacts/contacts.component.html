@@ -1,4 +1,4 @@
 <div class="social-container" *ngFor="let contact of profileData?.contacts">
-  <p class="social__title">{{contact.type | lowercase}}</p>
-  <p>{{contact.value |lowercase}}</p>
+  <p class="social__title">{{contact?.['type'] | lowercase}}</p>
+  <p>{{contact?.['value'] |lowercase}}</p>
 </div>

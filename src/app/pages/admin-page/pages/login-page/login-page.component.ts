@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from 'src/services/auth/auth.service';
 
@@ -6,6 +6,7 @@ import { AuthService } from 'src/services/auth/auth.service';
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginPageComponent implements OnInit {
   constructor(private auth: AuthService) {}
