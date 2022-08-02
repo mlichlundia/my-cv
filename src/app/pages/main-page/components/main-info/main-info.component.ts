@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+} from '@angular/core';
 import { Profile } from 'src/interfaces/profile';
 import { ProfileService } from 'src/services/profile/profile.service';
 
@@ -6,21 +11,15 @@ import { ProfileService } from 'src/services/profile/profile.service';
   selector: 'app-main-info',
   templateUrl: './main-info.component.html',
   styleUrls: ['./main-info.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainInfoComponent implements OnInit {
-  profileData: Profile = {
-    name: '',
-    location: '',
-    contacts: [{ type: '', value: '' }],
-    profileImg: '',
-  };
+  profileData!: Profile;
 
-  isEditable: boolean = false;
-  hasError: boolean = false;
-
-  currentName: string = '';
-
-  constructor(private profileService: ProfileService) {}
+  constructor(
+    private profileService: ProfileService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
     this.showProfile();
@@ -29,35 +28,7 @@ export class MainInfoComponent implements OnInit {
   showProfile() {
     this.profileService.getProfile().subscribe((data) => {
       this.profileData = data;
+      this.cdr.markForCheck();
     });
-  }
-
-  onEdit(): void {
-    this.isEditable = true;
-    this.currentName = this.profileData.name;
-  }
-
-  onSave(valid: boolean | null): void {
-    this.isEditable = false;
-    this.isValid(valid);
-
-    //check if username was changed
-    if (this.currentName === this.profileData.name) {
-      return;
-    }
-
-    //make request
-    this.profileService
-      .setData(this.profileData)
-      .subscribe((message) => console.log(message));
-  }
-
-  isValid(valid: boolean | null) {
-    if (!valid) {
-      this.hasError = true;
-      return;
-    } else {
-      this.hasError = false;
-    }
   }
 }

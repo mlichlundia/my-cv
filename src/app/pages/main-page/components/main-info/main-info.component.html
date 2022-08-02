@@ -1,24 +1,13 @@
-<div class="profile__input"
-    [ngClass]="isEditable ? 'profile__input_visible' : ''">
-    <label for="name">{{profileData.name | uppercase}}</label>
-    <input [(ngModel)]="profileData.name" #name='ngModel' type="text"
-        name="name" minlength="3" maxlength="27" (focus)="onEdit()"
-        (blur)="onSave(name.valid)" [class.profile__input_error]="hasError">
-
-    <div *ngIf=" !name.valid" class="form__error">
-        <p *ngIf="name.errors?.['minlength']">Your name should be not less than
-            3 symbols</p>
-    </div>
-</div>
+<h1>{{ profileData?.name }}</h1>
 <h3>Junior Frontend Developer</h3>
 <div class=" profile__summary">
-    <p>I`m a Junior Frontend Developer. I started to learn frontend development
-        with my mentor. I think such way of learning helps me to understand more
-        about working in company and also in a team. Our mentoring program
-        increases my knowledge with the most important and modern Frontend
-        technologies.
-    </p>
-    <p>I am looking for a company that will give me friendly enviroment in which
-        i will increase my knowledge in creating large-scale applications.
-    </p>
+  <p>I`m a Junior Frontend Developer. I started to learn frontend development
+    with my mentor. I think such way of learning helps me to understand more
+    about working in company and also in a team. Our mentoring program
+    increases my knowledge with the most important and modern Frontend
+    technologies.
+  </p>
+  <p>I am looking for a company that will give me friendly enviroment in which
+    i will increase my knowledge in creating large-scale applications.
+  </p>
 </div>
