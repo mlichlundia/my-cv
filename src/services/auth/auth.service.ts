@@ -4,7 +4,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor() {}
+  pattern: RegExp = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
+
+  get usernamePattern(): RegExp {
+    return this.pattern;
+  }
 
   login(username: string, password: string): void {
     const key = 'Basic ' + btoa(username + ':' + password);

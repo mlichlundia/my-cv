@@ -7,4 +7,10 @@ button {
   font-size: font(16);
   font-weight: 700;
   letter-spacing: rem(1.6);
+  transition: 0.25s;
+}
+
+button:disabled {
+  opacity: 0;
+  visibility: hidden;
 }
