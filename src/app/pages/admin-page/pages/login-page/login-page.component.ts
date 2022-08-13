@@ -4,7 +4,6 @@ import {
   FormBuilder,
   FormControl,
   FormGroup,
-  NgForm,
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -50,13 +49,15 @@ export class LoginPageComponent implements OnInit {
         return;
       }
     }
-    this._auth.login(this.form.value.username, this.form.value.password);
-    this.form.reset();
 
-    if (localStorage.getItem('token')) {
-      console.log('ok');
-      this._router.navigate(['admin/edit']);
-    }
+    this._auth
+      .login(this.form.value.username, this.form.value.password)
+      .subscribe(() => {
+        this._router.navigate(['admin/edit']);
+        this._auth.setAuth(true);
+      });
+
+    this.form.reset();
   }
 
   get usernameControl(): AbstractControl<string> | null {
