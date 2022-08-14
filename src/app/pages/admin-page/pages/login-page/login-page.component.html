@@ -1,5 +1,8 @@
 <h1>login</h1>
 <form (ngSubmit)="onSubmit()" [formGroup]=form>
+  <div class="form__error">
+    <p *ngIf="auth.error$ |async as error">{{error}}</p>
+  </div>
   <div class="form__form-group">
     <div class="form__form-control">
       <div>

@@ -20,8 +20,8 @@ export class LoginPageComponent implements OnInit {
 
   constructor(
     private _fb: FormBuilder,
-    private _auth: AuthService,
-    private _router: Router
+    private _router: Router,
+    public auth: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -38,7 +38,7 @@ export class LoginPageComponent implements OnInit {
       password: new FormControl('', [
         Validators.required,
         Validators.minLength(8),
-        Validators.pattern(this._auth.usernamePattern),
+        Validators.pattern(this.auth.pattern),
       ]),
     });
   }
@@ -50,11 +50,11 @@ export class LoginPageComponent implements OnInit {
       }
     }
 
-    this._auth
+    this.auth
       .login(this.form.value.username, this.form.value.password)
       .subscribe(() => {
         this._router.navigate(['admin/edit']);
-        this._auth.setAuth(true);
+        this.auth.isAuth = true;
       });
 
     this.form.reset();
