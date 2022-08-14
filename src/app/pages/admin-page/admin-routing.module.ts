@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { EditPageComponent } from './pages/edit-page/edit-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { AdminPageComponent } from './admin-page.component';
+import { AuthGuard } from 'src/services/auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
       {
         path: 'edit',
         component: EditPageComponent,
+        canActivate: [AuthGuard],
       },
       {
         path: 'login',

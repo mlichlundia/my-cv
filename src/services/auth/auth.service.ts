@@ -8,7 +8,6 @@ import { ProfileService } from '../profile/profile.service';
 })
 export class AuthService {
   pattern: RegExp = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
-  isAuth: boolean = true;
 
   constructor(private _profileService: ProfileService) {}
 
@@ -16,8 +15,14 @@ export class AuthService {
     return this.pattern;
   }
 
-  setAuth(state: boolean) {
-    this.isAuth = state;
+  get isAuth(): boolean {
+    return localStorage.getItem('isAuth')
+      ? JSON.parse(localStorage.getItem('isAuth')!)
+      : false;
+  }
+
+  setAuth(state: boolean): void {
+    localStorage.setItem('isAuth', JSON.stringify(state));
   }
 
   checkAuth(): Observable<Profile> {
@@ -38,5 +43,7 @@ export class AuthService {
     return this.checkAuth();
   }
 
-  logout() {}
+  logout() {
+    localStorage.clear();
+  }
 }
