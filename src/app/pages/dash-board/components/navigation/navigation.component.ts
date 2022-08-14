@@ -7,10 +7,10 @@ import { Component, HostBinding, HostListener } from '@angular/core';
 })
 export class NavigationComponent {
   /**
-    if you open menu, assign skipClick to true,
+    if you open menu, assign _skipClick to true,
     it prevents hide method from being called
    **/
-  private skipClick = false;
+  private _skipClick = false;
   menuPointClick = false;
   @HostBinding('class')
   hostClass = 'unvisible';
@@ -21,7 +21,7 @@ export class NavigationComponent {
 
   show(): void {
     this.hostClass = '';
-    this.skipClick = true;
+    this._skipClick = true;
   }
 
   @HostListener('click', ['$event'])
@@ -36,8 +36,8 @@ export class NavigationComponent {
 
   @HostListener('window:click')
   hide(): void {
-    if (this.skipClick) {
-      this.skipClick = false;
+    if (this._skipClick) {
+      this._skipClick = false;
       return;
     }
 

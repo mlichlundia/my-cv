@@ -10,13 +10,13 @@ import { Project } from 'src/interfaces/project';
 export class ProjectsService {
   projectsApi = GlobalVariables.apiURL + 'projects';
 
-  constructor(private http: HttpClient) {}
+  constructor(private _http: HttpClient) {}
 
   getData() {
-    return this.http.get<Project[]>(this.projectsApi).pipe(retry(3));
+    return this._http.get<Project[]>(this.projectsApi).pipe(retry(3));
   }
 
   setData(data: Project[]) {
-    return this.http.post<Project[]>(this.projectsApi, data);
+    return this._http.post<Project[]>(this.projectsApi, data);
   }
 }

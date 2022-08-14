@@ -9,15 +9,15 @@ import { GlobalVariables } from 'src/constants';
 export class SkillsService {
   skillsApi: string = GlobalVariables.apiURL + 'skills';
 
-  constructor(private http: HttpClient) {}
+  constructor(private _http: HttpClient) {}
 
   getSkills() {
-    return this.http
+    return this._http
       .get<Record<string, string>[]>(this.skillsApi)
       .pipe(retry(3));
   }
 
   setData(data: Record<string, string>[]) {
-    return this.http.post<Record<string, string>[]>(this.skillsApi, data);
+    return this._http.post<Record<string, string>[]>(this.skillsApi, data);
   }
 }

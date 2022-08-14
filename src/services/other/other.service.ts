@@ -10,21 +10,21 @@ export class OtherService {
   langApi: string = GlobalVariables.apiURL + 'languages';
   educationApi: string = GlobalVariables.apiURL + 'educations';
 
-  constructor(private http: HttpClient) {}
+  constructor(private _http: HttpClient) {}
 
   getLangs() {
-    return this.http.get<string[]>(this.langApi).pipe(retry(3));
+    return this._http.get<string[]>(this.langApi).pipe(retry(3));
   }
 
   getEducation() {
-    return this.http.get<string[]>(this.educationApi).pipe(retry(3));
+    return this._http.get<string[]>(this.educationApi).pipe(retry(3));
   }
 
   setLangs(data: string[]) {
-    return this.http.post<string[]>(this.langApi, data);
+    return this._http.post<string[]>(this.langApi, data);
   }
 
   setEducation(data: string[]) {
-    return this.http.post<string[]>(this.educationApi, data);
+    return this._http.post<string[]>(this.educationApi, data);
   }
 }

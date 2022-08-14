@@ -17,8 +17,8 @@ export class ContactsComponent implements OnInit {
   profileData!: Profile;
 
   constructor(
-    private profileService: ProfileService,
-    private cdr: ChangeDetectorRef
+    private _profileService: ProfileService,
+    private __cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -26,9 +26,9 @@ export class ContactsComponent implements OnInit {
   }
 
   showContacts() {
-    this.profileService.getProfile().subscribe((data) => {
+    this._profileService.getProfile().subscribe((data) => {
       this.profileData = data;
-      this.cdr.markForCheck();
+      this.__cdr.markForCheck();
     });
   }
 }

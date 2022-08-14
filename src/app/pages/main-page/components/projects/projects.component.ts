@@ -27,8 +27,8 @@ export class ProjectsComponent implements OnInit {
   projects!: Project[];
 
   constructor(
-    private projectService: ProjectsService,
-    private cdr: ChangeDetectorRef
+    private _projectService: ProjectsService,
+    private _cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -36,9 +36,9 @@ export class ProjectsComponent implements OnInit {
   }
 
   getProjects() {
-    this.projectService.getData().subscribe((data) => {
+    this._projectService.getData().subscribe((data) => {
       this.projects = data;
-      this.cdr.markForCheck();
+      this._cdr.markForCheck();
     });
   }
 

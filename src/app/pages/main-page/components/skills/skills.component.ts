@@ -16,8 +16,8 @@ export class SkillsComponent implements OnInit {
   skills!: Record<string, string>[];
 
   constructor(
-    private skillsServise: SkillsService,
-    private cdr: ChangeDetectorRef
+    private _skillsServise: SkillsService,
+    private _cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -25,9 +25,9 @@ export class SkillsComponent implements OnInit {
   }
 
   showSkills() {
-    this.skillsServise.getSkills().subscribe((data) => {
+    this._skillsServise.getSkills().subscribe((data) => {
       this.skills = data;
-      this.cdr.markForCheck();
+      this._cdr.markForCheck();
     });
   }
 }

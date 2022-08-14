@@ -17,8 +17,8 @@ export class MainInfoComponent implements OnInit {
   profileData!: Profile;
 
   constructor(
-    private profileService: ProfileService,
-    private cdr: ChangeDetectorRef
+    private _profileService: ProfileService,
+    private _cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
@@ -26,9 +26,9 @@ export class MainInfoComponent implements OnInit {
   }
 
   showProfile() {
-    this.profileService.getProfile().subscribe((data) => {
+    this._profileService.getProfile().subscribe((data) => {
       this.profileData = data;
-      this.cdr.markForCheck();
+      this._cdr.markForCheck();
     });
   }
 }
