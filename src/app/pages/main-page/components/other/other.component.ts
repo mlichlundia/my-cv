@@ -17,8 +17,8 @@ export class OtherComponent implements OnInit {
   langs!: string[];
 
   constructor(
-    private otherService: OtherService,
-    private cdr: ChangeDetectorRef
+    private _otherService: OtherService,
+    private _cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -26,14 +26,14 @@ export class OtherComponent implements OnInit {
   }
 
   showData() {
-    this.otherService.getEducation().subscribe((data) => {
+    this._otherService.getEducation().subscribe((data) => {
       this.educationData = data;
-      this.cdr.markForCheck();
+      this._cdr.markForCheck();
     });
 
-    this.otherService.getLangs().subscribe((data) => {
+    this._otherService.getLangs().subscribe((data) => {
       this.langs = data;
-      this.cdr.markForCheck();
+      this._cdr.markForCheck();
     });
   }
 }
