@@ -1,4 +1,4 @@
-@use "../utilities/" as *;
+@use "../utilities" as *;
 
 button {
   padding: rem(8) rem(16);
@@ -13,4 +13,10 @@ button {
 button:disabled {
   opacity: 0;
   visibility: hidden;
+}
+
+.input-button {
+  position: absolute;
+  top: 0;
+  right: rem(-16);
 }
