@@ -9,7 +9,7 @@ export class MenuButtonComponent {
   @Input() public isOpen!: boolean
   @Output() public onToggle: EventEmitter<boolean> = new EventEmitter<boolean>()
 
-  public toggleOpen() {
+  public toggleOpen():void {
     this.onToggle.emit(!this.isOpen)
   }
 }

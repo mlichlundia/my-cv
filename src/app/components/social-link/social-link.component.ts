@@ -11,10 +11,7 @@ export class SocialLinkComponent implements OnInit {
 
   public imgSrc!:string
 
-  constructor() { }
-
   ngOnInit(): void {
     this.imgSrc = `/assets/svg/social/${this.contact.type}.svg`
   }
-
 }
