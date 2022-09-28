@@ -1,0 +1,52 @@
+@use '../../../styles/main' as *;
+
+:host {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: rem(364);
+  height: 100vh;
+  padding: rem(24);
+  overflow: auto;
+
+  @media screen and (min-width: get-breakpoint(xl)){
+    position: static;
+    padding: rem(24);
+  }
+}
+
+.menu-button {
+  @media screen and (min-width: get-breakpoint(xl)){
+    display: none;
+  }
+}
+
+.sidebar {
+  margin-top: rem(24) ;
+  transition: .4s;
+
+  @media screen and (min-width: get-breakpoint(xl)){
+    margin-top: 0;
+  }
+
+  &>:nth-child(n) {
+    margin-bottom: rem(24);
+  }
+
+  &>:last-child {
+    font-size: font(12);
+    font-weight: 300;
+    line-height: 160%;
+  }
+}
+
+.socials__container {
+  display: flex;
+  width: 100%;
+
+  &>:first-child {
+    margin-right: rem(24);
+  }
+}

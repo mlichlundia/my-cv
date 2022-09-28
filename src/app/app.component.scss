@@ -1,0 +1,18 @@
+@use '../styles/main.scss' as *;
+
+:host {
+  height: 100vh;
+  display: flex;
+  padding: 0;
+  background: color(gray-200);
+}
+
+::-webkit-scrollbar, ::-webkit-scrollbar:horizontal {
+  height: rem(8);
+  width: rem(8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 0.1rem;
+}

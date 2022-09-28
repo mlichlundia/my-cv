@@ -1,22 +1,46 @@
 @use "../utilities" as *;
 
-button {
-  padding: rem(8) rem(16);
-  background: none;
-  text-transform: uppercase;
+.button_primary, .button_secondary {
+
+  padding: rem(20) rem(48);
+  font-size: font(20);
+  border-radius: rem(12);
+}
+
+.button_primary, .button_secondary , .button_thirdly {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 120%;
+  font-weight: 500;
+}
+
+.button_primary {
+  color: color(gray-200);
+  background: color(primary-700);
+
+  &:hover {
+    background: color(primary-800);
+  }
+}
+
+.button_secondary {
+  color: color(primary-700);
+  background: color(primary-200);
+
+  &:hover {
+    color: color(primary-800);
+    background: color(primary-300);
+  }
+}
+
+.button_thirdly {
+  padding: rem(8) 0;
   font-size: font(16);
-  font-weight: 700;
-  letter-spacing: rem(1.6);
-  transition: 0.25s;
-}
+  color: color(primary-700);
+  background: transparent;
 
-button:disabled {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.input-button {
-  position: absolute;
-  top: 0;
-  right: rem(-16);
+  &:hover {
+    color: color(primary-800);
+  }
 }

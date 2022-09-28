@@ -1,0 +1,15 @@
+<div class="sidebar-container">
+  <app-menu-button [isOpen]="isOpen" (onToggle)="toggleOpen()" class="menu-button"></app-menu-button>
+
+  <div class="sidebar" [@openClose]="isOpen ? 'open' : 'close'" (window:resize)="onResize($event)">
+    <app-menu></app-menu>
+    <app-articles></app-articles>
+
+    <div class="socials__container">
+      <app-social-link *ngFor="let contact of contacts" [contact]="contact"></app-social-link>
+    </div>
+  </div>
+</div>
+
+<p>© Copyright 2022 Kseniya Sychova</p>
+

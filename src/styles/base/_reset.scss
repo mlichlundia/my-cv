@@ -2,21 +2,18 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  color: color(dark);
 }
 
 * {
   margin: 0;
   padding: 0;
   border: none;
+  outline: none;
   font-family: inherit;
 }
 
 body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  height: 100vh;
 }
 
 ul,
@@ -33,6 +30,7 @@ svg {
 button,
 select,
 a {
+  transition: .25s;
   cursor: pointer;
 }
 
@@ -41,6 +39,11 @@ a {
   text-decoration: none;
 }
 
-input {
+input, textarea {
   font: inherit;
+}
+
+hr {
+  display: block;
+  margin: 0 auto;
 }

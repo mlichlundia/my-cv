@@ -1,0 +1,35 @@
+@use '../../../styles/main' as *;
+
+:host {
+  @include card;
+  display: block;
+  width: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+hr {
+  height: rem(1);
+  width: calc(100% - 4rem);
+  background: color(gray-300);
+}
+
+.content {
+  padding: rem(32);
+
+  h4 {
+    margin: 0 0 rem(8);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+  }
+
+  span {
+    margin-left: rem(4);
+  }
+}

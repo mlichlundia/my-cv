@@ -1,0 +1,32 @@
+@use '../../../styles/main' as *;
+
+button {
+  position: relative;
+  width: rem(32);
+  height: rem(32);
+  border-radius: rem(6);
+  background: color(gray-300);
+
+  @media screen and (min-width: get-breakpoint(xl)){
+    display: none;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: rem(26);
+    height: rem(26);
+    border-radius: rem(6);
+    background: color(primary-700);
+    transition: .5s ease-in-out;
+  }
+
+  &.active:after {
+    width: rem(8);
+    height: rem(8);
+    border-radius: rem(2);
+  }
+}

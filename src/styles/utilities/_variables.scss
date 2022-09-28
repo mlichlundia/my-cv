@@ -1,11 +1,18 @@
 $font-base: 16;
-$fonts: (24, 20, 16, 14);
+$fonts: (32, 24, 20, 18, 16, 12);
 
 $colors: (
-  light: #fff,
-  dark: #000,
-  dark-sec: rgba(0, 0, 0, 0.65),
-  error: #c90022,
+  primary-100: #eef2ff,
+  primary-200: #e0e7ff,
+  primary-300: #c7d2fe,
+  primary-700: #4338CA,
+  primary-800: #3730a3,
+  gray-100: #FFFFFF,
+  gray-200: #FBFBFB,
+  gray-300: #F1F1F1,
+  gray-700: #7B7987,
+  gray-900: #403F48,
+  red-900: #be123c,
 );
 
 $breakpoints: (

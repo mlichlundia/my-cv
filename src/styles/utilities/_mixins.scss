@@ -42,3 +42,10 @@
     font-size: 0.8333333333333vw;
   }
 }
+
+@mixin card {
+  background: color(gray-100);
+  box-shadow: rem(-16) rem(9) rem(26) rem(-12) rgba(27, 23, 24, 0.02);
+  border: rem(1) solid color(gray-300);
+  border-radius: rem(16);
+}

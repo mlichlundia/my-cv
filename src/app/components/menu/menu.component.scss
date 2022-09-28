@@ -1,0 +1,49 @@
+@use '../../../styles/main' as *;
+
+:host {
+  @include card;
+  display: block;
+  width: 100%;
+  padding: rem(32);
+}
+
+img {
+  cursor: pointer;
+}
+
+hr {
+  height: rem(1);
+  width: calc(100% - 2rem);
+  margin: rem(24) auto;
+  background: color(gray-300);
+}
+
+ul {
+  margin: rem(24) rem(-16) 0;
+}
+
+li {
+  padding: rem(8) rem(16);
+  margin: rem(4);
+  border-radius: rem(8);
+  cursor: pointer;
+  transition: .25s;
+
+  a {
+    color: color(gray-700);
+  }
+
+  &.active {
+    background: color(gray-200);
+
+    a {
+      color: color(gray-900);
+    }
+  }
+
+  &:hover {
+    background: color(gray-200);
+  }
+}
+
+

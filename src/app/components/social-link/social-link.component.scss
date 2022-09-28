@@ -1,0 +1,21 @@
+@use '../../../styles/main' as *;
+
+:host {
+  width: 100%;
+}
+
+a {
+  @include card;
+  display: flex;
+  align-items: center;
+  padding: rem(16) rem(24);
+
+  &:hover {
+    background: color(gray-200);
+  }
+}
+
+p {
+  margin-left: rem(16);
+  line-height: 160%;
+}
