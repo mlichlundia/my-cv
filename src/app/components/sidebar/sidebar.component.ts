@@ -10,7 +10,7 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
   animations: [
     trigger( 'openClose', [
       state('open', style( {transform: 'translate(0)'})),
-      state('close', style( {transform: 'translate(-375px)'})),
+      state('close', style( {transform: 'translate(-23rem)'})),
       transition('open <=> close', [ animate('400ms 0.2ms ease-in-out') ])
       ]
     )
