@@ -7,6 +7,10 @@
   background: color(gray-200);
 }
 
+main {
+  padding: rem(120) rem(144);
+}
+
 ::-webkit-scrollbar, ::-webkit-scrollbar:horizontal {
   height: rem(8);
   width: rem(8);

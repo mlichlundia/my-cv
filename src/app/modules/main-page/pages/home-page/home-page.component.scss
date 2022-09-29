@@ -1,0 +1,21 @@
+@use '../../../../../styles/main' as *;
+
+:host {
+  display: block;
+  margin-top: rem(120);
+}
+
+.position {
+  margin-bottom: rem(24);
+  color: color(primary-700);
+  }
+
+.text {
+  max-width: rem(810);
+  margin: rem(32) 0 rem(48);
+  font-size: font(20);
+}
+
+.arrow {
+  margin-left: rem(12);
+}
