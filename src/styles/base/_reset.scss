@@ -47,3 +47,13 @@ hr {
   display: block;
   margin: 0 auto;
 }
+
+::-webkit-scrollbar, ::-webkit-scrollbar:horizontal {
+  height: .25rem;
+  width: .25rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 0.1rem;
+}

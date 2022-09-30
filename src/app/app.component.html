@@ -1,7 +1,7 @@
 <article>
-  <app-sidebar></app-sidebar>
+  <app-sidebar (openMenu)="isMenuOpen = $event"></app-sidebar>
 </article>
 
-<main>
+<main [class]="{'no-scroll': isMenuOpen}">
   <router-outlet></router-outlet>
 </main>
