@@ -1,5 +1,5 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {ArticleService} from "../../services/article/article.service";
+import {ArticleService} from "../../modules/shared/services/article/article.service";
 import {ArticleInterface} from "../../modules/shared/interfaces/article.interface";
 import {ARTICLE_MOCKS} from "../../modules/shared/mocks/article.mock";
 

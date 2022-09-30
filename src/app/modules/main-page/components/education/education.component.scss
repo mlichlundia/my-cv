@@ -1,0 +1,9 @@
+@use '../../../../../styles/main' as *;
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: rem(220);
+  margin: rem(32) 0;
+  color: color(gray-700);
+}

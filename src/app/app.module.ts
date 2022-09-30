@@ -6,7 +6,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from "./modules/shared/shared.module";
-import { httpIntrseptorProvider } from "./services/interseptors/InterseptorExport";
+import { httpIntrseptorProvider } from "./modules/shared/services/interseptors/InterseptorExport";
 import { AppComponent } from './app.component';
 import {SidebarComponent} from "./components/sidebar/sidebar.component";
 import {MenuComponent} from "./components/menu/menu.component";

@@ -1,0 +1,14 @@
+@use '../../../../../styles/main' as *;
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: rem(496);
+  margin: rem(32) rem(-20) 0;
+
+  span {
+    display: block;
+    margin: rem(16) rem(20);
+    color: color(gray-700);
+  }
+}

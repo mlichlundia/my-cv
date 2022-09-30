@@ -6,6 +6,9 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProjectsPageComponent } from './pages/projects-page/projects-page.component';
 import { SkillsPageComponent } from './pages/skills-page/skills-page.component';
 import {SharedModule} from "../shared/shared.module";
+import { SkillsComponent } from './components/skills/skills.component';
+import { EducationComponent } from './components/education/education.component';
+import { LanguagesComponent } from './components/languages/languages.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +16,9 @@ import {SharedModule} from "../shared/shared.module";
     HomePageComponent,
     ProjectsPageComponent,
     SkillsPageComponent,
+    SkillsComponent,
+    EducationComponent,
+    LanguagesComponent,
   ],
   imports: [MainRoutingModule, CommonModule, SharedModule],
 })
