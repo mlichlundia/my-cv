@@ -1,0 +1,35 @@
+@use '../../../../../styles/main' as *;
+
+:host {
+  @include card;
+  display: block;
+  width: rem(392);
+  padding: rem(32);
+}
+
+h3, p {
+  display: -webkit-box !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+h3 {
+  -webkit-line-clamp: 1;
+}
+
+p {
+  -webkit-line-clamp: 3;
+  margin: rem(20) 0 rem(32);
+}
+
+.tag-container {
+  display: flex;
+  max-height: rem(32);
+  margin: rem(-4) rem(-4);
+
+  &>:nth-child(n) {
+    margin: rem(4) rem(4);
+  }
+}

@@ -1,0 +1,10 @@
+@use '../../../../../styles/main' as *;
+
+p {
+  width: fit-content;
+  padding: rem(6) rem(10);
+  font-size: font(12);
+  color: color(primary-700);
+  background: color(primary-100);
+  border-radius: rem(6);
+}

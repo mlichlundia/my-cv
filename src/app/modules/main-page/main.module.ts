@@ -9,6 +9,8 @@ import {SharedModule} from "../shared/shared.module";
 import { SkillsComponent } from './components/skills/skills.component';
 import { EducationComponent } from './components/education/education.component';
 import { LanguagesComponent } from './components/languages/languages.component';
+import { ProjectComponent } from './components/project/project.component';
+import { TagComponent } from './components/tag/tag.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { LanguagesComponent } from './components/languages/languages.component';
     SkillsComponent,
     EducationComponent,
     LanguagesComponent,
+    ProjectComponent,
+    TagComponent,
   ],
   imports: [MainRoutingModule, CommonModule, SharedModule],
 })

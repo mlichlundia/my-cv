@@ -2,6 +2,7 @@
 
 :host {
   display: block;
+  margin-top: rem(48);
 
   @media screen and (min-width: get-breakpoint(l)) {
     margin-top: rem(120);

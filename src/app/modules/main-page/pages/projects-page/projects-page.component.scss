@@ -1,0 +1,15 @@
+@use '../../../../../styles/main' as *;
+
+h2 {
+  margin-bottom: rem(32);
+}
+
+.projects-list{
+  display: flex;
+  flex-wrap: wrap;
+  margin: rem(-12);
+
+  &>:nth-child(n){
+    margin: rem(12);
+  }
+}
