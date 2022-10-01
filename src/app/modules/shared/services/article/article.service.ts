@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpBackend, HttpClient} from "@angular/common/http";
 import {map, Observable} from "rxjs";
 import {ARTICLE_URL} from "../../constants/url";
 import {ArticleInterface} from "../../interfaces/article.interface";
@@ -9,8 +9,11 @@ import {ARTICLE_TOKEN} from "../../constants/token";
   providedIn: 'root'
 })
 export class ArticleService {
+  private http!: HttpClient
 
-  constructor(private http: HttpClient) {}
+  constructor(private httpBackend: HttpBackend) {
+    this.http = new HttpClient(httpBackend)
+  }
 
   public getLastArticle(): Observable<ArticleInterface[]> {
     return this.http.get<ArticleInterface[]>(ARTICLE_URL, {params: { accessToken: ARTICLE_TOKEN }})
