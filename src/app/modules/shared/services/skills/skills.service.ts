@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Observable, retry} from 'rxjs';
-import { GlobalVariables } from 'src/constants';
 import {SkillInterface} from "../../interfaces/skill.interface";
+import {BASE_URL} from "../../constants/url";
 
 @Injectable({
   providedIn: 'root',
 })
 export class SkillsService {
-  private skillsApi: string = GlobalVariables.apiURL + 'skills';
+  private skillsApi: string = BASE_URL  + 'skills';
 
   constructor(private http: HttpClient) {}
 

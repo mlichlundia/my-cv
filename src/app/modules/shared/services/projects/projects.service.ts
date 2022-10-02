@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { retry } from 'rxjs';
-import { GlobalVariables } from 'src/constants';
 import { Project } from 'src/interfaces/project';
+import {BASE_URL} from "../../constants/url";
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProjectsService {
-  projectsApi = GlobalVariables.apiURL + 'projects';
+  projectsApi = BASE_URL  + 'projects';
 
   constructor(private _http: HttpClient) {}
 

@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Observable, retry} from 'rxjs';
-import { GlobalVariables } from 'src/constants';
+import {BASE_URL} from "../../constants/url";
 
 @Injectable({
   providedIn: 'root',
 })
 export class EducationLangService {
-  private langApi: string = GlobalVariables.apiURL + 'languages';
-  private educationApi: string = GlobalVariables.apiURL + 'educations';
+  private langApi: string = BASE_URL + 'languages';
+  private educationApi: string = BASE_URL  + 'educations';
 
   constructor(private http: HttpClient) {}
 
