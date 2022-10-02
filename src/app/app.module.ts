@@ -8,16 +8,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from "./modules/shared/shared.module";
 import { httpInterceptorProvider } from "./modules/shared/services/interseptors/InterseptorExport";
 import { AppComponent } from './app.component';
-import {SidebarComponent} from "./components/sidebar/sidebar.component";
-import {MenuComponent} from "./components/menu/menu.component";
-import {ArticlesComponent} from "./components/articles/articles.component";
-import {SocialLinkComponent} from "./components/social-link/social-link.component";
-import { MenuButtonComponent } from './components/menu-button/menu-button.component';
 
 @NgModule({
-  declarations: [
-    AppComponent, SidebarComponent, MenuComponent, ArticlesComponent, SocialLinkComponent, MenuButtonComponent
-  ],
+  declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, SharedModule, BrowserAnimationsModule],
   providers: [httpInterceptorProvider],
   bootstrap: [AppComponent],

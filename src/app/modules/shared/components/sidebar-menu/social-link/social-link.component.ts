@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Contact} from "../../modules/shared/interfaces/contacts.interface";
+import {Contact} from "../../../interfaces/contacts.interface";
 
 @Component({
   selector: 'app-social-link',

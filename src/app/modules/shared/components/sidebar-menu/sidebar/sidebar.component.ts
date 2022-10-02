@@ -1,6 +1,6 @@
 import {Component, EventEmitter, HostListener, Output} from '@angular/core';
-import {Contact} from "../../modules/shared/interfaces/contacts.interface";
-import {CONTACTS_MOCKS} from "../../modules/shared/mocks/contacts.mock";
+import {Contact} from "../../../interfaces/contacts.interface";
+import {CONTACTS_MOCKS} from "../../../mocks/contacts.mock";
 import {animate, style, transition, trigger} from "@angular/animations";
 
 @Component({

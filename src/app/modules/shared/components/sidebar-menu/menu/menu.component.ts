@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {AuthService} from "../../modules/shared/services/auth/auth.service";
+import {AuthService} from "../../../services/auth/auth.service";
 import {animate, animateChild, group, keyframes, query, state, style, transition, trigger} from "@angular/animations";
 
 @Component({
