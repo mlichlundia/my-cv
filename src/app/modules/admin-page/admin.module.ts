@@ -8,6 +8,7 @@ import { EditPageComponent } from './pages/edit-page/edit-page.component';
 import {LoginPageComponent} from "./pages/login-page/login-page.component";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import {MatInputModule} from "@angular/material/input";
     LoginPageComponent,
     EditPageComponent,
   ],
-  imports: [AdminRoutingModule, CommonModule, FormsModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule],
+  imports: [AdminRoutingModule, CommonModule, FormsModule, ReactiveFormsModule,SharedModule, MatFormFieldModule, MatInputModule],
   providers: [AuthGuard],
 })
 export class AdminModule {}

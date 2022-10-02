@@ -25,6 +25,6 @@ import {ReactiveFormsModule} from "@angular/forms";
     ProjectComponent,
     TagComponent,
   ],
-    imports: [MainRoutingModule, CommonModule, SharedModule, ReactiveFormsModule],
+  imports: [MainRoutingModule, CommonModule, SharedModule, ReactiveFormsModule],
 })
 export class MainModule {}
