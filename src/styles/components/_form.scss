@@ -1,0 +1,26 @@
+@use "../utilities" as *;
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  font-size: 16px;
+}
+
+.server-error {
+  position: absolute;
+  color: color(red-900);
+}
+
+.mat-form-field {
+  width: rem(352);
+}
+
+::ng-deep {
+  & .mat-form-field-appearance-outline .mat-form-field-wrapper >.mat-form-field-subscript-wrapper {
+    line-height: rem(18);
+    padding: 0;
+  }
+}

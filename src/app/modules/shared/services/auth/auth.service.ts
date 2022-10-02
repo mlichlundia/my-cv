@@ -1,4 +1,4 @@
-import { HttpErrorResponse } from '@angular/common/http';
+import {HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, Subject, switchMap, throwError } from 'rxjs';
 import { Profile } from 'src/interfaces/profile';
@@ -8,57 +8,58 @@ import { ProfileService } from '../profile/profile.service';
   providedIn: 'root',
 })
 export class AuthService {
-  private _errorSubject: Subject<string> = new Subject<string>();
-  error$: Observable<string> = this._errorSubject.asObservable();
-  pattern: RegExp = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
+  private errorSubject: Subject<string> = new Subject<string>();
+  public error$: Observable<string> = this.errorSubject.asObservable();
 
-  constructor(private _profileService: ProfileService) {}
+  constructor(private profileService: ProfileService) {}
 
-  get isAuth(): boolean {
-    return localStorage.getItem('isAuth')
-      ? JSON.parse(localStorage.getItem('isAuth')!)
-      : false;
+  public get isAuth(): boolean {
+    const token: string = JSON.parse(localStorage.getItem('token')!)
+    return token? !!token : false;
   }
 
-  set isAuth(state: boolean) {
-    localStorage.setItem('isAuth', JSON.stringify(state));
+  public setToken(): void {
+    const checkToken = JSON.parse(localStorage.getItem('checkToken')!)
+    localStorage.removeItem('checkToken')
+    localStorage.setItem('token', JSON.stringify(checkToken))
   }
 
-  checkAuth(): Observable<Profile> {
-    return this._profileService
+  private checkAuth(): Observable<Profile> {
+    const headers = new HttpHeaders({Authorization: JSON.parse(localStorage.getItem('checkToken')!)})
+
+    return this.profileService
       .getProfile()
-      .pipe(switchMap((profile) => this._profileService.setData(profile)));
+      .pipe(switchMap((profile: Profile) => this.profileService.setProfile(profile, headers)));
   }
 
-  handleError(err: HttpErrorResponse): Observable<HttpErrorResponse> {
+  private handleError(err: HttpErrorResponse): Observable<HttpErrorResponse> {
     let message: string = err.error.message;
 
     switch (message) {
       case 'Unauthorized':
-        this._errorSubject.next("This user doesn't exist");
+        this.errorSubject.next("This user doesn't exist");
         break;
       default:
-        this._errorSubject.next('Something went wrong. Try again');
+        this.errorSubject.next('Something went wrong. Try again');
         break;
     }
 
     return throwError(err);
   }
 
-  login(username: string, password: string): Observable<any> {
+  public login(username: string, password: string): Observable<any> {
     const key = 'Basic ' + btoa(username + ':' + password);
 
-    localStorage.setItem('token', key);
+    localStorage.setItem('checkToken', JSON.stringify(key));
 
     return this.checkAuth().pipe(
       catchError((err) => {
-        this.isAuth = false;
         return this.handleError(err);
       })
     );
   }
 
-  logout() {
+  public logout(): void {
     localStorage.clear();
   }
 }

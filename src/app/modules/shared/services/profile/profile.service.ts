@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { retry } from 'rxjs/operators';
 import { GlobalVariables } from 'src/constants';
 import { Profile } from 'src/interfaces/profile';
@@ -11,13 +11,13 @@ import { Observable } from 'rxjs';
 export class ProfileService {
   profileApi: string = GlobalVariables.apiURL + 'profile';
 
-  constructor(private _http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   getProfile(): Observable<Profile> {
-    return this._http.get<Profile>(this.profileApi).pipe(retry(3));
+    return this.http.get<Profile>(this.profileApi).pipe(retry(3));
   }
 
-  setData(data: Profile): Observable<Profile> {
-    return this._http.post<Profile>(this.profileApi, data);
+  setProfile(data: Profile, headers?: HttpHeaders): Observable<Profile> {
+    return this.http.post<Profile>(this.profileApi, data, {headers: headers});
   }
 }

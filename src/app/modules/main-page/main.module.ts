@@ -11,6 +11,7 @@ import { EducationComponent } from './components/education/education.component';
 import { LanguagesComponent } from './components/languages/languages.component';
 import { ProjectComponent } from './components/project/project.component';
 import { TagComponent } from './components/tag/tag.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,6 @@ import { TagComponent } from './components/tag/tag.component';
     ProjectComponent,
     TagComponent,
   ],
-  imports: [MainRoutingModule, CommonModule, SharedModule],
+    imports: [MainRoutingModule, CommonModule, SharedModule, ReactiveFormsModule],
 })
 export class MainModule {}

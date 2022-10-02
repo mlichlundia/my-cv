@@ -6,7 +6,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from "./modules/shared/shared.module";
-import { httpIntrseptorProvider } from "./modules/shared/services/interseptors/InterseptorExport";
+import { httpInterceptorProvider } from "./modules/shared/services/interseptors/InterseptorExport";
 import { AppComponent } from './app.component';
 import {SidebarComponent} from "./components/sidebar/sidebar.component";
 import {MenuComponent} from "./components/menu/menu.component";
@@ -19,7 +19,7 @@ import { MenuButtonComponent } from './components/menu-button/menu-button.compon
     AppComponent, SidebarComponent, MenuComponent, ArticlesComponent, SocialLinkComponent, MenuButtonComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, SharedModule, BrowserAnimationsModule],
-  providers: [httpIntrseptorProvider],
+  providers: [httpInterceptorProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

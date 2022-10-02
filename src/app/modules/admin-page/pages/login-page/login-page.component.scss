@@ -1,0 +1,22 @@
+@use '../../../../../styles/main' as *;
+
+:host {
+  display: block;
+  margin-top: rem(48);
+
+  @media screen and (min-width: get-breakpoint(l)) {
+    margin-top: rem(120);
+  }
+}
+
+form {
+  margin-top: rem(40);
+}
+
+.username {
+  margin-bottom: rem(16);
+}
+
+.password {
+  margin-bottom: rem(48);
+}
