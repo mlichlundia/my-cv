@@ -1,16 +1,17 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { retry } from 'rxjs';
-import { Project } from 'src/interfaces/project';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {retry} from 'rxjs';
+import {Project} from 'src/interfaces/project';
 import {BASE_URL} from "../../constants/url";
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProjectsService {
-  projectsApi = BASE_URL  + 'projects';
+  projectsApi = BASE_URL + 'projects';
 
-  constructor(private _http: HttpClient) {}
+  constructor(private _http: HttpClient) {
+  }
 
   getData() {
     return this._http.get<Project[]>(this.projectsApi).pipe(retry(3));

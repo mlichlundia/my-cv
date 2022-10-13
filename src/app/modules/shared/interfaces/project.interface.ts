@@ -1,4 +1,4 @@
-export interface ProjectInterface   {
+export interface ProjectInterface {
   title: string,
   description: string,
   descriptionShort: string,

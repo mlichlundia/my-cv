@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
 import {Observable, retry} from 'rxjs';
 import {SkillInterface} from "../../interfaces/skill.interface";
 import {BASE_URL} from "../../constants/url";
@@ -8,9 +8,10 @@ import {BASE_URL} from "../../constants/url";
   providedIn: 'root',
 })
 export class SkillsService {
-  private skillsApi: string = BASE_URL  + 'skills';
+  private skillsApi: string = BASE_URL + 'skills';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   public getSkills(): Observable<SkillInterface[]> {
     return this.http

@@ -19,7 +19,7 @@ input {
 }
 
 ::ng-deep {
-  & .mat-form-field-appearance-outline .mat-form-field-wrapper >.mat-form-field-subscript-wrapper {
+  & .mat-form-field-appearance-outline .mat-form-field-wrapper > .mat-form-field-subscript-wrapper {
     line-height: rem(18);
     padding: 0;
   }

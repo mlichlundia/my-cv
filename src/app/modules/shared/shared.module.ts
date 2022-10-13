@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ArrowIconComponent } from './components/arrow.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {ArrowIconComponent} from './components/arrow.component';
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {SidebarComponent} from "./components/sidebar-menu/sidebar/sidebar.component";
@@ -37,4 +37,5 @@ import {RouterModule} from "@angular/router";
     SocialLinkComponent
   ],
 })
-export class SharedModule { }
+export class SharedModule {
+}

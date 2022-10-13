@@ -9,7 +9,8 @@ import {EducationLangService} from "../../../shared/services/education-lang/educ
 export class LanguagesComponent implements OnInit {
   public langs: string[] = ['']
 
-  constructor(private cdr: ChangeDetectorRef, private langService: EducationLangService) { }
+  constructor(private cdr: ChangeDetectorRef, private langService: EducationLangService) {
+  }
 
   ngOnInit(): void {
     this.langService.getLangs().subscribe((res) => {

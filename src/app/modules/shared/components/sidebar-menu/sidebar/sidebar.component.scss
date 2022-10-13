@@ -11,7 +11,7 @@
   overflow: auto;
   z-index: 1000;
 
-  @media screen and (min-width: get-breakpoint(xl)){
+  @media screen and (min-width: get-breakpoint(xl)) {
     position: static;
     padding: rem(24);
   }
@@ -22,25 +22,25 @@
 }
 
 .menu-button {
-  @media screen and (min-width: get-breakpoint(xl)){
+  @media screen and (min-width: get-breakpoint(xl)) {
     display: none;
   }
 }
 
 .sidebar {
   height: 100%;
-  margin-top: rem(24) ;
+  margin-top: rem(24);
   transition: .4s;
 
-  @media screen and (min-width: get-breakpoint(xl)){
+  @media screen and (min-width: get-breakpoint(xl)) {
     margin-top: 0;
   }
 
-  &>:nth-child(n) {
+  & > :nth-child(n) {
     margin-bottom: rem(24);
   }
 
-  &>:last-child {
+  & > :last-child {
     position: relative;
     bottom: 0;
     font-size: font(12);
@@ -53,7 +53,7 @@
   display: flex;
   width: 100%;
 
-  &>:first-child {
+  & > :first-child {
     margin-right: rem(24);
   }
 }

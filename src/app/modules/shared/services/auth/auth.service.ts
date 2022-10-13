@@ -1,8 +1,8 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { catchError, Observable, Subject, switchMap, throwError } from 'rxjs';
-import { Profile } from 'src/interfaces/profile';
-import { ProfileService } from '../profile/profile.service';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {catchError, Observable, Subject, switchMap, throwError} from 'rxjs';
+import {Profile} from 'src/interfaces/profile';
+import {ProfileService} from '../profile/profile.service';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +11,8 @@ export class AuthService {
   private errorSubject: Subject<string> = new Subject<string>();
   public error$: Observable<string> = this.errorSubject.asObservable();
 
-  constructor(private http: HttpClient, private profileService: ProfileService) {}
+  constructor(private http: HttpClient, private profileService: ProfileService) {
+  }
 
   public get isAuth(): boolean {
     const token: string = localStorage.getItem('token')!

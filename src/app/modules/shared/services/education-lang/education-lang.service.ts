@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
 import {Observable, retry} from 'rxjs';
 import {BASE_URL} from "../../constants/url";
 
@@ -8,9 +8,10 @@ import {BASE_URL} from "../../constants/url";
 })
 export class EducationLangService {
   private langApi: string = BASE_URL + 'languages';
-  private educationApi: string = BASE_URL  + 'educations';
+  private educationApi: string = BASE_URL + 'educations';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   public getLangs(): Observable<string[]> {
     return this.http.get<string[]>(this.langApi).pipe(retry(3));
@@ -20,7 +21,7 @@ export class EducationLangService {
     return this.http.get<string[]>(this.educationApi).pipe(retry(3));
   }
 
-  public setLangs(data: string[]):Observable<string[]> {
+  public setLangs(data: string[]): Observable<string[]> {
     return this.http.post<string[]>(this.langApi, data);
   }
 

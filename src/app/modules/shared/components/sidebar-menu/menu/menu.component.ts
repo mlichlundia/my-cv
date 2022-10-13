@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {AuthService} from "../../../services/auth/auth.service";
 import {animate, animateChild, group, keyframes, query, state, style, transition, trigger} from "@angular/animations";
 
@@ -7,18 +7,21 @@ import {animate, animateChild, group, keyframes, query, state, style, transition
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
   animations: [
-    trigger( 'inOut', [
-        transition(':enter', [ style( { opacity: 0}), animate('400ms 400ms ease-in-out', style( {opacity: 1, visibility: 'visible'})) ]),
-        transition(':leave', [
-          animate('1000ms ease-in-out',
-            keyframes([
-              style( { opacity: 0, offset: 0}),
-              style( { position: 'absolute', offset: 0.4}),
-            ])
-          )]
-        )
+    trigger('inOut', [
+      transition(':enter', [style({opacity: 0}), animate('400ms 400ms ease-in-out', style({
+        opacity: 1,
+        visibility: 'visible'
+      }))]),
+      transition(':leave', [
+        animate('1000ms ease-in-out',
+          keyframes([
+            style({opacity: 0, offset: 0}),
+            style({position: 'absolute', offset: 0.4}),
+          ])
+        )]
+      )
     ]),
-    trigger( 'expandNarrow', [
+    trigger('expandNarrow', [
       state('expand', style({
         height: '20rem'
       })),
@@ -35,5 +38,6 @@ import {animate, animateChild, group, keyframes, query, state, style, transition
   ]
 })
 export class MenuComponent {
-  constructor(public auth: AuthService) {}
+  constructor(public auth: AuthService) {
+  }
 }

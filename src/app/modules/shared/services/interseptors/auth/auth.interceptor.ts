@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {
   HttpRequest,
   HttpHandler,
@@ -10,7 +10,8 @@ import {AuthService} from "../../auth/auth.service";
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService) {
+  }
 
   intercept(
     request: HttpRequest<unknown>,
@@ -18,7 +19,7 @@ export class AuthInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<unknown>> {
     const key = localStorage.getItem('token')! || localStorage.getItem('checkToken')!;
 
-    if(key) {
+    if (key) {
       request = request.clone({
         headers: request.headers.set('Authorization', JSON.parse(key)),
       });

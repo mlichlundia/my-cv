@@ -11,13 +11,14 @@ import {SKILLS_MOCK} from "../../../shared/mocks/skills.mock";
 export class SkillsComponent implements OnInit {
   public skills: SkillInterface[] = SKILLS_MOCK
 
-  constructor(private cdr: ChangeDetectorRef, private skillsService: SkillsService) { }
+  constructor(private cdr: ChangeDetectorRef, private skillsService: SkillsService) {
+  }
 
   ngOnInit(): void {
     this.getSkills()
   }
 
-  private getSkills():void {
+  private getSkills(): void {
     this.skillsService.getSkills().subscribe((res) => {
       this.skills = res
       this.cdr.markForCheck()

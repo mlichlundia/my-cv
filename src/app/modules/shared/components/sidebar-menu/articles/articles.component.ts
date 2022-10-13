@@ -11,13 +11,14 @@ import {ARTICLE_MOCKS} from "../../../mocks/article.mock";
 export class ArticlesComponent implements OnInit {
   public article: ArticleInterface = ARTICLE_MOCKS[0]
 
-  constructor(private cdr: ChangeDetectorRef, private articleService: ArticleService) {}
+  constructor(private cdr: ChangeDetectorRef, private articleService: ArticleService) {
+  }
 
   ngOnInit() {
     this.getPosts()
   }
 
-  public getPosts():void {
+  public getPosts(): void {
     this.articleService.getLastArticle()
       .subscribe((res) => {
         this.article = res[0] ? res[0] : ARTICLE_MOCKS[0]

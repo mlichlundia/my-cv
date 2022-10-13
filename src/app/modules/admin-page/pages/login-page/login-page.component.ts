@@ -11,9 +11,10 @@ import {Router} from "@angular/router";
 })
 export class LoginPageComponent implements OnInit {
   public form!: FormGroup
-  public hide: boolean= true
+  public hide: boolean = true
 
-  constructor(private fb: FormBuilder,private router: Router, public auth: AuthService) {}
+  constructor(private fb: FormBuilder, private router: Router, public auth: AuthService) {
+  }
 
   ngOnInit(): void {
     this.initForm()
@@ -21,7 +22,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   public onSubmit() {
-    if(this.form.invalid) {
+    if (this.form.invalid) {
       return
     }
 
@@ -40,23 +41,23 @@ export class LoginPageComponent implements OnInit {
   }
 
   public getUsernameError(): string {
-    if(!this.username?.errors) {
+    if (!this.username?.errors) {
       return ''
     }
 
-    if(this.username?.errors['required']) {
+    if (this.username?.errors['required']) {
       return 'Username is required'
     }
 
-    if(this.username?.errors['minlength']) {
+    if (this.username?.errors['minlength']) {
       return `Username should contain not less than ${this.username.errors['minlength']['requiredLength']} symbols`
     }
 
-    if(this.username?.errors['maxlength']) {
+    if (this.username?.errors['maxlength']) {
       return `Username should contain not more than ${this.username.errors['maxlength']['requiredLength']} symbols`
     }
 
-    if(this.username?.errors['pattern']) {
+    if (this.username?.errors['pattern']) {
       return `Username should contain only latin letter. Example: JohnSmith`
     }
 
@@ -64,23 +65,23 @@ export class LoginPageComponent implements OnInit {
   }
 
   public getPasswordError(): string {
-    if(!this.password?.errors) {
+    if (!this.password?.errors) {
       return ''
     }
 
-    if(this.password?.errors['required']) {
+    if (this.password?.errors['required']) {
       return 'Password is required'
     }
 
-    if(this.password?.errors['minlength']) {
+    if (this.password?.errors['minlength']) {
       return `Password should contain at least ${this.password.errors['minlength']['requiredLength']} symbols`
     }
 
-    if(this.password?.errors['maxlength']) {
+    if (this.password?.errors['maxlength']) {
       return `Password should contain not more than ${this.password.errors['maxlength']['requiredLength']} symbols`
     }
 
-    if(this.password?.errors['pattern']) {
+    if (this.password?.errors['pattern']) {
       return `Password should contain at least 1 special symbol, 1 number, 1 uppercase letter. Example: 1Username!`
     }
 

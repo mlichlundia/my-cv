@@ -8,14 +8,20 @@ import {animate, style, transition, trigger} from "@angular/animations";
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
   animations: [
-    trigger( 'openClose', [
-      transition(':enter', [ style( {transform: 'translate(-23rem)', pointerEvents: 'none'}), animate('400ms 0.2ms ease-in-out', style( {transform: 'translate(0)', pointerEvents: 'all'})) ]),
-      transition(':leave', [ animate('400ms 0.2ms ease-in-out', style( {transform: 'translate(-23rem)', pointerEvents: 'none'})) ]),
+    trigger('openClose', [
+        transition(':enter', [style({
+          transform: 'translate(-23rem)',
+          pointerEvents: 'none'
+        }), animate('400ms 0.2ms ease-in-out', style({transform: 'translate(0)', pointerEvents: 'all'}))]),
+        transition(':leave', [animate('400ms 0.2ms ease-in-out', style({
+          transform: 'translate(-23rem)',
+          pointerEvents: 'none'
+        }))]),
       ]
     )
   ]
 })
-export class SidebarComponent{
+export class SidebarComponent {
   @Output() public openMenu: EventEmitter<boolean> = new EventEmitter<boolean>()
 
   public contacts: Contact[] = CONTACTS_MOCKS
@@ -23,15 +29,15 @@ export class SidebarComponent{
 
   @HostListener('window:click', ['$event'])
   private closeModal() {
-    if(!this.isOpen) {
+    if (!this.isOpen) {
       return
     }
 
-    if(window.innerWidth >= 1440) {
+    if (window.innerWidth >= 1440) {
       return
     }
 
-    if(
+    if (
       (event?.target as HTMLElement).closest('.sidebar-container')
       && !(event?.target as HTMLElement).closest('ul li')
     ) {
@@ -46,7 +52,7 @@ export class SidebarComponent{
     this.isOpen = (event?.target as Window).innerWidth >= 1440;
   }
 
-  public toggleOpen():void {
+  public toggleOpen(): void {
     this.isOpen = !this.isOpen
     this.openMenu.emit(this.isOpen)
   }

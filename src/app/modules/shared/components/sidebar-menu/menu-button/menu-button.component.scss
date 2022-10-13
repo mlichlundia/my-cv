@@ -7,7 +7,7 @@ button {
   border-radius: rem(6);
   background: color(gray-300);
 
-  @media screen and (min-width: get-breakpoint(xl)){
+  @media screen and (min-width: get-breakpoint(xl)) {
     display: none;
   }
 

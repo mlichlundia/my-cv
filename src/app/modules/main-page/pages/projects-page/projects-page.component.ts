@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ProjectInterface} from "../../../shared/interfaces/project.interface";
 import {PROJECTS_MOCK} from "../../../shared/mocks/projects.mock";
 
@@ -10,8 +10,10 @@ import {PROJECTS_MOCK} from "../../../shared/mocks/projects.mock";
 export class ProjectsPageComponent implements OnInit {
   public projects: ProjectInterface[] = PROJECTS_MOCK
 
-  constructor() { }
+  constructor() {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
 }

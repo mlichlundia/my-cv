@@ -29,7 +29,7 @@ p {
   max-height: rem(32);
   margin: rem(-4) rem(-4);
 
-  &>:nth-child(n) {
+  & > :nth-child(n) {
     margin: rem(4) rem(4);
   }
 }

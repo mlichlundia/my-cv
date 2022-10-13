@@ -6,10 +6,11 @@ import {EducationLangService} from "../../../shared/services/education-lang/educ
   templateUrl: './education.component.html',
   styleUrls: ['./education.component.scss']
 })
-export class EducationComponent implements OnInit{
+export class EducationComponent implements OnInit {
   public education: string = ''
 
-  constructor(private cdr: ChangeDetectorRef, public educationService: EducationLangService) {}
+  constructor(private cdr: ChangeDetectorRef, public educationService: EducationLangService) {
+  }
 
   ngOnInit(): void {
     this.educationService.getEducation().subscribe((res) => {

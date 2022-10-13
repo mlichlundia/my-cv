@@ -9,7 +9,7 @@ import {Contact} from "../../../interfaces/contacts.interface";
 export class SocialLinkComponent implements OnInit {
   @Input() public contact!: Contact
 
-  public imgSrc!:string
+  public imgSrc!: string
 
   ngOnInit(): void {
     this.imgSrc = `/assets/svg/social/${this.contact.type}.svg`

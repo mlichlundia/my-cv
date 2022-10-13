@@ -1,17 +1,20 @@
 <div class="menu-container" [@expandNarrow]="auth.isAuth ? 'expand' : 'narrow'">
-  <img src="../../../../../../assets/svg/logo.svg" alt="logo" [routerLink]="['/', 'home']" >
+  <img src="../../../../../../assets/svg/logo.svg" alt="logo" [routerLink]="['/', 'home']">
   <ul>
     <li [routerLink]="['/', 'home']" routerLinkActive="active"><a>home</a></li>
     <li [routerLink]="['/', 'projects']" routerLinkActive="active"><a>projects</a></li>
     <li [routerLink]="['/', 'skills']" routerLinkActive="active"><a>skills</a></li>
 
-  <hr>
+    <hr>
 
-    <li *ngIf="!auth.isAuth; else edit"  [routerLink]="['/admin', 'login']" routerLinkActive="active" [@inOut]="auth.isAuth ? ':enter' : ':leave'"><a>login</a></li>
+    <li *ngIf="!auth.isAuth; else edit" [routerLink]="['/admin', 'login']" routerLinkActive="active"
+        [@inOut]="auth.isAuth ? ':enter' : ':leave'"><a>login</a></li>
 
-    <ng-template #edit >
-      <li [routerLink]="['/admin', 'edit']" routerLinkActive="active" [@inOut]="!auth.isAuth ? ':enter' : ':leave'"><a>edit</a></li>
-      <li [routerLink]="['/admin', 'login']" routerLinkActive="active" (click)="auth.logout()" [@inOut]="!auth.isAuth ? ':enter' : ':leave'"><a>log out</a></li>
+    <ng-template #edit>
+      <li [routerLink]="['/admin', 'edit']" routerLinkActive="active" [@inOut]="!auth.isAuth ? ':enter' : ':leave'"><a>edit</a>
+      </li>
+      <li [routerLink]="['/admin', 'login']" routerLinkActive="active" (click)="auth.logout()"
+          [@inOut]="!auth.isAuth ? ':enter' : ':leave'"><a>log out</a></li>
     </ng-template>
   </ul>
 </div>
