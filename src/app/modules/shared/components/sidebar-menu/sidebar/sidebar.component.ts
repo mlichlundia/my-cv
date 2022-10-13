@@ -1,31 +1,13 @@
 import {Component, EventEmitter, HostListener, Output} from '@angular/core';
 import {Contact} from "../../../interfaces/contacts.interface";
 import {CONTACTS_MOCKS} from "../../../mocks/contacts.mock";
-import {animate, style, transition, trigger} from "@angular/animations";
+import {openCloseAnimation} from "../../../animations/open-close.animation";
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
-  animations: [
-    trigger('openClose', [
-        transition(':enter', [
-          style({
-            transform: 'translate(-23rem)',
-            pointerEvents: 'none'
-          }),
-          animate('400ms 0.2ms ease-in-out',
-            style({transform: 'translate(0)', pointerEvents: 'all'})
-          )
-        ]),
-        transition(':leave', [
-          animate('400ms 0.2ms ease-in-out',
-            style({transform: 'translate(-23rem)', pointerEvents: 'none'})
-          )
-        ]),
-      ]
-    )
-  ]
+  animations: [openCloseAnimation]
 })
 export class SidebarComponent {
   @Output() public openMenu: EventEmitter<boolean> = new EventEmitter<boolean>()
