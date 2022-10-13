@@ -1,4 +1,4 @@
-import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, Subject, switchMap, throwError } from 'rxjs';
 import { Profile } from 'src/interfaces/profile';
@@ -14,8 +14,8 @@ export class AuthService {
   constructor(private http: HttpClient, private profileService: ProfileService) {}
 
   public get isAuth(): boolean {
-    const token: string = JSON.parse(localStorage.getItem('token')!)
-    return token? !!token : false;
+    const token: string = localStorage.getItem('token')!
+    return token ? !!token : false;
   }
 
   public setToken(): void {
@@ -25,11 +25,9 @@ export class AuthService {
   }
 
   private checkAuth(): Observable<Profile> {
-    const headers = new HttpHeaders({Authorization: JSON.parse(localStorage.getItem('checkToken')!)})
-
     return this.profileService
       .getProfile()
-      .pipe(switchMap((profile: Profile) => this.profileService.setProfile(profile, headers)));
+      .pipe(switchMap((profile: Profile) => this.profileService.setProfile(profile)));
   }
 
   private handleError(err: HttpErrorResponse): Observable<HttpErrorResponse> {
