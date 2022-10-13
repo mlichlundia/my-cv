@@ -8,12 +8,17 @@ import {animate, animateChild, group, keyframes, query, state, style, transition
   styleUrls: ['./menu.component.scss'],
   animations: [
     trigger('inOut', [
-      transition(':enter', [style({opacity: 0}), animate('400ms 400ms ease-in-out', style({
-        opacity: 1,
-        visibility: 'visible'
-      }))]),
+      transition(':enter', [
+        style({opacity: 0}),
+        animate('400ms ease-in-out',
+          style({
+            opacity: 1,
+            visibility: 'visible'
+          })
+        )
+      ]),
       transition(':leave', [
-        animate('1000ms ease-in-out',
+        animate('400ms ease-in-out',
           keyframes([
             style({opacity: 0, offset: 0}),
             style({position: 'absolute', offset: 0.4}),
@@ -28,7 +33,7 @@ import {animate, animateChild, group, keyframes, query, state, style, transition
       state('narrow', style({
         height: '17rem'
       })),
-      transition('* => *', [
+      transition('narrow <=> expand', [
         group([
           query('@inOut', animateChild()),
           animate('400ms ease-in-out'),
