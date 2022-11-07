@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {PASSWORD, USERNAME} from "../../../shared/constants/reg-exps";
 import {AuthService} from "../../../shared/services/auth/auth.service";
 import {Router} from "@angular/router";
@@ -32,15 +32,15 @@ export class LoginPageComponent implements OnInit {
     })
   }
 
-  public get username() {
-    return this.form.get('username')
+  public get username(): AbstractControl<string> {
+    return this.form.get('username')!
   }
 
-  public get password() {
-    return this.form.get('password')
+  public get password(): AbstractControl<string> {
+    return this.form.get('password')!
   }
 
-  public getUsernameError(): string {
+  public get usernameError(): string {
     if (!this.username?.errors) {
       return ''
     }
@@ -64,7 +64,7 @@ export class LoginPageComponent implements OnInit {
     return 'Username is invalid'
   }
 
-  public getPasswordError(): string {
+  public get passwordError(): string {
     if (!this.password?.errors) {
       return ''
     }
