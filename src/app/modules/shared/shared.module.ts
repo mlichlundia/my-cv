@@ -10,6 +10,7 @@ import {ArticlesComponent} from "./components/sidebar-menu/articles/articles.com
 import {SocialLinkComponent} from "./components/sidebar-menu/social-link/social-link.component";
 import {RouterModule} from "@angular/router";
 import {TabsComponent} from "../admin-page/pages/edit-page/components/tabs/tabs.component";
+import { IconComponent } from './components/UI/icon/icon.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import {TabsComponent} from "../admin-page/pages/edit-page/components/tabs/tabs.
     MenuButtonComponent,
     SocialLinkComponent,
     TabsComponent,
+    IconComponent,
   ],
   imports: [
     CommonModule,
@@ -28,17 +30,18 @@ import {TabsComponent} from "../admin-page/pages/edit-page/components/tabs/tabs.
     MatButtonModule,
     RouterModule
   ],
-  exports: [
-    ArrowIconComponent,
-    MatIconModule,
-    MatButtonModule,
-    SidebarComponent,
-    MenuComponent,
-    ArticlesComponent,
-    MenuButtonComponent,
-    SocialLinkComponent,
-    TabsComponent
-  ],
+    exports: [
+        ArrowIconComponent,
+        MatIconModule,
+        MatButtonModule,
+        SidebarComponent,
+        MenuComponent,
+        ArticlesComponent,
+        MenuButtonComponent,
+        SocialLinkComponent,
+        TabsComponent,
+        IconComponent
+    ],
 })
 export class SharedModule {
 }
