@@ -39,4 +39,14 @@ input {
   &.mat-form-field-appearance-outline .mat-form-field-outline-end {
     border-radius: 0 rem(8) rem(8) 0 !important;
   }
+
+  &.mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin: 0;
+  }
+
+  &.mat-form-field:not(mat-focused) {
+    .mat-form-field-outline-start, .mat-form-field-outline-end, .mat-form-field-outline-gap {
+      background: color(gray-100);
+    }
+  }
 }

@@ -1,0 +1,32 @@
+@use "src/styles/main.scss" as *;
+
+:host {
+  @include card;
+  position: relative;
+  display: block;
+  height: rem(42);
+  width: rem(42);
+  border-radius: rem(8);
+  color: color(gray-700);
+  overflow: hidden;
+  transition: .25s ease-in-out;
+
+  &:hover {
+    width: rem(90);
+  }
+}
+
+.container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: rem(72);
+  margin: rem(8);
+
+  >:not(:first-child) {
+    --icon-height: #{rem(16)};
+    --icon-width: #{rem(16)};
+    margin-left: rem(8);
+    cursor: pointer;
+  }
+}

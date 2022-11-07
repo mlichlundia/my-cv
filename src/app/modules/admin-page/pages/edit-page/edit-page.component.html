@@ -1,3 +1,7 @@
-<app-tabs (changeView)="changeCurrentView($event)" [activeTab]="currentView" [tabs]="tabs"></app-tabs>
-<app-edit-skills *ngIf="currentView === 0"></app-edit-skills>
-<app-edit-projects *ngIf="currentView === 1"></app-edit-projects>
+<app-tabs class="tabs" (changeView)="changeCurrentView($event)" [activeTab]="currentView" [tabs]="tabs"></app-tabs>
+<section class="edit-forms">
+    <app-edit-contacts *ngIf="currentView === 0"></app-edit-contacts>
+    <app-edit-skills *ngIf="currentView === 1"></app-edit-skills>
+    <app-edit-projects *ngIf="currentView === 2"></app-edit-projects>
+    <app-edit-other *ngIf="currentView === 3"></app-edit-other>
+</section>

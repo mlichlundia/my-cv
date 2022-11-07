@@ -11,6 +11,9 @@ import {MatInputModule} from "@angular/material/input";
 import {SharedModule} from '../shared/shared.module';
 import { EditSkillsComponent } from './pages/edit-page/components/edit-skills/edit-skills.component';
 import { EditProjectsComponent } from './pages/edit-page/components/edit-projects/edit-projects.component';
+import { EditContactsComponent } from './pages/edit-page/components/edit-contacts/edit-contacts.component';
+import { EditOtherComponent } from './pages/edit-page/components/edit-other/edit-other.component';
+import { ContactManageItemComponent } from './pages/edit-page/components/edit-contacts/components/contact-manage-item/contact-manage-item.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import { EditProjectsComponent } from './pages/edit-page/components/edit-project
     EditPageComponent,
     EditSkillsComponent,
     EditProjectsComponent,
+    EditContactsComponent,
+    EditOtherComponent,
+    ContactManageItemComponent,
   ],
   imports: [AdminRoutingModule, CommonModule, FormsModule, ReactiveFormsModule, SharedModule, MatFormFieldModule, MatInputModule],
   providers: [AuthGuard],
