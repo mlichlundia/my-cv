@@ -3,7 +3,6 @@ import {HttpBackend, HttpClient} from "@angular/common/http";
 import {map, Observable} from "rxjs";
 import {ARTICLE_URL} from "../../constants/url";
 import {ArticleInterface} from "../../interfaces/article.interface";
-import {ARTICLE_TOKEN} from "../../constants/token";
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +15,7 @@ export class ArticleService {
   }
 
   public getLastArticle(): Observable<ArticleInterface[]> {
-    return this.http.get<ArticleInterface[]>(ARTICLE_URL, {params: {accessToken: ARTICLE_TOKEN}})
-      .pipe(map((res: ArticleInterface[]) => res))
+    return this.http.get<ArticleInterface[]>(ARTICLE_URL)
+        .pipe(map((res: ArticleInterface[]) => res))
   }
 }

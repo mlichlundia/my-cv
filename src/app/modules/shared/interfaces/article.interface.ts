@@ -1,7 +1,7 @@
 export interface ArticleInterface {
-  id: string,
-  name: string;
+  id: number;
+  title: string;
   description: string;
   url: string;
-  imageUrl: string;
+  cover_image: string;
 }

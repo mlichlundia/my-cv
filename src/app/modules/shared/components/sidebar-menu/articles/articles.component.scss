@@ -8,6 +8,7 @@
 
 img {
   width: 100%;
+  margin-top: rem(20);
 }
 
 hr {
@@ -19,7 +20,7 @@ hr {
 .content {
   padding: rem(32);
 
-  h3 {
+  h4 {
     margin: 0 0 rem(8);
     overflow: hidden;
     text-overflow: ellipsis;
