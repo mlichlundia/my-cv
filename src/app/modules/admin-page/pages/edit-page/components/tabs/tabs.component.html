@@ -1,0 +1,8 @@
+<ul>
+  <li
+    (click)="onChange(i)"
+    *ngFor="let tab of tabs; let i = index"
+    [class]="{active: activeTab === i}"
+  >{{tab}}</li>
+  <div class="active-line" [style.left.rem]="7 * activeTab"></div>
+</ul>

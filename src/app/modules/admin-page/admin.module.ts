@@ -9,12 +9,16 @@ import {LoginPageComponent} from "./pages/login-page/login-page.component";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {SharedModule} from '../shared/shared.module';
+import { EditSkillsComponent } from './pages/edit-page/components/edit-skills/edit-skills.component';
+import { EditProjectsComponent } from './pages/edit-page/components/edit-projects/edit-projects.component';
 
 @NgModule({
   declarations: [
     AdminPageComponent,
     LoginPageComponent,
     EditPageComponent,
+    EditSkillsComponent,
+    EditProjectsComponent,
   ],
   imports: [AdminRoutingModule, CommonModule, FormsModule, ReactiveFormsModule, SharedModule, MatFormFieldModule, MatInputModule],
   providers: [AuthGuard],

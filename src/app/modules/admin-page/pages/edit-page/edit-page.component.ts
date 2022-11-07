@@ -6,11 +6,14 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./edit-page.component.scss']
 })
 export class EditPageComponent implements OnInit {
+  public tabs: string[] = ['contacts', 'skills', 'projects', 'other']
+  public currentView: number = 0
 
-  constructor() {
+  ngOnInit() {
+    this.currentView = 0
   }
 
-  ngOnInit(): void {
+  public changeCurrentView(view: number): void {
+    this.currentView = view
   }
-
 }

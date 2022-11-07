@@ -1,1 +1,3 @@
-<p>edit-page works!</p>
+<app-tabs (changeView)="changeCurrentView($event)" [activeTab]="currentView" [tabs]="tabs"></app-tabs>
+<app-edit-skills *ngIf="currentView === 0"></app-edit-skills>
+<app-edit-projects *ngIf="currentView === 1"></app-edit-projects>

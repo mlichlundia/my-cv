@@ -9,6 +9,7 @@ import {MenuComponent} from "./components/sidebar-menu/menu/menu.component";
 import {ArticlesComponent} from "./components/sidebar-menu/articles/articles.component";
 import {SocialLinkComponent} from "./components/sidebar-menu/social-link/social-link.component";
 import {RouterModule} from "@angular/router";
+import {TabsComponent} from "../admin-page/pages/edit-page/components/tabs/tabs.component";
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {RouterModule} from "@angular/router";
     MenuComponent,
     ArticlesComponent,
     MenuButtonComponent,
-    SocialLinkComponent
+    SocialLinkComponent,
+    TabsComponent,
   ],
   imports: [
     CommonModule,
@@ -34,7 +36,8 @@ import {RouterModule} from "@angular/router";
     MenuComponent,
     ArticlesComponent,
     MenuButtonComponent,
-    SocialLinkComponent
+    SocialLinkComponent,
+    TabsComponent
   ],
 })
 export class SharedModule {
