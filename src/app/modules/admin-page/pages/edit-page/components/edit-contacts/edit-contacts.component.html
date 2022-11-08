@@ -1,10 +1,14 @@
 <h2>contacts</h2>
 
-<!--<p class="server-error">{{auth.error$ | async}}</p>-->
-
-<div class="contacts-container">
-    <app-contact-manage-item [icon]="0"></app-contact-manage-item>
-    <app-contact-manage-item [icon]="1"></app-contact-manage-item>
+<div
+        class="contacts-container"
+        *ngIf="profileService.profile?.contacts
+        || profileService.profile?.contacts && profileService.profile?.contacts!.length > 0"
+>
+    <app-contact-manage-item
+            *ngFor="let contact of profileService.profile.contacts"
+            [contact]="contact"
+    ></app-contact-manage-item>
 </div>
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()">

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {ProfileService} from "../../../../../shared/services/profile/profile.service";
+import {Icons} from "../../../../../shared/components/UI/icon/constants";
 
 @Component({
   selector: 'app-edit-contacts',
@@ -8,13 +10,12 @@ import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "
 })
 export class EditContactsComponent implements OnInit {
   public form!: FormGroup
+  public icons = Icons
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, public profileService: ProfileService) {}
 
   ngOnInit(): void {
     this.initForm()
-    console.log(this.title, this.form)
-
   }
 
   public get title(): AbstractControl<string> {

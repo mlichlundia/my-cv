@@ -1,8 +1,12 @@
 @use "src/styles/main.scss" as *;
 
+h2 {
+  margin-bottom: rem(32);
+}
+
 .contacts-container {
   display: flex;
-  margin: rem(32) 0 rem(24);
+  margin-bottom: rem(24);
 
   >:not(:last-child) {
     margin-right: rem(12);

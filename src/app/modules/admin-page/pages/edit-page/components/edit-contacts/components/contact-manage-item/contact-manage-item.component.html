@@ -1,5 +1,5 @@
 <div class="container">
-    <app-icon [name]="icon"></app-icon>
-    <app-icon [name]="icons.EDIT"></app-icon>
-    <app-icon [name]="icons.DELETE"></app-icon>
+    <app-icon [name]="currentIcon"></app-icon>
+    <app-icon [name]="icons['EDIT']"></app-icon>
+    <app-icon [name]="icons['DELETE']" (click)="onRemove()"></app-icon>
 </div>
