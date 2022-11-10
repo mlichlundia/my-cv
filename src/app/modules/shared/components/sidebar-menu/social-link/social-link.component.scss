@@ -1,7 +1,7 @@
 @use 'src/styles/main' as *;
 
 :host {
-  width: 100%;
+  width: calc(100% / 2 - #{rem(12)});
 }
 
 a {
@@ -11,6 +11,9 @@ a {
   padding: rem(16) rem(24);
 
   >:first-child {
+    --icon-height: #{rem(24)};
+    --icon-width: #{rem(24)};
+
     color: color(primary-700);
   }
 
