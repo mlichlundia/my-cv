@@ -2,25 +2,25 @@
 
 <div
         class="contacts-container"
-        *ngIf="profileService.profile?.contacts
-        || profileService.profile?.contacts && profileService.profile?.contacts!.length > 0"
+        *ngIf="contacts.length > 0"
 >
     <app-contact-manage-item
-            *ngFor="let contact of profileService.profile.contacts"
+            *ngFor="let contact of contacts"
             [contact]="contact"
+            (removeContact)="onRemove($event)"
     ></app-contact-manage-item>
 </div>
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <mat-form-field appearance="outline" class="title">
         <mat-label>Title</mat-label>
-        <input matInput placeholder="Title" formControlName="title">
+        <input matInput placeholder="Title" formControlName="type">
         <mat-hint>Title should contain only latin letters. Example: Github</mat-hint>
         <mat-error *ngIf="title?.invalid">{{titleError}}</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline" class="link">
         <mat-label>Social link</mat-label>
-        <input matInput placeholder="Social link" formControlName="link">
+        <input matInput placeholder="Social link" formControlName="value">
         <mat-hint>Social link should be valid to access</mat-hint>
         <mat-error *ngIf="link?.invalid">{{linkError}}</mat-error>
     </mat-form-field>

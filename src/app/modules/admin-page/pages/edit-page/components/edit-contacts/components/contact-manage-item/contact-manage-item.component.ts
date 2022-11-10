@@ -1,7 +1,6 @@
 import {ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Icons} from "../../../../../../../shared/components/UI/icon/constants";
 import {Contact} from "../../../../../../../shared/interfaces/contacts.interface";
-import {ProfileService} from "../../../../../../../shared/services/profile/profile.service";
 
 @Component({
     selector: 'app-contact-manage-item',
@@ -16,7 +15,7 @@ export class ContactManageItemComponent implements OnInit {
     public icons: { [key: string]: any } = Icons
     public currentIcon!: number
 
-    constructor(private cdr: ChangeDetectorRef, private profileService: ProfileService) {
+    constructor(private cdr: ChangeDetectorRef) {
     }
 
     ngOnInit(): void {
@@ -25,13 +24,6 @@ export class ContactManageItemComponent implements OnInit {
     }
 
     public onRemove() {
-        console.log(123)
-        const profile = this.profileService.profile
-        const contacts = profile.contacts?.filter(contact => contact !== this.contact)
-
-        this.profileService.setProfile({...profile, contacts}).subscribe(() => {
-                this.profileService.profile = {...profile, contacts}
-            }
-        )
+        this.removeContact.emit(this.contact)
     }
 }
