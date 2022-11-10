@@ -11,11 +11,16 @@ import {Contact} from "../../../../../../../interfaces/profile";
 })
 export class EditContactsComponent implements OnInit {
     public form!: FormGroup
-    public icons = Icons
     public contacts: Contact[] = []
+    public icons = Icons
+    public isEdit: boolean = false
+    public updateSocial: string = ''
 
-    constructor(private cdr: ChangeDetectorRef, private fb: FormBuilder, public profileService: ProfileService) {
-    }
+    constructor(
+        private cdr: ChangeDetectorRef,
+        private fb: FormBuilder,
+        public profileService: ProfileService
+    ) {}
 
     ngOnInit(): void {
         this.initForm()
@@ -66,7 +71,7 @@ export class EditContactsComponent implements OnInit {
         return 'Social link is invalid'
     }
 
-    public onSubmit() {
+    public onSubmit():void {
         if (this.form.invalid || this.form.pristine) {
             return
         }
@@ -78,11 +83,31 @@ export class EditContactsComponent implements OnInit {
             this.title.setErrors(null)
             this.link.setErrors(null)
         })
-
-
     }
 
-    public onRemove(removeContact: Contact) {
+    public onUpdate() {
+        this.contacts = this.contacts.filter(contact => contact.type !== this.updateSocial)
+        this.contacts.push(this.form.value)
+
+        this.profileService.setProfile({...this.profileService.profile, contacts: this.contacts}).subscribe(() => {
+            this.isEdit = false
+
+            this.form.reset()
+
+            this.title.setErrors(null)
+            this.link.setErrors(null)
+        })
+    }
+
+    public onEdit(editContact: Contact):void {
+        this.isEdit = true
+        this.updateSocial = editContact.type
+
+        this.title.setValue(editContact.type)
+        this.link.setValue(editContact.value)
+    }
+
+    public onRemove(removeContact: Contact):void {
         this.contacts = this.contacts.filter(contact => contact !== removeContact) || []
 
         this.profileService.setProfile({...this.profileService.profile, contacts: this.contacts}).subscribe(() => {

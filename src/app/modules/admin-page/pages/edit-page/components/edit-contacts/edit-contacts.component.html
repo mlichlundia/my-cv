@@ -8,10 +8,11 @@
             *ngFor="let contact of contacts"
             [contact]="contact"
             (removeContact)="onRemove($event)"
+            (editContact)="onEdit($event)"
     ></app-contact-manage-item>
 </div>
 
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<form [formGroup]="form" (ngSubmit)="isEdit ? onUpdate() : onSubmit()">
     <mat-form-field appearance="outline" class="title">
         <mat-label>Title</mat-label>
         <input matInput placeholder="Title" formControlName="type">
@@ -24,5 +25,5 @@
         <mat-hint>Social link should be valid to access</mat-hint>
         <mat-error *ngIf="link?.invalid">{{linkError}}</mat-error>
     </mat-form-field>
-    <button class="button_primary">Add</button>
+    <button class="button_primary">{{ isEdit ? 'Update' : 'Add' }}</button>
 </form>
