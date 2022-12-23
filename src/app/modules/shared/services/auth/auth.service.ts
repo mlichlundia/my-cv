@@ -25,7 +25,7 @@ export class AuthService {
     localStorage.setItem('token', JSON.stringify(checkToken))
   }
 
-  private checkAuth(): Observable<Profile | HttpErrorResponse> {
+  private checkAuth(): Observable<Profile> {
     return this.profileService
       .getProfile()
       .pipe(switchMap((profile: Profile) => this.profileService.setProfile(profile)));

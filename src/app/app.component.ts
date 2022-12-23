@@ -1,6 +1,5 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {ProfileService} from "./modules/shared/services/profile/profile.service";
-import {Profile} from "../interfaces/profile";
 
 @Component({
   selector: 'app-root',
@@ -14,7 +13,6 @@ export class AppComponent implements OnInit{
   constructor(private profileService: ProfileService) {}
 
   ngOnInit(): void {
-    this.profileService.getProfile()
-        .subscribe((res:Profile) => this.profileService.profile = res);
+    this.profileService.getProfile().subscribe(res => this.profileService.profile = res);
   }
 }

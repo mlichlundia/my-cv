@@ -2,7 +2,7 @@
 
 <div
         class="contacts-container"
-        *ngIf="contacts.length > 0"
+        *ngIf="!!contacts.length"
 >
     <app-contact-manage-item
             *ngFor="let contact of contacts"

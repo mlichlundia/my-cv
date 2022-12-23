@@ -12,13 +12,14 @@ export class ProfileService {
 
   private profileApi: string = BASE_URL + 'profile';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   getProfile(): Observable<Profile> {
     return this.http.get<Profile>(this.profileApi).pipe(retry(1))
   }
 
   setProfile(data: Profile): Observable<Profile> {
-     return this.http.post<Profile>(this.profileApi, data);
+    return this.http.post<Profile>(this.profileApi, data);
   }
 }
