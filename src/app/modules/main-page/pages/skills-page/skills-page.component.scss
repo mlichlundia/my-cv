@@ -5,4 +5,10 @@
   margin-bottom: rem(64);
 }
 
-
+:host ::ng-deep .skeleton-container {
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+  max-width: rem(496);
+  margin: rem(48) 0 0;
+}

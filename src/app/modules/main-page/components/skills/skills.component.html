@@ -1,6 +1,12 @@
 <section>
-  <h2>skills</h2>
-  <div class="container">
-    <span *ngFor="let skill of skills">{{skill.title}}</span>
-  </div>
+    <h2>skills</h2>
+    <div class="container" *ngIf="skills; else skeleton">
+        <span *ngFor="let skill of skills">{{skill.title}}</span>
+    </div>
+    <ng-template #skeleton>
+        <div class="skeleton-container">
+            <ngx-skeleton-loader></ngx-skeleton-loader>
+            <ngx-skeleton-loader></ngx-skeleton-loader>
+        </div>
+    </ng-template>
 </section>

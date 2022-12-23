@@ -12,6 +12,7 @@ import {LanguagesComponent} from './components/languages/languages.component';
 import {ProjectComponent} from './components/project/project.component';
 import {TagComponent} from './components/tag/tag.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {NgxSkeletonLoaderModule} from "ngx-skeleton-loader";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     ProjectComponent,
     TagComponent,
   ],
-  imports: [MainRoutingModule, CommonModule, SharedModule, ReactiveFormsModule],
+  imports: [MainRoutingModule, CommonModule, SharedModule, ReactiveFormsModule, NgxSkeletonLoaderModule],
 })
 export class MainModule {
 }

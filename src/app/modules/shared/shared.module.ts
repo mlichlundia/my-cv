@@ -10,7 +10,8 @@ import {ArticlesComponent} from "./components/sidebar-menu/articles/articles.com
 import {SocialLinkComponent} from "./components/sidebar-menu/social-link/social-link.component";
 import {RouterModule} from "@angular/router";
 import {TabsComponent} from "../admin-page/pages/edit-page/components/tabs/tabs.component";
-import { IconComponent } from './components/UI/icon/icon.component';
+import {IconComponent} from './components/UI/icon/icon.component';
+import {NgxSkeletonLoaderModule} from "ngx-skeleton-loader";
 
 
 @NgModule({
@@ -28,20 +29,21 @@ import { IconComponent } from './components/UI/icon/icon.component';
     CommonModule,
     MatIconModule,
     MatButtonModule,
-    RouterModule
+    RouterModule,
+    NgxSkeletonLoaderModule.forRoot({ animation: 'pulse'})
   ],
-    exports: [
-        ArrowIconComponent,
-        MatIconModule,
-        MatButtonModule,
-        SidebarComponent,
-        MenuComponent,
-        ArticlesComponent,
-        MenuButtonComponent,
-        SocialLinkComponent,
-        TabsComponent,
-        IconComponent
-    ],
+  exports: [
+    ArrowIconComponent,
+    MatIconModule,
+    MatButtonModule,
+    SidebarComponent,
+    MenuComponent,
+    ArticlesComponent,
+    MenuButtonComponent,
+    SocialLinkComponent,
+    TabsComponent,
+    IconComponent,
+  ],
 })
 export class SharedModule {
 }

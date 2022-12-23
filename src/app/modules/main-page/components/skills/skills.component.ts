@@ -1,7 +1,6 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {SkillInterface} from "../../../shared/interfaces/skill.interface";
 import {SkillsService} from "../../../shared/services/skills/skills.service";
-import {SKILLS_MOCK} from "../../../shared/mocks/skills.mock";
 
 @Component({
   selector: 'app-skills',
@@ -9,7 +8,7 @@ import {SKILLS_MOCK} from "../../../shared/mocks/skills.mock";
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent implements OnInit {
-  public skills: SkillInterface[] = SKILLS_MOCK
+  public skills: SkillInterface[] | null = null
 
   constructor(private cdr: ChangeDetectorRef, private skillsService: SkillsService) {
   }

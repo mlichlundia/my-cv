@@ -7,7 +7,7 @@ import {EducationLangService} from "../../../shared/services/education-lang/educ
   styleUrls: ['./languages.component.scss']
 })
 export class LanguagesComponent implements OnInit {
-  public langs: string[] = ['']
+  public langs: string[] | null = null
 
   constructor(private cdr: ChangeDetectorRef, private langService: EducationLangService) {
   }
