@@ -1,0 +1,33 @@
+@use 'src/styles/main' as *;
+
+.mouse {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 10000;
+
+  &__pointer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: rem(6);
+    height: rem(6);
+    border-radius: 50%;
+    background: color(gray-200);
+    transition: width .25s ease-in-out, height .25s ease-in-out;
+  }
+
+  &.active {
+    .mouse__pointer {
+      width: rem(32);
+      height: rem(32);
+    }
+  }
+
+  @media screen and (max-width: get-breakpoint(l)) {
+    display: none;
+  }
+}

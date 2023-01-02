@@ -25,5 +25,5 @@
         <mat-hint>Social link should be valid to access</mat-hint>
         <mat-error *ngIf="link?.invalid">{{linkError}}</mat-error>
     </mat-form-field>
-    <button class="button_primary">{{ isEdit ? 'Update' : 'Add' }}</button>
+    <app-big-button type="submit">{{ isEdit ? 'Update' : 'Add' }}</app-big-button>
 </form>

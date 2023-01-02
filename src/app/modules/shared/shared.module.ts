@@ -12,7 +12,8 @@ import {RouterModule} from "@angular/router";
 import {TabsComponent} from "../admin-page/pages/edit-page/components/tabs/tabs.component";
 import {IconComponent} from './components/UI/icon/icon.component';
 import {NgxSkeletonLoaderModule} from "ngx-skeleton-loader";
-
+import { MouseComponent } from './components/mouse/mouse.component';
+import { BigButtonComponent } from './components/UI/big-button/big-button.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +25,15 @@ import {NgxSkeletonLoaderModule} from "ngx-skeleton-loader";
     SocialLinkComponent,
     TabsComponent,
     IconComponent,
+    MouseComponent,
+    BigButtonComponent,
   ],
   imports: [
     CommonModule,
     MatIconModule,
     MatButtonModule,
     RouterModule,
-    NgxSkeletonLoaderModule.forRoot({ animation: 'pulse'})
+    NgxSkeletonLoaderModule.forRoot({ animation: 'pulse'}),
   ],
   exports: [
     ArrowIconComponent,
@@ -43,6 +46,8 @@ import {NgxSkeletonLoaderModule} from "ngx-skeleton-loader";
     SocialLinkComponent,
     TabsComponent,
     IconComponent,
+    MouseComponent,
+    BigButtonComponent,
   ],
 })
 export class SharedModule {

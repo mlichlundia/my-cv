@@ -1,0 +1,6 @@
+<div class="mouse"
+     [class]="mouseService.isHovered ? 'active' : ''"
+     [style]="{ transform: 'translate(' + mouseService.pointer['x'] + 'px, ' + mouseService.pointer['y'] + 'px)'}"
+>
+    <div class="mouse__pointer"></div>
+</div>

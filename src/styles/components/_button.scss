@@ -1,7 +1,6 @@
 @use "../utilities" as *;
 
 .button_primary, .button_secondary {
-
   padding: rem(20) rem(48);
   font-size: font(20);
   border-radius: rem(12);
@@ -17,6 +16,7 @@
 }
 
 .button_primary {
+  min-width: rem(180);
   color: color(gray-200);
   background: color(primary-700);
 

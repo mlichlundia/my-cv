@@ -9,6 +9,7 @@
     @return $value;
   } @else {
     @warn 'This #{$value} shouldn\'t contain "px" in it';
+    @return 0
   }
 }
 
@@ -21,6 +22,7 @@
     @return var(--font-size-#{$value});
   } @else {
     @warn 'This #{$value} doesn\'t exist';
+    @return var(--invalid-font-provided)
   }
 }
 
@@ -29,6 +31,7 @@
     @return var(--color-#{$value});
   } @else {
     @warn 'This #{$value} doesn\'t exist';
+    @return var(--invalid-color-provided)
   }
 }
 
