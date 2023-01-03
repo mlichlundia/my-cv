@@ -30,7 +30,7 @@ svg {
 button,
 select,
 a {
-  transition: .25s;
+  transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
   cursor: pointer;
 }
 
@@ -39,7 +39,8 @@ a {
   text-decoration: none;
 }
 
-input, textarea {
+input,
+textarea {
   font: inherit;
 }
 
@@ -48,9 +49,10 @@ hr {
   margin: 0 auto;
 }
 
-::-webkit-scrollbar, ::-webkit-scrollbar:horizontal {
-  height: .25rem;
-  width: .25rem;
+::-webkit-scrollbar,
+::-webkit-scrollbar:horizontal {
+  height: 0.25rem;
+  width: 0.25rem;
 }
 
 ::-webkit-scrollbar-thumb {

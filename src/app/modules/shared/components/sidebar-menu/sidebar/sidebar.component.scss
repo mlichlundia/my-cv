@@ -1,27 +1,36 @@
-@use 'src/styles/main' as *;
+@use "src/styles/main" as *;
 
 .sidebar-container {
   position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: rem(364);
   height: 100vh;
-  padding: rem(24);
   overflow: auto;
   z-index: 1000;
+  backdrop-filter: blur(rem(8));
+  background: rgba(white, 0.2);
+  width: 100%;
+  transition: 0.4s width 0.25s ease-in-out,
+    0.4s background-color 0.25s ease-in-out;
 
   @media screen and (min-width: get-breakpoint(xl)) {
     position: static;
-    padding: rem(24);
+    backdrop-filter: none;
+    background: none;
   }
 
   &.close {
-    height: fit-content;
+    width: 0;
   }
 }
 
 .menu-button {
+  position: fixed;
+  top: rem(24);
+  left: rem(24);
+  z-index: 10000;
+
   @media screen and (min-width: get-breakpoint(xl)) {
     display: none;
   }
@@ -31,11 +40,13 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: rem(24);
-  transition: .4s;
+  padding-top: rem(56);
+  margin: rem(24) rem(24) 0;
+  // transition: .4s;
+  width: rem(364);
 
   @media screen and (min-width: get-breakpoint(xl)) {
-    margin-top: 0;
+    padding-top: 0;
   }
 
   & > :not(:last-child) {
@@ -44,6 +55,7 @@
 
   & > :last-child {
     margin-top: auto;
+    padding-bottom: rem(24);
     font-size: font(12);
     font-weight: 300;
     line-height: 160%;
@@ -58,3 +70,17 @@
     margin-right: rem(24);
   }
 }
+
+//.open { margin: rem(24);
+//  .menu-button {
+//    position: static;
+//
+//  }
+//
+//  .sidebar {
+//    //padding-top: rem(56);
+//    margin: rem(24) rem(24) 0;
+//    transition: .4s;
+//    //width: rem(364);
+//  }
+//}

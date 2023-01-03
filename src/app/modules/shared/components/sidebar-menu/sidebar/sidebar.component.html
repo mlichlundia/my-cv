@@ -1,14 +1,16 @@
-<div class="sidebar-container" [ngClass]="{'close': !isOpen}">
-  <app-menu-button [isOpen]="isOpen" (onToggle)="toggleOpen()" class="menu-button"></app-menu-button>
-  <div class="sidebar" *ngIf="isOpen" [@openClose]="isOpen ? ':enter' : ':leave'">
-    <app-menu></app-menu>
+<div [class]="isOpen ? 'open' : ''">
+    <app-menu-button [isOpen]="isOpen" (onToggle)="toggleOpen()" class="menu-button"></app-menu-button>
+    <div class="sidebar-container" [ngClass]="{'close': !isOpen}">
+        <div class="sidebar" *ngIf="isOpen" [@openClose]="isOpen ? ':enter' : ':leave'">
+            <app-menu></app-menu>
 
-    <app-articles></app-articles>
+            <app-articles></app-articles>
 
-    <div class="socials__container">
-      <app-social-link *ngFor="let contact of contacts" [contact]="contact"></app-social-link>
+            <div class="socials__container">
+                <app-social-link *ngFor="let contact of contacts" [contact]="contact"></app-social-link>
+            </div>
+
+            <p>© Copyright 2022 Kseniya Sychova</p>
+        </div>
     </div>
-
-    <p>© Copyright 2022 Kseniya Sychova</p>
-  </div>
 </div>

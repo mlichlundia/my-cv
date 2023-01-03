@@ -1,10 +1,9 @@
-@use 'src/styles/main' as *;
+@use "src/styles/main" as *;
 
 :host {
   @include card;
   display: block;
   width: 100%;
-  padding: rem(32);
 }
 
 img {
@@ -22,12 +21,12 @@ ul {
   margin: rem(24) rem(-16) 0;
 }
 
-li {
+.menu__point {
   padding: rem(8) rem(16);
   margin: rem(4);
   border-radius: rem(8);
   cursor: pointer;
-  transition: .25s;
+  transition: background-color 0.25s ease-in-out;
 
   a {
     text-transform: capitalize;
@@ -47,4 +46,13 @@ li {
   }
 }
 
+.menu {
+  &-container {
+    padding: rem(32);
+  }
 
+  //&__line {
+  //  padding: 0;
+  //  cursor: default;
+  //}
+}

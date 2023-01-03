@@ -9,7 +9,7 @@
   border-radius: rem(8);
   color: color(gray-700);
   overflow: hidden;
-  transition: .25s ease-in-out;
+  transition: width 0.25s ease-in-out;
 
   &:hover {
     width: rem(90);
@@ -23,11 +23,11 @@
   width: rem(72);
   margin: rem(8);
 
-  >:first-child {
+  > :first-child {
     color: color(primary-700);
   }
 
-  >:not(:first-child) {
+  > :not(:first-child) {
     --icon-height: #{rem(16)};
     --icon-width: #{rem(16)};
 

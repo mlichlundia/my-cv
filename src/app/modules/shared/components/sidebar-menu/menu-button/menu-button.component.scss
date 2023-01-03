@@ -1,4 +1,4 @@
-@use 'src/styles/main' as *;
+@use "src/styles/main" as *;
 
 button {
   position: relative;
@@ -12,7 +12,7 @@ button {
   }
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -21,7 +21,8 @@ button {
     height: rem(26);
     border-radius: rem(6);
     background: color(primary-700);
-    transition: .5s ease-in-out;
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out,
+      border-radius 0.5s ease-in-out;
   }
 
   &.active:after {
