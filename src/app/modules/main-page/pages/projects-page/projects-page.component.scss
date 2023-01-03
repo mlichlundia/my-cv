@@ -7,9 +7,5 @@ h2 {
 .projects-list {
   display: flex;
   flex-wrap: wrap;
-  margin: rem(-12);
-
-  & > :nth-child(n) {
-    margin: rem(12);
-  }
+  gap: rem(12);
 }
