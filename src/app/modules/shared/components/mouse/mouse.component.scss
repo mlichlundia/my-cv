@@ -6,7 +6,7 @@
   left: 0;
   pointer-events: none;
   mix-blend-mode: difference;
-  z-index: 10000;
+  z-index: 100000;
 
   &__pointer {
     position: absolute;
@@ -22,8 +22,8 @@
 
   &.active {
     .mouse__pointer {
-      width: rem(32);
-      height: rem(32);
+      width: rem(64);
+      height: rem(64);
     }
   }
 
