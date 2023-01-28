@@ -12,8 +12,10 @@ import {RouterModule} from "@angular/router";
 import {TabsComponent} from "../admin-page/pages/edit-page/components/tabs/tabs.component";
 import {IconComponent} from './components/UI/icon/icon.component';
 import {NgxSkeletonLoaderModule} from "ngx-skeleton-loader";
-import { MouseComponent } from './components/mouse/mouse.component';
-import { BigButtonComponent } from './components/UI/big-button/big-button.component';
+import {MouseComponent} from './components/mouse/mouse.component';
+import {BigButtonComponent} from './components/UI/big-button/big-button.component';
+import {SmallButtonComponent} from './components/UI/small-button/small-button.component';
+import {StickToMouseDirective} from "./directives/stick-to-mouse.directive";
 
 @NgModule({
   declarations: [
@@ -27,13 +29,15 @@ import { BigButtonComponent } from './components/UI/big-button/big-button.compon
     IconComponent,
     MouseComponent,
     BigButtonComponent,
+    SmallButtonComponent,
+    StickToMouseDirective
   ],
   imports: [
     CommonModule,
     MatIconModule,
     MatButtonModule,
     RouterModule,
-    NgxSkeletonLoaderModule.forRoot({ animation: 'pulse'}),
+    NgxSkeletonLoaderModule.forRoot({animation: 'pulse'}),
   ],
   exports: [
     ArrowIconComponent,
@@ -48,6 +52,8 @@ import { BigButtonComponent } from './components/UI/big-button/big-button.compon
     IconComponent,
     MouseComponent,
     BigButtonComponent,
+    SmallButtonComponent,
+    StickToMouseDirective
   ],
 })
 export class SharedModule {

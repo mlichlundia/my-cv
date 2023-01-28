@@ -1,1 +1,8 @@
-<button (click)="toggleOpen()" [class]="{'active': isOpen}"></button>
+<div class="wrapper">
+  <span class="stick-area"
+        stickToMouse
+        [stickTarget]="target"
+        [stickRate]="2"
+  ></span>
+  <button (click)="toggleOpen()" [class]="{'active': isOpen}" #stickTarget></button>
+</div>

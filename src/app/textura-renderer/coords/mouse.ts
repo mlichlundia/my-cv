@@ -1,7 +1,7 @@
 /**
  * @author Den Kravchu <denkravchu@gmail.com>
  * @fileoverview Convinient mouse coordinates api 2021
- * @version 1.0.0
+ * @version 1.0.1
 **/
 import { IMouse } from "../interfaces/mouse.interface"
 import { getElementDocumentCoords } from "./scroll"
@@ -56,40 +56,43 @@ const getMouseCoordsFromElement = function(domElement: HTMLElement) {
     const domElementCoords = getElementDocumentCoords(domElement)
     const mouseCoords = getMouseCoords().document
 
-    if (!domElementCoords.top || !domElementCoords.bottom ||
-        !domElementCoords.left || !domElementCoords.right ||
-        !domElementCoords.height || !domElementCoords.width ||
-        !mouseCoords.x || !mouseCoords.y) { 
-        console.error("getMouseCoordsFromElement: No domElement found")
-        return {
-            top: {
-                left: {
-                    x: null,
-                    y: null,
-                },
-                right: {
-                    x: null,
-                    y: null,
-                }
+    const nullObject = {
+        top: {
+            left: {
+                x: null,
+                y: null,
             },
-            center: {
-                center: {
-                    x: null,
-                    y: null,
-                }
-            },
-            bottom: {
-                left: {
-                    x: null,
-                    y: null,
-                },
-                right: {
-                    x: null,
-                    y: null,
-                }
+            right: {
+                x: null,
+                y: null,
             }
-        } 
+        },
+        center: {
+            center: {
+                x: null,
+                y: null,
+            }
+        },
+        bottom: {
+            left: {
+                x: null,
+                y: null,
+            },
+            right: {
+                x: null,
+                y: null,
+            }
+        }
     }
+
+    if (domElementCoords.top === null || domElementCoords.bottom === null ||
+        domElementCoords.left === null || domElementCoords.right === null ||
+        domElementCoords.height === null || domElementCoords.width === null) { 
+        console.error("getMouseCoordsFromElement: No domElement found")
+        return nullObject
+    }
+    if (mouseCoords.x === null || mouseCoords.y === null) { return nullObject }
+
     return {
         top: {
             left: {
@@ -123,13 +126,13 @@ const getMouseCoordsFromElement = function(domElement: HTMLElement) {
 const isElementHovered = function(domElement: HTMLElement, additionalRadius: number = 0) {
     const domElementCoords = getElementDocumentCoords(domElement)
     const mouseCoords = getMouseCoords().document
-    if (!domElementCoords.top || !domElementCoords.bottom ||
-        !domElementCoords.left || !domElementCoords.right ||
-        !domElementCoords.height || !domElementCoords.width ||
-        !mouseCoords.x || !mouseCoords.y) { 
+    if (domElementCoords.top === null || domElementCoords.bottom === null ||
+        domElementCoords.left === null || domElementCoords.right === null ||
+        domElementCoords.height === null || domElementCoords.width === null) { 
         console.error("isElementHovered: No domElement found")
         return false 
     }
+    if (mouseCoords.x === null || mouseCoords.y === null) { return false }
     return (domElementCoords.top - additionalRadius < mouseCoords.y && domElementCoords.bottom + additionalRadius > mouseCoords.y && domElementCoords.left - additionalRadius < mouseCoords.x && domElementCoords.right + additionalRadius > mouseCoords.x)
 }
 

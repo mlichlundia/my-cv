@@ -1,6 +1,6 @@
-import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
-import {ProfileService} from "./modules/shared/services/profile/profile.service";
-import {startRender, stopRender, subscribeMouse, unsubscribeMouse} from "./textura-renderer";
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import { ProfileService } from "./modules/shared/services/profile/profile.service";
+import { startRender, stopRender, subscribeMouse, unsubscribeMouse } from "./textura-renderer";
 
 @Component({
   selector: 'app-root',

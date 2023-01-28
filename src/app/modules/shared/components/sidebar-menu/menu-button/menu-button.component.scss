@@ -1,5 +1,26 @@
 @use "src/styles/main" as *;
 
+:host {
+  width: fit-content;
+  display: inline-block
+}
+
+.wrapper {
+  position: relative;
+  width: fit-content;
+}
+
+.stick-area {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: 100%;
+  transform: translate(-50%, -50%) scale(2);
+  pointer-events: none;
+}
+
 button {
   position: relative;
   width: rem(32);

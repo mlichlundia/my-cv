@@ -1,6 +1,6 @@
-import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
-import {getMouseCoords, lerp, removeFromRender, setToRender} from "../../../../textura-renderer";
-import {MouseService} from "../../services/mouse/mouse.service";
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { getMouseCoords, lerp, removeFromRender, setToRender } from "../../../../textura-renderer";
+import { MouseService } from "../../services/mouse/mouse.service";
 
 @Component({
   selector: 'app-mouse',

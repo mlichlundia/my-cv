@@ -22,7 +22,13 @@
 
   &:hover {
     background: color(primary-800);
+
+    @media screen and (min-width: get-breakpoint(l)) {
+      background: color(primary-700);
+    }
   }
+
+
 }
 
 .button_secondary {

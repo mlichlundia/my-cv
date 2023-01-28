@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-menu-button',
@@ -8,6 +8,8 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 export class MenuButtonComponent {
   @Input() public isOpen!: boolean
   @Output() public onToggle: EventEmitter<boolean> = new EventEmitter<boolean>()
+
+  @ViewChild('stickTarget') public target!: ElementRef
 
   public toggleOpen(): void {
     this.onToggle.emit(!this.isOpen)

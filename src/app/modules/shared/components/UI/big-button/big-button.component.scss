@@ -1,0 +1,22 @@
+@use 'src/styles/main' as *;
+
+:host {
+  width: fit-content;
+  display: inline-block
+}
+
+.wrapper {
+  position: relative;
+  width: fit-content;
+}
+
+.stick-area {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 125%;
+  width: 55%;
+  transform: translate(-50%, -50%) scale(2);
+  pointer-events: none;
+}

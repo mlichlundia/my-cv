@@ -1,13 +1,15 @@
-import {Component, HostListener, Input} from '@angular/core';
-import {MouseService} from "../../../services/mouse/mouse.service";
+import { Component, ElementRef, HostListener, Input, ViewChild } from '@angular/core';
+import { MouseService } from "../../../services/mouse/mouse.service";
 
 @Component({
   selector: 'app-big-button',
   templateUrl: './big-button.component.html',
-  styles: [':host {width: fit-content; display: inline-block}']
+  styleUrls: ['./big-button.component.scss']
 })
 export class BigButtonComponent {
   @Input() type: 'submit' | 'button' = "button"
+
+  @ViewChild('stickTarget') public target!: ElementRef
 
   @HostListener('mouseenter')
   private onMouseEnter() {
