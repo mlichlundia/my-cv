@@ -5,7 +5,7 @@ import {
   isElementPartableVisible,
   lerp,
   setToRender
-} from "../../../textura-renderer";
+} from "../../../../textura-renderer";
 
 @Directive({
   selector: '[stickToMouse]'
@@ -19,6 +19,8 @@ export class StickToMouseDirective implements OnInit {
 
   private current: Record<'x' | 'y', number> = {x: 0, y: 0}
   private label = 'stick' + Date.now()
+
+  constructor(private parent: ElementRef) { }
 
   ngOnInit(): void {
     setToRender({
@@ -44,8 +46,6 @@ export class StickToMouseDirective implements OnInit {
       this.leave()
     }
   }
-
-  constructor(private parent: ElementRef) { }
 
   private move() {
     if (typeof this.onMouseMove === 'function') {
