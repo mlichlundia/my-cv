@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {ProjectInterface} from "../../../shared/interfaces/project.interface";
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { ProjectInterface } from "../../../shared/interfaces/project.interface";
 
 @Component({
   selector: 'app-project',
@@ -8,4 +8,8 @@ import {ProjectInterface} from "../../../shared/interfaces/project.interface";
 })
 export class ProjectComponent {
   @Input() public project!: ProjectInterface
+
+  @ViewChild('makeMoveTarget') public target!: ElementRef
+
+  public extent: number = 5
 }

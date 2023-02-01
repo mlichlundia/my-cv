@@ -1,0 +1,16 @@
+@use 'src/styles/main' as *;
+
+:host {
+  --make-move-width: fit-content;
+  --make-move-height: fit-content;
+  --make-move-transition: transform .2s;
+}
+
+.container, .target {
+  width: var(--make-move-width);
+  height: var(--make-move-height);
+}
+
+.target {
+  transition: var(--make-move-transition);
+}

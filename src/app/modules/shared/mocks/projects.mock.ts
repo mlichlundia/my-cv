@@ -1,11 +1,12 @@
-import {ProjectInterface} from "../interfaces/project.interface";
+import { ProjectInterface } from "../interfaces/project.interface";
 
 export const PROJECTS_MOCK: ProjectInterface[] = [
   {
-    title: 'My Project',
-    description: 'My project description is very interesting',
-    descriptionShort: 'My project description',
-    tags: ['Angular', 'RxJs', 'TypeScript', 'Angular Material'],
+    id: 1,
+    title: 'NFT art',
+    description: 'This project is for client that works on NFT creation. Layouts were implemented according to the design, animations were developed in collaborating atmosphere with a designer and a customer',
+    descriptionShort: 'This project is for client that works on NFT creation',
+    tags: ['JavaScript', 'HTML', 'CSS', 'BEM', 'React', 'react-router', 'Figma'],
     links: [
       {
         url: '',
@@ -15,6 +16,7 @@ export const PROJECTS_MOCK: ProjectInterface[] = [
   },
 
   {
+    id: 2,
     title: 'My Project My Project My ProjectMy Project',
     description: 'My project description is very interesting. My project description is very interesting. My project description is very interesting. My project description is very interesting',
     descriptionShort: 'My project description',
@@ -28,6 +30,7 @@ export const PROJECTS_MOCK: ProjectInterface[] = [
   },
 
   {
+    id: 3,
     title: 'My Project My Project My ProjectMy Project',
     description: 'My project description is very interesting. My project description is very interesting. My project description is very interesting. My project description is very interesting',
     descriptionShort: 'My project description',
@@ -41,6 +44,7 @@ export const PROJECTS_MOCK: ProjectInterface[] = [
   },
 
   {
+    id: 4,
     title: 'My Project My Project My ProjectMy Project',
     description: 'My project description is very interesting. My project description is very interesting. My project description is very interesting. My project description is very interesting',
     descriptionShort: 'My project description',
@@ -54,6 +58,7 @@ export const PROJECTS_MOCK: ProjectInterface[] = [
   },
 
   {
+    id: 5,
     title: 'My Project My Project My ProjectMy Project',
     description: 'My project description is very interesting. My project description is very interesting. My project description is very interesting. My project description is very interesting',
     descriptionShort: 'My project description',
@@ -67,6 +72,7 @@ export const PROJECTS_MOCK: ProjectInterface[] = [
   },
 
   {
+    id: 6,
     title: 'My Project My Project My ProjectMy Project',
     description: 'My project description is very interesting. My project description is very interesting. My project description is very interesting. My project description is very interesting',
     descriptionShort: 'My project description',

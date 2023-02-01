@@ -26,8 +26,8 @@ p {
 
 .tag-container {
   display: flex;
-  max-height: rem(32);
-  margin: rem(-4) rem(-4);
+  flex-wrap: wrap;
+  margin: rem(16) rem(-4) 0;
 
   & > :nth-child(n) {
     margin: rem(4) rem(4);
