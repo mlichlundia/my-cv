@@ -1,0 +1,10 @@
+<div class="wrapper">
+  <span class="stick-area"
+        stickToMouse
+        [stickTarget]="target"
+        [stickRate]="rate"
+  ></span>
+  <div #stickTarget>
+    <ng-content></ng-content>
+  </div>
+</div>

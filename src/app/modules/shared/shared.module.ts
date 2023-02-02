@@ -20,6 +20,11 @@ import { MakeMoveDirective } from './directives/makeMove/make-move.directive';
 import {
   MakeMoveContainerComponent
 } from './components/UI/makeMoveContainer/make-move-container/make-move-container.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
+import { LinkComponent } from './components/UI/link/link/link.component';
+import {
+  StickToMouseContainerComponent
+} from './components/UI/stickToMouseContainer/stick-to-mouse-container/stick-to-mouse-container.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +41,10 @@ import {
     SmallButtonComponent,
     StickToMouseDirective,
     MakeMoveDirective,
-    MakeMoveContainerComponent
+    MakeMoveContainerComponent,
+    ErrorPageComponent,
+    LinkComponent,
+    StickToMouseContainerComponent
   ],
   imports: [
     CommonModule,
@@ -61,7 +69,9 @@ import {
     SmallButtonComponent,
     StickToMouseDirective,
     MakeMoveDirective,
-    MakeMoveContainerComponent
+    MakeMoveContainerComponent,
+    LinkComponent,
+    StickToMouseContainerComponent
   ],
 })
 export class SharedModule {

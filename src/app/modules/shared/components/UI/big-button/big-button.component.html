@@ -1,10 +1,5 @@
-<div class="wrapper">
-  <span class="stick-area"
-        stickToMouse
-        [stickTarget]="target"
-        [stickRate]="5"
-  ></span>
-  <button class="button_primary" [type]="type" #stickTarget>
+<app-stick-to-mouse-container>
+  <button class="button_primary" [type]="type">
     <ng-content></ng-content>
   </button>
-</div>
+</app-stick-to-mouse-container>
