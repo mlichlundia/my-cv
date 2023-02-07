@@ -19,8 +19,8 @@
 
   @media screen and (min-width: get-breakpoint(xl)) {
     position: static;
-    backdrop-filter: none;
     background: none;
+    box-shadow: none;
   }
 
   &.close {
