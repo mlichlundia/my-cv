@@ -1,7 +1,7 @@
 @use 'src/styles/main' as *;
 
 :host {
-  --make-move-transition: transform .2s;
+  --make-move-transition: transform .1s;
 
   display: block;
 }
