@@ -1,0 +1,13 @@
+<app-make-move-container [extent]="extent">
+  <a class="project__container" [routerLink]="['/project', project.id]">
+    <h3>{{project.title}}</h3>
+    <p>{{project.description}}</p>
+    <img
+        src="https://24tv.ua/resources/photos/news/201912/1243548_10326629.gif?201912110626&w=500&h=274&fit=cover"
+        alt="project preview"
+    >
+    <div class="tag__container">
+      <app-tag *ngFor="let tag of project.tags" [tag]="tag"></app-tag>
+    </div>
+  </a>
+</app-make-move-container>

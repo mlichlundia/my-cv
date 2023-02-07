@@ -1,0 +1,48 @@
+@use 'src/styles/main' as *;
+
+:host {
+  display: block;
+  width: 100%;
+  height: fit-content;
+
+  @media screen and (min-width: get-breakpoint(l)) {
+    width: calc((100% - #{rem(12)}) / 2);
+  }
+
+  @media screen and (min-width: get-breakpoint(xxl)) {
+    width: calc((100% - #{rem(12 * 2)}) / 3);
+  }
+}
+
+.project__container {
+  @include card;
+  display: block;
+  padding: rem(32);
+}
+
+h3, p {
+  display: -webkit-box !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+h3 {
+  -webkit-line-clamp: 1;
+}
+
+p {
+  -webkit-line-clamp: 3;
+  margin: rem(20) 0 rem(32);
+}
+
+.tag__container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: rem(16) rem(-4) 0;
+
+  & > :nth-child(n) {
+    margin: rem(4) rem(4);
+  }
+}

@@ -1,14 +1,14 @@
 @use 'src/styles/main' as *;
 
 :host {
-  --make-move-width: fit-content;
-  --make-move-height: fit-content;
   --make-move-transition: transform .2s;
+
+  display: block;
 }
 
-.container, .target {
-  width: var(--make-move-width);
-  height: var(--make-move-height);
+.container {
+  position: relative;
+  border-radius: 50%;
 }
 
 .target {
