@@ -14,7 +14,7 @@ export const openCloseAnimation = trigger('openClose', [
   transition(':leave', [
     animate(
       '400ms 0.2ms ease-in-out',
-      style({ transform: 'translate(-23rem)', pointerEvents: 'none' })
+      style({ transform: 'translate(23rem)', pointerEvents: 'none' })
     ),
   ]),
 ]);

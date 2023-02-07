@@ -2,15 +2,17 @@
 
 .sidebar-container {
   position: absolute;
+  right: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: end;
   height: 100vh;
   overflow: auto;
   z-index: 1000;
-  backdrop-filter: blur(rem(8));
-  background: rgba(white, 0.2);
-  width: 100%;
+  background: color(gray-200);
+  box-shadow: -10px 0px rem(50) rgba(color-hex(gray-700), .25);
+  width: rem(420);
   transition: 0.4s width 0.25s ease-in-out,
     0.4s background-color 0.25s ease-in-out;
   pointer-events: all;
@@ -29,7 +31,7 @@
 .menu-button {
   position: fixed;
   top: rem(24);
-  left: rem(24);
+  right: rem(24);
   z-index: 10000;
 
   @media screen and (min-width: get-breakpoint(xl)) {
@@ -43,7 +45,6 @@
   flex-direction: column;
   padding-top: rem(56);
   margin: rem(24) rem(24) 0;
-  // transition: .4s;
   width: rem(364);
 
   @media screen and (min-width: get-breakpoint(xl)) {
@@ -71,17 +72,3 @@
     margin-right: rem(24);
   }
 }
-
-//.open { margin: rem(24);
-//  .menu-button {
-//    position: static;
-//
-//  }
-//
-//  .sidebar {
-//    //padding-top: rem(56);
-//    margin: rem(24) rem(24) 0;
-//    transition: .4s;
-//    //width: rem(364);
-//  }
-//}

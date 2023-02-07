@@ -38,3 +38,10 @@
 @function get-breakpoint($value) {
   @return map.get($breakpoints, $value);
 }
+
+@function color-hex($name) {
+  @if not map.get($colors, $name) {
+    @error '"#{$name}" is not a valid color name';
+  }
+  @return map.get($colors, $name)
+};

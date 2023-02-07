@@ -2,9 +2,14 @@
 
 :host {
   display: flex;
+  flex-direction: row-reverse;
   height: 100vh;
   padding: 0;
   background: color(gray-200);
+
+  @media screen and (min-width: get-breakpoint(xl)){
+    flex-direction: row;
+  }
 }
 
 main {
