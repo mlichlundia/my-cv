@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="project-page.component.scss"><h5>My Project</h5>
+<p class="project__title">{{ project.title }}</p>
+
+<div class="project__content">
+  <div class="project__video">
+    <img src="https://wallpaperaccess.com/full/349967.jpg" alt="project-video">
+  </div>
+
+  <section class="project__text-block">
+    <h5>Description</h5>
+    <div>
+      {{ project.description }}
+      <app-link [src]="project.title">Launch project</app-link>
+    </div>
+  </section>
+
+  <div class="project__screens">
+    <img src="https://wallpaperaccess.com/full/349967.jpg" alt="project-screen">
+    <img src="https://wallpaperaccess.com/full/349967.jpg" alt="project-screen">
+    <img src="https://wallpaperaccess.com/full/349967.jpg" alt="project-screen">
+  </div>
+
+  <section class="project__text-block">
+    <h5>Tech Side</h5>
+    <div>
+      {{ project.description }}
+    </div>
+  </section>
+</div>
