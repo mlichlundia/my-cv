@@ -6,13 +6,12 @@
 
   @media screen and (min-width: get-breakpoint(l)) {
     margin-top: rem(120);
-
   }
 }
 
 .position {
   margin-bottom: rem(24);
-  color: color(primary-700);
+  color: color(gray-700);
 }
 
 .text {

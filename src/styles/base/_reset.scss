@@ -59,3 +59,8 @@ hr {
   background: transparent;
   border-radius: 0.1rem;
 }
+
+::selection {
+  color: black;
+  background: #ffd8dc;
+}

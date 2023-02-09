@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { getMouseCoords, lerp, removeFromRender, setToRender } from "../../../../textura-renderer";
 import { MouseService } from "../../services/mouse/mouse.service";
 
@@ -7,7 +7,8 @@ import { MouseService } from "../../services/mouse/mouse.service";
   templateUrl: './mouse.component.html',
   styleUrls: ['./mouse.component.scss']
 })
-export class MouseComponent implements OnInit, OnDestroy {
+export class MouseComponent implements OnInit, AfterViewInit, OnDestroy {
+  @ViewChild('video') private video!: ElementRef
 
   constructor(private cdr: ChangeDetectorRef, public mouseService: MouseService) {}
 
@@ -28,5 +29,9 @@ export class MouseComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     removeFromRender(this.mouseService.rendererLabel)
+  }
+
+  ngAfterViewInit(): void {
+    this.video.nativeElement.muted = true
   }
 }

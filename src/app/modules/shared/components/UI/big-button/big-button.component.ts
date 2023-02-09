@@ -4,6 +4,7 @@ import { MouseService } from "../../../services/mouse/mouse.service";
 @Component({
   selector: 'app-big-button',
   templateUrl: './big-button.component.html',
+  styles: [':host {width: rem(100)}']
 })
 export class BigButtonComponent {
   @Input() type: 'submit' | 'button' = "button"

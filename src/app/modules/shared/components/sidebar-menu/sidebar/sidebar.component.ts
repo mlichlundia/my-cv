@@ -1,7 +1,7 @@
-import {Component, EventEmitter, HostListener, OnInit, Output} from '@angular/core';
-import {Contact} from "../../../interfaces/contacts.interface";
-import {CONTACTS_MOCKS} from "../../../mocks/contacts.mock";
-import {openCloseAnimation} from "../../../animations/open-close.animation";
+import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
+import { Contact } from "../../../interfaces/contacts.interface";
+import { CONTACTS_MOCKS } from "../../../mocks/contacts.mock";
+import { openCloseAnimation } from "../../../animations/open-close.animation";
 
 @Component({
   selector: 'app-sidebar',
@@ -36,6 +36,7 @@ export class SidebarComponent implements OnInit {
     }
 
     this.toggleOpen()
+    this.openMenu.emit(this.isOpen)
   }
 
   @HostListener('window:resize', ['event$'])

@@ -1,6 +1,9 @@
 <div [class]="isOpen ? 'open' : ''">
     <app-menu-button [isOpen]="isOpen" (onToggle)="toggleOpen()" class="menu-button"></app-menu-button>
     <div class="sidebar-container" [ngClass]="{'close': !isOpen}">
+<!--        <div>-->
+<!--            <img src="favicon.ico" alt="menu-image"/>-->
+<!--        </div>-->
         <div class="sidebar" *ngIf="isOpen" [@openClose]="isOpen ? ':enter' : ':leave'">
             <app-menu></app-menu>
 

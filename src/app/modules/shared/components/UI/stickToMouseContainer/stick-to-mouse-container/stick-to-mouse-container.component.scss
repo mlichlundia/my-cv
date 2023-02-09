@@ -1,13 +1,15 @@
 @use 'src/styles/main' as *;
 
 :host {
-  width: fit-content;
+  --stick-to-mouse-width: fit-content;
+
+  width: var(--stick-to-mouse-width);
   display: inline-block
 }
 
 .wrapper {
+  width: var(--stick-to-mouse-width);
   position: relative;
-  width: fit-content;
 }
 
 .stick-area {
@@ -15,8 +17,12 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  height: 125%;
-  width: 55%;
+  height: 115%;
+  width: 70%;
   transform: translate(-50%, -50%) scale(2);
   pointer-events: none;
+}
+
+.target {
+  width: var(--stick-to-mouse-width);
 }

@@ -1,13 +1,7 @@
-<img [src]="article.cover_image" alt="article-img">
-
-<hr>
-
-<div class="content">
-  <h4>{{article.title}}</h4>
-  <a class="button_thirdly" [href]="article.url" target="_blank">
-    Read
-    <span>
-      <app-arrow-icon color="#4338CA" [size]="20"></app-arrow-icon>
-    </span>
-  </a>
-</div>
+<a [href]="article.url" target="_blank">
+  <img [src]="article.cover_image" alt="article-img">
+  <hr>
+  <div class="article__content">
+    <h4>{{article.title}}</h4>
+  </div>
+</a>

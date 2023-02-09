@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Contact} from "../../../interfaces/contacts.interface";
-import {Icons} from "../../UI/icon/constants";
+import { Component, Input, OnInit } from '@angular/core';
+import { Contact } from "../../../interfaces/contacts.interface";
+import { Icons } from "../../UI/icon/constants";
 
 @Component({
   selector: 'app-social-link',

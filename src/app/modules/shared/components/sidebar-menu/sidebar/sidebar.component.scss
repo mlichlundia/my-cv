@@ -11,8 +11,7 @@
   overflow: auto;
   z-index: 1000;
   background: color(gray-200);
-  box-shadow: -10px 0px rem(50) rgba(color-hex(gray-700), .25);
-  width: rem(420);
+  width: 100%;
   transition: 0.4s width 0.25s ease-in-out,
     0.4s background-color 0.25s ease-in-out;
   pointer-events: all;

@@ -1,4 +1,6 @@
-<a [href]="contact.value" target="_blank">
-  <app-icon [name]="currentIcon"></app-icon>
-  <p>{{ contact.type | titlecase }}</p>
-</a>
+<app-stick-to-mouse-container>
+  <a [href]="contact.value" target="_blank">
+    <app-icon [name]="currentIcon"></app-icon>
+    <p>{{ contact.type | titlecase }}</p>
+  </a>
+</app-stick-to-mouse-container>

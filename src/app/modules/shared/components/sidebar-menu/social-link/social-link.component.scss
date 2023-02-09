@@ -1,7 +1,11 @@
 @use 'src/styles/main' as *;
 
 :host {
-  width: calc(100% / 2 - #{rem(12)});
+  >:first-child {
+    --stick-to-mouse-width: 100%;
+  }
+
+  width: 50%;
 }
 
 a {
@@ -9,16 +13,11 @@ a {
   display: flex;
   align-items: center;
   padding: rem(16) rem(24);
+  color: color(black-900);
 
-  >:first-child {
+  > :first-child {
     --icon-height: #{rem(24)};
     --icon-width: #{rem(24)};
-
-    color: color(primary-700);
-  }
-
-  &:hover {
-    background: color(gray-200);
   }
 }
 

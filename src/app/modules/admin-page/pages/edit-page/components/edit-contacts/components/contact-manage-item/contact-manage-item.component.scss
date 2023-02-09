@@ -22,10 +22,7 @@
   align-items: center;
   width: rem(72);
   margin: rem(8);
-
-  > :first-child {
-    color: color(primary-700);
-  }
+  color: color(black-900);
 
   > :not(:first-child) {
     --icon-height: #{rem(16)};

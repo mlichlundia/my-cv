@@ -16,15 +16,34 @@
     width: rem(6);
     height: rem(6);
     border-radius: 50%;
-    background: color(gray-200);
-    transition: width .25s ease-in-out, height .25s ease-in-out;
+    background: color(gray-100);
+    transition: .25s width ease-in-out, .25s height ease-in-out, .25s background-color ease-in-out;
+    overflow: hidden;
   }
 
   &.active {
-    .mouse__pointer {
-      width: rem(64);
-      height: rem(64);
+    video {
+      visibility: visible;
+      opacity: 1;
     }
+
+    .mouse__pointer {
+      width: rem(120);
+      height: rem(120);
+      background: color(black-900);
+    }
+  }
+
+  video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: rem(2000);
+    width: rem(2000);
+    visibility: hidden;
+    opacity: 0;
+    transition: .25s visibility ease-in-out, .25s opacity ease-in-out;
   }
 
   @media screen and (max-width: get-breakpoint(l)) {

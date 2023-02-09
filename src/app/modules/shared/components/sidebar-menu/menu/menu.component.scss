@@ -47,12 +47,12 @@ ul {
 }
 
 .menu {
+  &__logo {
+    width: rem(48);
+    height: auto;
+  }
+
   &-container {
     padding: rem(32);
   }
-
-  //&__line {
-  //  padding: 0;
-  //  cursor: default;
-  //}
 }
