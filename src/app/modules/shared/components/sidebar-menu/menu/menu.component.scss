@@ -34,7 +34,11 @@ ul {
   }
 
   &.active {
-    background: color(gray-200);
+    background: color(gray-300);
+
+    &:hover {
+      background: color(gray-300);
+    }
 
     a {
       color: color(gray-900);

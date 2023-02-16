@@ -18,10 +18,14 @@
 
   &__title {
     margin: rem(16) 0 rem(72);
-    font-size: font(64);
+    font-size: font(48);
     font-weight: 500;
     line-height: 120%;
     color: color(black-900);
+
+    @media screen and (min-width: get-breakpoint(s)) {
+      font-size: font(64);
+    }
   }
 
   &__video {
