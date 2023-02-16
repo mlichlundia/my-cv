@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, ViewChild } from '@angular/core';
 import { ProjectInterface } from "../../../shared/interfaces/project.interface";
 
 @Component({
@@ -6,17 +6,28 @@ import { ProjectInterface } from "../../../shared/interfaces/project.interface";
   templateUrl: './project-preview.component.html',
   styleUrls: ['./project-preview.component.scss'],
 })
-export class ProjectPreviewComponent implements AfterViewInit{
+export class ProjectPreviewComponent {
   @Input() public project!: ProjectInterface
 
   @ViewChild('makeMoveTarget') public target!: ElementRef
-  @ViewChild('video') public video!: ElementRef
+  public extent: number = 3
 
-  public extent: number = 25
+  @HostListener('mouseenter') private onMouseEnter() {
+    this.addTransition()
+  }
 
-  ngAfterViewInit(): void {
-    if(this.video.nativeElement.muted) {
-      this.video.nativeElement.play()
-    }
+  @HostListener('mouseleave') private onMouseLeave() {
+    this.addTransition()
+  }
+
+  private addTransition() {
+    this.target && (this.target.nativeElement.style.transition = '.25s transform')
+    setTimeout(() => {
+      this.removeTransition()
+    }, 250)
+  }
+
+  private removeTransition() {
+    this.target && (this.target.nativeElement.style.transition = 'none')
   }
 }

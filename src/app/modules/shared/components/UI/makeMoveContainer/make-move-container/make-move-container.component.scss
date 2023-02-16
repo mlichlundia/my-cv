@@ -1,16 +1,10 @@
 @use 'src/styles/main' as *;
 
 :host {
-  --make-move-transition: transform .1s;
-
   display: block;
 }
 
 .container {
   position: relative;
   border-radius: 50%;
-}
-
-.target {
-  transition: var(--make-move-transition);
 }

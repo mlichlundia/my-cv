@@ -14,10 +14,25 @@
   }
 }
 
-.project__container {
+.pull-out {
+  height: rem(180);
+  border-radius: rem(4);
+  overflow: hidden;
+  transform: translateZ(rem(64));
+  transition: .25s transform ease-in-out;
+}
+
+.project__container.target {
   @include card;
   display: block;
   padding: rem(32);
+
+  // for pullout element
+  transform-style: preserve-3d;
+}
+
+video {
+  width: 100%;
 }
 
 h3, p {
@@ -33,12 +48,8 @@ h3 {
 }
 
 p {
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   margin: rem(20) 0 rem(32);
-}
-
-video {
-  width: 100%;
 }
 
 .tag__container {
