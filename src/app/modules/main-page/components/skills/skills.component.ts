@@ -1,6 +1,6 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {SkillInterface} from "../../../shared/interfaces/skill.interface";
-import {SkillsService} from "../../../shared/services/skills/skills.service";
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { SkillInterface } from "../../../shared/interfaces/skill.interface";
+import { SkillsService } from "../../../shared/services/skills/skills.service";
 
 @Component({
   selector: 'app-skills',
@@ -19,6 +19,7 @@ export class SkillsComponent implements OnInit {
 
   private getSkills(): void {
     this.skillsService.getSkills().subscribe((res) => {
+      console.log(res)
       this.skills = res
       this.cdr.markForCheck()
     })

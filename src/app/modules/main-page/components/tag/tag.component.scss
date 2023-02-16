@@ -1,9 +1,13 @@
 @use 'src/styles/main' as *;
 
+:host {
+  --skill-font-size: #{font(12)}
+}
+
 p {
   width: fit-content;
   padding: rem(6) rem(10);
-  font-size: font(12);
+  font-size: var(--skill-font-size);
   color: color(black-900);
   background: color(gray-300);
   border-radius: rem(6);

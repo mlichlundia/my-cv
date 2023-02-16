@@ -4,11 +4,10 @@
   display: flex;
   flex-wrap: wrap;
   max-width: rem(496);
-  margin: rem(32) rem(-20) 0;
+  margin-top: rem(32);
+  gap: rem(12);
 
-  span {
-    display: block;
-    margin: rem(16) rem(20);
-    color: color(gray-700);
+  > :nth-child(n) {
+    --skill-font-size: #{font(14)};
   }
 }

@@ -1,6 +1,6 @@
 @use 'src/styles/main' as *;
 
-:host > :nth-child(n) {
+:host > :not(:last-child) {
   display: block;
   margin-bottom: rem(64);
 }
