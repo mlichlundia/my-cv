@@ -1,4 +1,4 @@
-<div class="menu-container" [@expandNarrow]="auth.isAuth ? 'expand' : 'narrow'">
+<div class="menu-container">
   <img src="../../../../../../assets/svg/logo.svg" alt="logo" class="menu__logo" [routerLink]="['/', 'home']">
   <ul>
     <li [routerLink]="['/', 'home']" routerLinkActive="active" class="menu__point"><a>home</a></li>
@@ -9,16 +9,7 @@
       <hr>
     </li>
 
-    <li *ngIf="!auth.isAuth; else edit" [routerLink]="['/admin', 'login']" routerLinkActive="active"
-        [@inOut]="auth.isAuth ? ':enter' : ':leave'" class="menu__point"><a>login</a></li>
-
-    <ng-template #edit>
-      <li [routerLink]="['/admin', 'edit']" routerLinkActive="active"
-          [@inOut]="!auth.isAuth ? ':enter' : ':leave'" class="menu__point"><a>edit</a>
-      </li>
-      <li [routerLink]="['/admin', 'login']" routerLinkActive="active" (click)="auth.logout()"
-          [@inOut]="!auth.isAuth ? ':enter' : ':leave'" class="menu__point"><a>log out</a></li>
-    </ng-template>
+    <li class="menu__point"><a href="/assets/docs/cv.pdf" download="Kseniya_Sychova_FE_Angular">Get CV</a></li>
   </ul>
 </div>
 

@@ -1,4 +1,4 @@
-import {ArticleInterface} from "../interfaces/article.interface";
+import { ArticleInterface } from "../interfaces/article.interface";
 
 export const ARTICLE_MOCKS: ArticleInterface[] = [
   {
@@ -6,6 +6,6 @@ export const ARTICLE_MOCKS: ArticleInterface[] = [
     title: 'Article title',
     description: 'Article description',
     url: 'https://medium.com/@mlichlundia',
-    cover_image: '/assets/img/default-article.png',
+    cover_image: '/assets/img/default-article.jpg',
   }
 ]
