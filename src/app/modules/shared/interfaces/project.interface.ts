@@ -1,9 +1,12 @@
 export interface ProjectInterface {
   id: number,
   title: string,
+  subtitle: string,
   description: string,
-  descriptionShort: string,
-  tags: string[],
+  tech: string,
+  skills: string[],
+  mainPreview: string,
+  images: string[],
   links: LinkInterface[]
 }
 

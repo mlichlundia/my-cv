@@ -1,7 +1,7 @@
-import {HttpClient} from '@angular/common/http';
-import {Injectable} from '@angular/core';
-import {delay, Observable, retry} from 'rxjs';
-import {BASE_URL} from "../../constants/url";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { delay, Observable, retry } from 'rxjs';
+import { BASE_URL } from "../../constants/url";
 
 @Injectable({
   providedIn: 'root',
