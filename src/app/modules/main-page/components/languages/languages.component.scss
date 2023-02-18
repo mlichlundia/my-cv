@@ -5,7 +5,12 @@
   flex-wrap: wrap;
   max-width: rem(496);
   margin-top: rem(32);
-  gap: rem(32);
+  gap: rem(12);
+
+
+  @media screen and (min-width: get-breakpoint(m)) {
+    gap: rem(32);
+  }
 
   span {
     display: block;

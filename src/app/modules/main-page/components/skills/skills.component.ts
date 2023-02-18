@@ -19,7 +19,6 @@ export class SkillsComponent implements OnInit {
 
   private getSkills(): void {
     this.skillsService.getSkills().subscribe((res) => {
-      console.log(res)
       this.skills = res
       this.cdr.markForCheck()
     })

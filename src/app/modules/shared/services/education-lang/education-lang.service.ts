@@ -10,8 +10,7 @@ export class EducationLangService {
   private langApi: string = BASE_URL + 'languages';
   private educationApi: string = BASE_URL + 'educations';
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) { }
 
   public getLangs(): Observable<string[]> {
     return this.http.get<string[]>(this.langApi).pipe(delay(1000), retry(3));
