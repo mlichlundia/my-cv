@@ -1,18 +1,13 @@
-<div
-    makeMove
-    [makeMoveTarget]="target"
-    [extent]="extent"
-    class="container"
->
+<app-make-move-container [extent]="extent" [routerLink]="['/project', project.id]">
+  <div top>
+    <h3>{{project.title}}</h3>
+    <p>{{project.description}}</p>
+  </div>
 
-    <a #makeMoveTarget class="project__container target" [routerLink]="['/project', project.id]">
-      <h3>{{project.title}}</h3>
-      <p>{{project.description}}</p>
-      <div class="pull-out" *ngIf="project.mainPreview">
-        <img [src]="project.mainPreview" alt="project-preview">
-      </div>
-      <div class="tag__container">
-        <app-tag *ngFor="let tag of project.skills" [tag]="tag"></app-tag>
-      </div>
-    </a>
-</div>
+  <div pull-out class="pull-out" *ngIf="project.mainPreview">
+    <img [src]="project.mainPreview" alt="project-preview">
+  </div>
+  <div bottom class="tag__container">
+    <app-tag *ngFor="let tag of project.skills" [tag]="tag"></app-tag>
+  </div>
+</app-make-move-container>

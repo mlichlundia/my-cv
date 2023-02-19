@@ -12,26 +12,18 @@
   @media screen and (min-width: get-breakpoint(xxl)) {
     width: calc((100% - #{rem(12 * 2)}) / 3);
   }
+
+  ::ng-deep app-make-move-container .container .target {
+    @include card;
+    display: block;
+    padding: rem(32);
+  }
 }
 
 .pull-out {
   height: rem(180);
   border-radius: rem(8);
   overflow: hidden;
-  transform: translateZ(rem(64));
-}
-
-.project__container.target {
-  @include card;
-  display: block;
-  padding: rem(32);
-
-  // for pullout element
-  transform-style: preserve-3d;
-}
-
-video {
-  width: 100%;
 }
 
 h3, p {

@@ -8,3 +8,14 @@
   position: relative;
   border-radius: 50%;
 }
+
+.target {
+  // for pull-out  element
+  transform-style: preserve-3d;
+
+  .pull-out {
+    transform-style: preserve-3d;
+    transform: translateZ(rem(64)) perspective(60rem) scale3d(1, 1, 1);
+    will-change: transform;
+  }
+}

@@ -5,6 +5,10 @@
     class="container"
 >
   <div #makeMoveTarget class="target">
-    <ng-content></ng-content>
+    <ng-content select="[top]"></ng-content>
+    <div class="pull-out">
+      <ng-content select="[pull-out]"></ng-content>
+    </div>
+    <ng-content select="[bottom]"></ng-content>
   </div>
 </div>
