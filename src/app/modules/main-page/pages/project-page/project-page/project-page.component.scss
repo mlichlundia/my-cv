@@ -34,17 +34,28 @@ h5 {
 
   &__video {
     width: 100%;
-    height: rem(150);
+    height: rem(200);
+    border: rem(1) solid color(gray-400);
     border-radius: rem(16);
     overflow: hidden;
 
     @media screen and (min-width: get-breakpoint(m)) {
-      height: rem(250);
+      height: rem(300);
+    }
+
+    @media screen and (min-width: get-breakpoint(l)) {
+      height: rem(400);
     }
 
     @media screen and (min-width: get-breakpoint(xxl)) {
-      height: rem(350);
+      height: rem(500);
     }
+
+    video {
+      width: 100%;
+      transform: translate(0, rem(-2));
+    }
+
   }
 
   &__text-block {

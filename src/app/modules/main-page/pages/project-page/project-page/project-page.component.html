@@ -3,7 +3,11 @@
 
 <div class="project__content">
   <div class="project__video" *ngIf="project.mainPreview">
-    <img [src]="project.mainPreview" alt="project-video">
+    <video autoplay muted loop>
+      <source [src]="'assets/videos/projects/' + project.mainPreview + '.mp4'" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+<!--    <img [src]="project.mainPreview" alt="project-video">-->
   </div>
 
   <section class="project__text-block" *ngIf="project.description">
