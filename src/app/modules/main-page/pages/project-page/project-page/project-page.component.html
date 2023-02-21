@@ -3,10 +3,15 @@
 
 <div class="project__content">
   <div class="project__video" *ngIf="project.mainPreview">
-    <video autoplay muted loop>
+    <video *ngIf="isVideoReady; else skeleton" (canplaythrough)="isVideoReady = true" autoplay muted loop>
       <source [src]="'assets/videos/projects/' + project.mainPreview + '.mp4'" type="video/mp4">
       Your browser does not support the video tag.
     </video>
+    <ng-template #skeleton>
+      <div class="skeleton-container">
+        <ngx-skeleton-loader></ngx-skeleton-loader>
+      </div>
+    </ng-template>
   </div>
 
   <section class="project__text-block" *ngIf="project.description">

@@ -10,6 +10,8 @@ import { MouseService } from "../../services/mouse/mouse.service";
 export class MouseComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('video') private video!: ElementRef
 
+  public isVideoReady: boolean = false
+
   constructor(private cdr: ChangeDetectorRef, public mouseService: MouseService) {}
 
   ngOnInit(): void {
@@ -32,6 +34,6 @@ export class MouseComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    this.video.nativeElement.muted = true
+    this.video && (this.video.nativeElement.muted = true)
   }
 }

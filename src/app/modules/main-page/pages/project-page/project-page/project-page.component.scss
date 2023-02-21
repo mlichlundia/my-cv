@@ -1,5 +1,11 @@
 @use 'src/styles/main' as *;
 
+:host {
+  ::ng-deep ngx-skeleton-loader .skeleton-loader {
+    height: 100vh !important;
+  }
+}
+
 h5 {
   text-transform: capitalize;
 }
