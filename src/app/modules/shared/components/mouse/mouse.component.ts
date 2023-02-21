@@ -1,6 +1,8 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { getMouseCoords, lerp, removeFromRender, setToRender } from "../../../../textura-renderer";
 import { MouseService } from "../../services/mouse/mouse.service";
+import { getDeviceType } from "../../functions/getDeviceType";
+import { DeviceType } from "../../types/device.type";
 
 @Component({
   selector: 'app-mouse',
@@ -10,11 +12,14 @@ import { MouseService } from "../../services/mouse/mouse.service";
 export class MouseComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('video') private video!: ElementRef
 
-  public isVideoReady: boolean = false
+  public deviceType: DeviceType = 'desktop'
 
   constructor(private cdr: ChangeDetectorRef, public mouseService: MouseService) {}
 
   ngOnInit(): void {
+    this.deviceType = getDeviceType()
+    if (this.deviceType !== 'desktop') { return }
+
     setToRender({
       label: this.mouseService.rendererLabel, handler: () => {
         const {x, y} = getMouseCoords().window

@@ -10,8 +10,7 @@ import { PROJECTS_MOCK } from '../../../../shared/mocks/projects.mock';
 })
 export class ProjectPageComponent implements OnInit {
   public project!: ProjectInterface;
-  public isVideoReady:boolean = false;
-
+  
   constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
