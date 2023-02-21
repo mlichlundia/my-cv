@@ -1,7 +1,7 @@
 <section>
     <h2>skills</h2>
-    <div class="container" *ngIf="skills; else skeleton">
-        <app-tag *ngFor="let skill of skills" [tag]="skill.title"></app-tag>
+    <div class="container" *ngIf="skillsService.skills.length; else skeleton">
+        <app-tag *ngFor="let skill of skillsService.skills" [tag]="skill.title"></app-tag>
     </div>
     <ng-template #skeleton>
         <div class="skeleton-container">

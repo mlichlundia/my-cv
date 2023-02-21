@@ -1,5 +1,5 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {EducationLangService} from "../../../shared/services/education-lang/education-lang.service";
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { EducationLangService } from "../../../shared/services/education-lang/education-lang.service";
 
 @Component({
   selector: 'app-languages',
@@ -7,16 +7,10 @@ import {EducationLangService} from "../../../shared/services/education-lang/educ
   styleUrls: ['./languages.component.scss']
 })
 export class LanguagesComponent implements OnInit {
-  public langs: string[] | null = null
-
-  constructor(private cdr: ChangeDetectorRef, private langService: EducationLangService) {
-  }
+  constructor(private cdr: ChangeDetectorRef, public langService: EducationLangService) { }
 
   ngOnInit(): void {
-    this.langService.getLangs().subscribe((res) => {
-      this.langs = res
-      this.cdr.markForCheck()
-    })
+    this.langService.getLangs().subscribe(() => this.cdr.markForCheck())
   }
 
 }

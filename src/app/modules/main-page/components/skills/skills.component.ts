@@ -1,5 +1,4 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { SkillInterface } from "../../../shared/interfaces/skill.interface";
 import { SkillsService } from "../../../shared/services/skills/skills.service";
 
 @Component({
@@ -8,19 +7,14 @@ import { SkillsService } from "../../../shared/services/skills/skills.service";
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent implements OnInit {
-  public skills: SkillInterface[] | null = null
-
-  constructor(private cdr: ChangeDetectorRef, private skillsService: SkillsService) {
+  constructor(private cdr: ChangeDetectorRef, public skillsService: SkillsService) {
   }
 
   ngOnInit(): void {
-    this.getSkills()
-  }
-
-  private getSkills(): void {
-    this.skillsService.getSkills().subscribe((res) => {
-      this.skills = res
-      this.cdr.markForCheck()
-    })
+    if(this.skillsService.skills.length) {
+      return
+    }
+    
+    this.skillsService.getSkills().subscribe(() => this.cdr.markForCheck())
   }
 }

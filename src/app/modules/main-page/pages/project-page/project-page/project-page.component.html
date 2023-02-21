@@ -7,7 +7,6 @@
       <source [src]="'assets/videos/projects/' + project.mainPreview + '.mp4'" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-<!--    <img [src]="project.mainPreview" alt="project-video">-->
   </div>
 
   <section class="project__text-block" *ngIf="project.description">
@@ -19,7 +18,11 @@
   </section>
 
   <div class="project__screens" *ngIf="project.images.length">
-    <img *ngFor="let img of project.images" [src]="'assets/img/projects/' + img + '.png'" alt="project-screen">
+    <picture *ngFor="let img of project.images">
+      <source type="image/webp" [attr.lazyLoad]="'assets/img/projects/webp/' + img + '.webp'">
+      <source type="image/png" [srcset]="'assets/img/projects/png/' + img + '.png'">
+      <img  [src]="'assets/img/projects/png/' + img + '.png'" alt="project-screen">
+    </picture>
   </div>
 
   <section class="project__text-block" *ngIf="project.tech">

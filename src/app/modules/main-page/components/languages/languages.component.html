@@ -1,7 +1,7 @@
 <section>
   <h2>languages</h2>
-  <div class="container" *ngIf="langs; else skeleton">
-    <span *ngFor="let lang of langs">{{lang}}</span>
+  <div class="container" *ngIf="langService.langs.length; else skeleton">
+    <span *ngFor="let lang of langService.langs">{{lang}}</span>
   </div>
   <ng-template #skeleton>
     <div class="skeleton-container">

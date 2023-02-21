@@ -1,7 +1,7 @@
 <section>
   <h2>education</h2>
-  <div class="container" *ngIf="education; else skeleton">
-    <p>{{ education }}</p>
+  <div class="container" *ngIf="educationService.education; else skeleton">
+    <p>{{ educationService.education }}</p>
   </div>
   <ng-template #skeleton>
     <div class="skeleton-container">

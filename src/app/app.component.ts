@@ -17,7 +17,7 @@ export class AppComponent implements OnInit, OnDestroy{
     startRender()
     subscribeMouse()
 
-    this.profileService.getProfile().subscribe(res => this.profileService.profile = res);
+    this.profileService.getProfile();
   }
 
   ngOnDestroy(): void {
