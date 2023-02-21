@@ -15,13 +15,17 @@
   </section>
 
   <div class="project__screens" *ngIf="project.images.length">
-    <img *ngFor="let img of project.images" [src]="img" alt="project-screen">
+    <img *ngFor="let img of project.images" [src]="'assets/img/projects/' + img + '.png'" alt="project-screen">
   </div>
 
   <section class="project__text-block" *ngIf="project.tech">
     <h5>Tech Side</h5>
     <div>
       {{ project.tech }}
+
+      <div class="project__tags">
+        <app-tag *ngFor="let tag of project.skills" [tag]="tag"></app-tag>
+      </div>
     </div>
   </section>
 </div>

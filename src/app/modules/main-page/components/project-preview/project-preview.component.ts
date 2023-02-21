@@ -10,5 +10,5 @@ export class ProjectPreviewComponent {
   @Input() public project!: ProjectInterface
 
   @ViewChild('makeMoveTarget') public target!: ElementRef
-  public extent: number = 2.5
+  public extent: number = 1.5
 }

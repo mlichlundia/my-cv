@@ -4,6 +4,7 @@
   display: block;
   width: 100%;
   height: fit-content;
+  cursor: pointer;
 
   @media screen and (min-width: get-breakpoint(l)) {
     width: calc((100% - #{rem(12)}) / 2);
@@ -44,11 +45,13 @@ p {
 }
 
 .tag__container {
+  margin-top: rem(32);
   display: flex;
+  align-items: baseline;
   flex-wrap: wrap;
-  margin: rem(16) rem(-4) 0;
+  gap: rem(8);
 
-  & > :nth-child(n) {
-    margin: rem(4) rem(4);
+  >:last-child.tag_counter {
+    --skill-background: #{color(gray-200)};
   }
 }

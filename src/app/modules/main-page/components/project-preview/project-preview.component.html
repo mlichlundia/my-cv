@@ -5,9 +5,10 @@
   </div>
 
   <div pull-out class="pull-out" *ngIf="project.mainPreview">
-    <img [src]="project.mainPreview" alt="project-preview">
+    <img [src]="'assets/img/projects/' + project.images[2] + '.png'" alt="project-preview">
   </div>
   <div bottom class="tag__container">
-    <app-tag *ngFor="let tag of project.skills" [tag]="tag"></app-tag>
+    <app-tag *ngFor="let tag of project.skills.slice(0, 4)" [tag]="tag"></app-tag>
+    <app-tag class="tag_counter" *ngIf="project.skills.slice(4).length" [tag]="project.skills.slice(4).length + '+'"></app-tag>
   </div>
 </app-make-move-container>

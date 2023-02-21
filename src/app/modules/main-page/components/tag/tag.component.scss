@@ -1,7 +1,8 @@
 @use 'src/styles/main' as *;
 
 :host {
-  --skill-font-size: #{font(12)}
+  --skill-font-size: #{font(12)};
+  --skill-background: #{color(gray-400)};
 }
 
 p {
@@ -9,6 +10,6 @@ p {
   padding: rem(6) rem(10);
   font-size: var(--skill-font-size);
   color: color(black-900);
-  background: color(gray-300);
+  background: var(--skill-background);
   border-radius: rem(6);
 }
