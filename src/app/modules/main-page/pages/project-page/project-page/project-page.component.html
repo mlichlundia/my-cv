@@ -18,10 +18,10 @@
   </section>
 
   <div class="project__screens" *ngIf="project.images.length">
-    <picture *ngFor="let img of project.images">
+    <picture *ngFor="let img of project.images.slice(0, 3)">
       <source type="image/webp" [attr.lazyLoad]="'assets/img/projects/webp/' + img + '.webp'">
       <source type="image/png" [srcset]="'assets/img/projects/png/' + img + '.png'">
-      <img  [src]="'assets/img/projects/png/' + img + '.png'" alt="project-screen">
+      <img width="392" height="auto" [src]="'assets/img/projects/png/' + img + '.png'" alt="project-screen">
     </picture>
   </div>
 
