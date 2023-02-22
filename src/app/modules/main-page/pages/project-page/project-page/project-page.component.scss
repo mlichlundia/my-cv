@@ -122,6 +122,7 @@ h5 {
       width: 100%;
       height: rem(250);
       object-fit: cover;
+      overflow: hidden;
 
       @media screen and (min-width: get-breakpoint(l)) {
         width: calc((100% - #{rem(12 * 2)}) / 3);
