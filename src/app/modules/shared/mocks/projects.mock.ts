@@ -19,7 +19,7 @@ export const PROJECTS_MOCK: ProjectInterface[] = [
     description: 'This project is for a client who specializes in NFT creation. I implemented the layouts in accordance with the client\'s design, and I collaborated closely with both a designer and the customer to develop the animations. By working together, we were able to create a visually stunning and engaging project that met the client\'s needs and exceeded their expectations.',
     tech: 'The application was built using the React library. One of the main challenges I faced was implementing the complex animation on the main screen, which I accomplished by leveraging the requestAnimationFrame function. Throughout the project, I applied the most common programming principles to ensure a high-quality codebase that is easy to read, understand, and maintain. By following best practices, I was able to deliver a robust and reliable application that met the client\'s needs.',
     skills: ['JavaScript', 'HTML', 'CSS', 'BEM', 'React', 'React Hooks', 'react-router', 'npm', 'Git', 'Figma'],
-    mainPreview: 'https://images.unsplash.com/photo-1556900253-f2ddf15183cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+    mainPreview: 'nft_video',
     images: ['nft-1', 'nft-2', 'nft-3'],
     links: [
       {

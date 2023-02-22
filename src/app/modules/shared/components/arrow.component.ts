@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-arrow-icon',
@@ -9,6 +9,7 @@ import {Component, Input} from '@angular/core';
         [attr.fill]="color"/>
     </svg>
   `,
+  // styles: ['svg {width: fit-content}']
 })
 export class ArrowIconComponent {
   @Input() public color: string = '#FCFCFF'
