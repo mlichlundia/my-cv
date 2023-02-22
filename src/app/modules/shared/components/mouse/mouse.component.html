@@ -3,9 +3,5 @@
      [style]="{ transform: 'translate(' + mouseService.pointer['x'] + 'px, ' + mouseService.pointer['y'] + 'px)'}"
 
 >
-  <div class="mouse__pointer">
-    <video *ngIf="mouseService.isHovered" loop autoplay="autoplay" muted #video>
-      <source src="/assets/videos/abstraction.mp4" type="video/mp4">
-    </video>
-  </div>
+  <div class="mouse__pointer"></div>
 </div>

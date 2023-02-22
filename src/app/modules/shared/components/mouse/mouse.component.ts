@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { getMouseCoords, lerp, removeFromRender, setToRender } from "../../../../textura-renderer";
 import { MouseService } from "../../services/mouse/mouse.service";
 import { getDeviceType } from "../../functions/getDeviceType";
@@ -9,7 +9,7 @@ import { DeviceType } from "../../types/device.type";
   templateUrl: './mouse.component.html',
   styleUrls: ['./mouse.component.scss']
 })
-export class MouseComponent implements OnInit, AfterViewInit, OnDestroy {
+export class MouseComponent implements OnInit, OnDestroy {
   @ViewChild('video') private video!: ElementRef
 
   public deviceType: DeviceType = 'desktop'
@@ -36,9 +36,5 @@ export class MouseComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnDestroy(): void {
     removeFromRender(this.mouseService.rendererLabel)
-  }
-
-  ngAfterViewInit(): void {
-    this.video && (this.video.nativeElement.muted = true)
   }
 }

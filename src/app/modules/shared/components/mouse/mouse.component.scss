@@ -22,31 +22,9 @@
   }
 
   &.active {
-    video {
-      visibility: visible;
-      opacity: 1;
-    }
-
     .mouse__pointer {
       width: rem(120);
       height: rem(120);
-      background: color(black-900);
     }
-  }
-
-  video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: rem(1500);
-    width: rem(1500);
-    visibility: hidden;
-    opacity: 0;
-    transition: .25s visibility ease-in-out, .25s opacity ease-in-out;
-  }
-
-  @media screen and (max-width: get-breakpoint(l)) {
-    display: none;
   }
 }
