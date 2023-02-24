@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { delay, map, Observable, retry } from 'rxjs';
+import { map, Observable, retry } from 'rxjs';
 import { SkillInterface } from "../../interfaces/skill.interface";
 import { BASE_URL } from "../../constants/url";
 
@@ -19,7 +19,6 @@ export class SkillsService {
     return this.http
         .get<SkillInterface[]>(this.skillsApi)
         .pipe(
-            delay(1000),
             retry(3),
             map((res: SkillInterface[]) => this.skills = res)
         )

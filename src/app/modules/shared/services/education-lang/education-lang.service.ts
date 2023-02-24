@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { delay, map, Observable, retry } from 'rxjs';
+import { map, Observable, retry } from 'rxjs';
 import { BASE_URL } from "../../constants/url";
 
 @Injectable({
@@ -18,7 +18,6 @@ export class EducationLangService {
   public getLangs(): Observable<string[]> {
     return this.http.get<string[]>(this.langApi)
         .pipe(
-            delay(1000),
             retry(3),
             map(res => this.langs = res)
         );
@@ -27,7 +26,6 @@ export class EducationLangService {
   public getEducation(): Observable<string> {
     return this.http.get<string[]>(this.educationApi)
         .pipe(
-            delay(1000),
             retry(3),
             map(res => this.education = res[0])
         );
