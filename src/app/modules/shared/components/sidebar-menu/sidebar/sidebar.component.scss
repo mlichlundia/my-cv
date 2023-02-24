@@ -13,18 +13,20 @@
   background: color(gray-200);
   width: 100%;
   transition: 0.25s width ease-in-out,
-    0.25s background-color ease-in-out;
+  0.25s background-color ease-in-out,
+  0.25s visibility 0s;
   pointer-events: all;
 
   @media screen and (min-width: get-breakpoint(xl)) {
     position: static;
     background: none;
-    box-shadow: none;
   }
 
   &.close {
     width: 0;
     border-left: rem(1) solid transparent;
+    pointer-events: none;
+    visibility: hidden;
   }
 }
 
