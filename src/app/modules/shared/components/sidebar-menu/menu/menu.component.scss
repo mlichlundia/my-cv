@@ -6,10 +6,6 @@
   width: 100%;
 }
 
-img {
-  cursor: pointer;
-}
-
 hr {
   height: rem(1);
   width: calc(100% - 2rem);
@@ -52,6 +48,7 @@ ul {
   &__logo {
     width: rem(48);
     height: auto;
+    border-radius: 50%;
   }
 
   &-container {

@@ -1,5 +1,7 @@
 <div class="menu-container">
-  <img src="../../../../../../assets/svg/logo.svg" alt="logo" class="menu__logo" [routerLink]="['/', 'home']">
+  <a class="menu__logo" [routerLink]="['/', 'home']">
+    <img src="/assets/svg/logo.svg" alt="logo" class="menu__logo" width="48" height="48">
+  </a>
   <ul>
     <li><a [routerLink]="['/', 'home']" routerLinkActive="active" class="menu__point">home</a></li>
     <li><a [routerLink]="['/', 'projects']" routerLinkActive="active" class="menu__point">projects</a></li>
