@@ -3,7 +3,7 @@
 .sidebar-container {
   position: absolute;
   right: 0;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: end;
@@ -24,7 +24,6 @@
   }
 
   &.open {
-    display: flex;
     width: 100%;
     pointer-events: all;
     visibility: visible;

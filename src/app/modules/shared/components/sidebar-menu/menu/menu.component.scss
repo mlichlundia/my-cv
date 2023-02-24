@@ -26,13 +26,10 @@ ul {
   border-radius: rem(8);
   cursor: pointer;
   transition: background-color 0.25s ease-in-out;
-
-  a {
-    display: block;
-    padding: rem(8) rem(16);
-    text-transform: capitalize;
-    color: color(gray-700);
-  }
+  display: block;
+  padding: rem(8) rem(16);
+  text-transform: capitalize;
+  color: color(gray-700);
 
   &.active {
     background: color(gray-300);
