@@ -1,5 +1,10 @@
 <app-stick-to-mouse-container>
-  <a class="link" target="_blank" [href]="src">
+  <a
+      class="link"
+      target="_blank"
+      [href]="src"
+      [attr.aria-label]="'Tap to go to' + src"
+  >
     <ng-content></ng-content>
   </a>
 </app-stick-to-mouse-container>

@@ -1,17 +1,28 @@
-<a [href]="article.url" target="_blank">
+<a [href]="article.url" target="_blank" aria-label="Open last article">
   <div class="article__image">
     <picture [style.visibility]="isLoaded ? 'visible' : 'none'">
-      <img *ngIf="articleImage; else defaultImg" (load)="onLoad()" [src]="articleImage" alt="article">
+      <img
+          *ngIf="articleImage; else defaultImg"
+          (load)="onLoad()"
+          [src]="articleImage"
+          alt="article"
+      />
       <ng-template #defaultImg>
-        <img priority (load)="onLoad()" ngSrc="/cv/default-article.jpg" fill alt="article">
+        <img
+            priority
+            (load)="onLoad()"
+            ngSrc="/cv/default-article.jpg"
+            fill
+            alt="article"
+        />
       </ng-template>
     </picture>
     <div *ngIf="!isLoaded" class="skeleton-container">
       <ngx-skeleton-loader></ngx-skeleton-loader>
     </div>
   </div>
-  <hr>
+  <hr/>
   <div class="article__content">
-    <h4>{{article.title}}</h4>
+    <h4>{{ article.title }}</h4>
   </div>
 </a>

@@ -1,51 +1,52 @@
 <div class="menu-container">
   <a class="menu__logo" [routerLink]="['/', 'home']" aria-label="Go home">
     <img
-      src="/assets/svg/logo.svg"
-      alt="logo"
-      class="menu__logo"
-      width="48"
-      height="48"
+        src="/assets/svg/logo.svg"
+        alt="logo"
+        class="menu__logo"
+        width="48"
+        height="48"
     />
   </a>
   <ul>
     <li>
       <a
-        [routerLink]="['/', 'home']"
-        routerLinkActive="active"
-        class="menu__point"
-        aria-label="Go home"
-        >home</a
+          [routerLink]="['/', 'home']"
+          routerLinkActive="active"
+          class="menu__point"
+          aria-label="Go home"
+      >home</a
       >
     </li>
     <li>
       <a
-        [routerLink]="['/', 'projects']"
-        routerLinkActive="active"
-        class="menu__point"
-        aria-label="Go to projects"
-        >projects</a
+          [routerLink]="['/', 'projects']"
+          routerLinkActive="active"
+          class="menu__point"
+          aria-label="Go to projects"
+      >projects</a
       >
     </li>
     <li>
       <a
-        [routerLink]="['/', 'skills']"
-        routerLinkActive="active"
-        class="menu__point"
-        aria-label="Go to skills"
-        >skills</a
+          [routerLink]="['/', 'skills']"
+          routerLinkActive="active"
+          class="menu__point"
+          aria-label="Go to skills"
+      >skills</a
       >
     </li>
 
     <li>
-      <hr />
+      <hr/>
     </li>
 
     <li class="menu__point">
       <a
-        href="/assets/docs/Kseniya_Suchova_FE_Angular.pdf"
-        download="Kseniya_Sychova_FE_Angular"
-        >Get CV</a
+          href="/assets/docs/Kseniya_Suchova_FE_Angular.pdf"
+          download="Kseniya_Sychova_FE_Angular"
+          aria-label="Download CV"
+      >Download CV</a
       >
     </li>
   </ul>
