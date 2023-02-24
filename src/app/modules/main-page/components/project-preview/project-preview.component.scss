@@ -22,9 +22,32 @@
 }
 
 .pull-out {
-  height: rem(180);
+  position: relative;
   border-radius: rem(8);
   overflow: hidden;
+
+  picture, .skeleton-container {
+    position: absolute;
+  }
+
+  img {
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.pull-out, .pull-out picture, .pull-out .skeleton-container {
+  width: 100%;
+  height: rem(210);
+  display: block;
+
+  @media screen and (min-width: get-breakpoint(m)) {
+    height: rem(270);
+  }
+
+  @media screen and (min-width: get-breakpoint(l)) {
+    height: rem(180);
+  }
 }
 
 h3, p {

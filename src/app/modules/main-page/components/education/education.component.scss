@@ -7,3 +7,7 @@
   margin: rem(32) 0;
   color: color(gray-700);
 }
+
+.skeleton-container {
+  @include text-skeleton;
+}

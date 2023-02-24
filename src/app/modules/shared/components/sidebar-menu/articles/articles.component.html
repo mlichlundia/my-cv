@@ -1,5 +1,15 @@
 <a [href]="article.url" target="_blank">
-  <img [src]="article.cover_image" alt="article-img">
+  <div class="article__image">
+    <picture [style.visibility]="isLoaded ? 'visible' : 'none'">
+      <img *ngIf="articleImage; else defaultImg" (load)="onLoad()" [src]="articleImage" alt="article">
+      <ng-template #defaultImg>
+        <img priority (load)="onLoad()" ngSrc="/cv/default-article.jpg" fill alt="article">
+      </ng-template>
+    </picture>
+    <div *ngIf="!isLoaded" class="skeleton-container">
+      <ngx-skeleton-loader></ngx-skeleton-loader>
+    </div>
+  </div>
   <hr>
   <div class="article__content">
     <h4>{{article.title}}</h4>

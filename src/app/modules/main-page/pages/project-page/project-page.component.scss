@@ -1,4 +1,4 @@
-@use 'src/styles/main' as *;
+@use '../../../../../styles/main' as *;
 
 :host {
   ::ng-deep ngx-skeleton-loader .skeleton-loader {
@@ -15,15 +15,6 @@ h5 {
     display: flex;
     flex-direction: column;
     gap: rem(80);
-
-    img {
-      width: 100%;
-      object-fit: cover;
-
-      @media screen and (min-width: get-breakpoint(m)) {
-        font-size: font(18);
-      }
-    }
   }
 
   &__title {
@@ -39,6 +30,7 @@ h5 {
   }
 
   &__video {
+    position: relative;
     width: 100%;
     height: rem(200);
     border: rem(1) solid color(gray-400);
@@ -59,12 +51,17 @@ h5 {
       height: rem(600);
     }
 
-    video {
+    video, .skeleton-container {
+      position: absolute;
       width: 100%;
       transform: translate(0, rem(-2));
       border-radius: rem(16);
       -webkit-border-radius: rem(16);
       -moz-border-radius: rem(16);
+    }
+
+    video {
+      transform: translate(0, rem(-2));
     }
 
   }
@@ -118,24 +115,37 @@ h5 {
       flex-direction: unset;
     }
 
-    picture {
+    .screen__container, picture, .skeleton-container {
       width: 100%;
       height: rem(250);
-      object-fit: cover;
-      overflow: hidden;
+      display: block;
 
       @media screen and (min-width: get-breakpoint(l)) {
-        width: calc((100% - #{rem(12 * 2)}) / 3);
         height: rem(200);
       }
 
       @media screen and (min-width: get-breakpoint(xxl)) {
         height: rem(300);
       }
+    }
 
-      img {
-        border-radius: rem(16);
-      }
+    .screen__container {
+       position: relative;
+       overflow: hidden;
+      border-radius: rem(16);
+
+       @media screen and (min-width: get-breakpoint(l)) {
+         width: calc((100% - #{rem(12 * 2)}) / 3);
+       }
+     }
+
+    picture, .skeleton-container {
+      position: absolute;
+    }
+
+    img {
+      object-fit: cover;
+      object-position: top;
     }
   }
 

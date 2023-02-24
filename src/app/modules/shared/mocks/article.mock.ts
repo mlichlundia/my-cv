@@ -6,6 +6,6 @@ export const ARTICLE_MOCKS: ArticleInterface[] = [
     title: 'Article title',
     description: 'Article description',
     url: 'https://medium.com/@mlichlundia',
-    cover_image: '/assets/img/default-article.jpg',
+    cover_image: 'cv/default-article.jpg',
   }
 ]

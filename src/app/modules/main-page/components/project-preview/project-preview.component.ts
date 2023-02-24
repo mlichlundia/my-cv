@@ -8,7 +8,12 @@ import { ProjectInterface } from "../../../shared/interfaces/project.interface";
 })
 export class ProjectPreviewComponent {
   @Input() public project!: ProjectInterface
+  public isLoaded: boolean = false
 
   @ViewChild('makeMoveTarget') public target!: ElementRef
   public extent: number = 1.5
+
+  public onLoad() {
+    this.isLoaded = true
+  } 
 }

@@ -49,3 +49,7 @@
   border: rem(1) solid color(gray-400);
   border-radius: rem(16);
 }
+
+@mixin text-skeleton {
+  height: rem(24) !important;
+}

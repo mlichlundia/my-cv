@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectInterface } from '../../../../shared/interfaces/project.interface';
+import { ProjectInterface } from '../../../shared/interfaces/project.interface';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PROJECTS_MOCK } from '../../../../shared/mocks/projects.mock';
+import { PROJECTS_MOCK } from '../../../shared/mocks/projects.mock';
 
 @Component({
   selector: 'app-project-preview-page',
@@ -10,6 +10,8 @@ import { PROJECTS_MOCK } from '../../../../shared/mocks/projects.mock';
 })
 export class ProjectPageComponent implements OnInit {
   public project!: ProjectInterface;
+  public isLoaded: boolean[] = [false, false, false]
+  public isVideoLoaded: boolean = false;
   
   constructor(private router: Router, private route: ActivatedRoute) {}
 
@@ -26,5 +28,13 @@ export class ProjectPageComponent implements OnInit {
 
       this.project = currentProject;
     });
+  }
+
+  public onLoad(index: number) {
+    this.isLoaded[index] = true
+  }
+
+  onVideoLoad() {
+    this.isVideoLoaded = true
   }
 }

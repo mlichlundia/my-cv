@@ -11,3 +11,7 @@
     --skill-font-size: #{font(14)};
   }
 }
+
+.skeleton-container {
+  @include text-skeleton;
+}

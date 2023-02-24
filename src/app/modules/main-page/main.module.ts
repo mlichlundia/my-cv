@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MainRoutingModule } from './main-routing.module';
 import { MainPageComponent } from './main-page.component';
@@ -13,7 +13,7 @@ import { ProjectPreviewComponent } from './components/project-preview/project-pr
 import { TagComponent } from './components/tag/tag.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { NgxSkeletonLoaderModule } from "ngx-skeleton-loader";
-import { ProjectPageComponent } from './pages/project-page/project-page/project-page.component';
+import { ProjectPageComponent } from './pages/project-page/project-page.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { ProjectPageComponent } from './pages/project-page/project-page/project-
     TagComponent,
     ProjectPageComponent,
   ],
-  imports: [MainRoutingModule, CommonModule, SharedModule, ReactiveFormsModule, NgxSkeletonLoaderModule],
+  imports: [MainRoutingModule, CommonModule, SharedModule, ReactiveFormsModule, NgxSkeletonLoaderModule, NgOptimizedImage],
 })
 export class MainModule {
 }

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage, provideImageKitLoader } from '@angular/common';
 import { ArrowIconComponent } from './components/arrow.component';
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
@@ -52,6 +52,7 @@ import {
     MatButtonModule,
     RouterModule,
     NgxSkeletonLoaderModule.forRoot({animation: 'pulse'}),
+    NgOptimizedImage
   ],
   exports: [
     ArrowIconComponent,
@@ -73,6 +74,7 @@ import {
     LinkComponent,
     StickToMouseContainerComponent
   ],
+  providers: [provideImageKitLoader('https://ik.imagekit.io/mlichlundia')],
 })
 export class SharedModule {
 }
