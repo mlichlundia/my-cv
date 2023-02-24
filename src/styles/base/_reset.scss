@@ -51,13 +51,13 @@ hr {
 
 ::-webkit-scrollbar,
 ::-webkit-scrollbar:horizontal {
-  height: 0.25rem;
-  width: 0.25rem;
+  height: 0;
+  width: 0;
 }
 
 ::-webkit-scrollbar-thumb {
   background: transparent;
-  border-radius: 0.1rem;
+  border-radius: 0;
 }
 
 ::selection {

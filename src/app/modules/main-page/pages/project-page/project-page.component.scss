@@ -18,7 +18,7 @@ h5 {
   }
 
   &__title {
-    margin: rem(16) 0 rem(72);
+    margin: rem(16) 0 rem(48);
     font-size: font(48);
     font-weight: 500;
     line-height: 120%;
@@ -26,6 +26,10 @@ h5 {
 
     @media screen and (min-width: get-breakpoint(s)) {
       font-size: font(64);
+    }
+
+    @media screen and (min-width: get-breakpoint(l)) {
+      margin: rem(16) 0 rem(72);
     }
   }
 
@@ -68,9 +72,7 @@ h5 {
 
   &__text-block {
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    gap: rem(24);
+
     font-size: font(14);
     line-height: 180%;
     color: color(gray-700);
@@ -80,6 +82,9 @@ h5 {
     }
 
     @media screen and (min-width: get-breakpoint(l)) {
+      display: grid;
+      grid-template-columns: 1fr 5fr;
+      gap: rem(24);
       font-size: font(20);
     }
 
@@ -88,14 +93,16 @@ h5 {
     }
 
     h5 {
-      font-size: font(14);
+      margin-bottom: rem(16);
+      font-size: font(20);
       font-weight: 500;
       line-height: 140%;
-      transform: translate(0, rem(6));
       color: color(gray-900);
 
-      @media screen and (min-width: get-breakpoint(m)) {
+      @media screen and (min-width: get-breakpoint(l)) {
         font-size: font(16);
+        transform: translate(0, rem(6));
+        margin-bottom: 0;
       }
     }
 

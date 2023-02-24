@@ -2,7 +2,7 @@
 <p class="project__title">{{ project.title }}</p>
 
 <div class="project__content">
-  <div class="project__video" *ngIf="project.mainPreview">
+  <div class="project__video" *ngIf="project.mainPreview && isVideoShown">
     <video autoplay muted loop (canplaythrough)="onVideoLoad()" [style.visibility]="isVideoLoaded ? 'visible' : 'none'">
       <source [src]="'assets/videos/projects/' + project.mainPreview + '.mp4'" type="video/mp4">
       Your browser does not support the video tag.
@@ -23,9 +23,7 @@
   <div class="project__screens" *ngIf="project.images.length">
     <div class="screen__container" *ngFor="let img of project.images; let i = index">
       <picture [style.visibility]="isLoaded ? 'visible' : 'none'">
-        <source type="image/webp" [attr.lazyLoad]="'assets/img/projects/webp/' + img + '.webp'">
-        <source type="image/png" [srcset]="'assets/img/projects/png/' + img + '.png'">
-        <img (load)="onLoad(i)" [ngSrc]="'cv/projects/' + img + '.png'" fill alt="project-screen">
+        <img priority (load)="onLoad(i)" [ngSrc]="'cv/projects/' + img + '.webp'" fill alt="project-screen">
       </picture>
       <div *ngIf="!isLoaded[i]" class="skeleton-container">
         <ngx-skeleton-loader></ngx-skeleton-loader>

@@ -1,13 +1,11 @@
 import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 import { Contact } from "../../../interfaces/contacts.interface";
 import { CONTACTS_MOCKS } from "../../../mocks/contacts.mock";
-import { openCloseAnimation } from "../../../animations/open-close.animation";
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
-  animations: [openCloseAnimation]
 })
 export class SidebarComponent implements OnInit {
   @Output() public openMenu: EventEmitter<boolean> = new EventEmitter<boolean>()

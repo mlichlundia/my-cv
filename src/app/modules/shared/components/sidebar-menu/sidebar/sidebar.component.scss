@@ -12,8 +12,8 @@
   z-index: 1000;
   background: color(gray-200);
   width: 100%;
-  transition: 0.4s width 0.25s ease-in-out,
-    0.4s background-color 0.25s ease-in-out;
+  transition: 0.25s width ease-in-out,
+    0.25s background-color ease-in-out;
   pointer-events: all;
 
   @media screen and (min-width: get-breakpoint(xl)) {
@@ -24,6 +24,7 @@
 
   &.close {
     width: 0;
+    border-left: rem(1) solid transparent;
   }
 }
 

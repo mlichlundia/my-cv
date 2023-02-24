@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ProjectInterface } from '../../../shared/interfaces/project.interface';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PROJECTS_MOCK } from '../../../shared/mocks/projects.mock';
+import { getDeviceType } from "../../../shared/functions/getDeviceType";
 
 @Component({
   selector: 'app-project-preview-page',
@@ -12,8 +13,9 @@ export class ProjectPageComponent implements OnInit {
   public project!: ProjectInterface;
   public isLoaded: boolean[] = [false, false, false]
   public isVideoLoaded: boolean = false;
+  public isVideoShown: boolean = false
   
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(private cdr: ChangeDetectorRef, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((res) => {
@@ -27,6 +29,7 @@ export class ProjectPageComponent implements OnInit {
       }
 
       this.project = currentProject;
+      this.isVideoShown = this.showVideo()
     });
   }
 
@@ -36,5 +39,9 @@ export class ProjectPageComponent implements OnInit {
 
   onVideoLoad() {
     this.isVideoLoaded = true
+  }
+
+  public showVideo():boolean {
+    return getDeviceType() !== 'mobile'
   }
 }
