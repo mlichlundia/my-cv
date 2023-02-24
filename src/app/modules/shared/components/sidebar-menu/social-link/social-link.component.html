@@ -1,5 +1,9 @@
 <app-stick-to-mouse-container>
-  <a [href]="contact.value" target="_blank">
+  <a
+    [href]="contact.value"
+    target="_blank"
+    [attr.aria-label]="'Contact me via' + contact.type"
+  >
     <app-icon [name]="currentIcon"></app-icon>
     <p>{{ contact.type | titlecase }}</p>
   </a>
